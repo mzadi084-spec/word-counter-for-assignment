@@ -1,0 +1,6 @@
+{
+  "name": "Word Counter for Assignment",
+  "description": "Free online word counter for assignment writing with live word count, Urdu text support, word limit tracking, reading time, and words to pages converter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
