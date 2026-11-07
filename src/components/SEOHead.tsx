@@ -9,6 +9,8 @@ interface SEOHeadProps {
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
+const SITE_URL = 'https://wordcounterforassignment.com';
+
 export const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description,
@@ -16,9 +18,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   type = 'website',
   schema,
 }) => {
-  // Use window origin or standard fallback for canonical URL
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://wordcounterassignment.com';
-  const fullCanonical = `${siteUrl}${canonicalPath}`;
+  const fullCanonical = `${SITE_URL}${canonicalPath}`;
 
   return (
     <Helmet>

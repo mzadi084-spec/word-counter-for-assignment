@@ -37,23 +37,31 @@ export const BlogPostPage: React.FC = () => {
   }
 
   // Article JSON-LD Schema
+  const articleUrl = `https://wordcounterforassignment.com/blog/${article.slug}`;
+  const siteUrl = 'https://wordcounterforassignment.com';
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': articleUrl,
+    url: articleUrl,
     headline: article.title,
     description: article.summary,
     author: {
       '@type': 'Organization',
       name: article.author,
+      url: siteUrl,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Word Counter for Assignment',
+      url: siteUrl,
     },
     datePublished: '2026-11-01',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://wordcounterassignment.com/blog/${article.slug}`,
+      '@id': articleUrl,
+      url: articleUrl,
     },
   };
 

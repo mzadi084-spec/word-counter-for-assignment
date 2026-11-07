@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wordcounterassignment.com/sitemap.xml
+Sitemap: https://wordcounterforassignment.com/sitemap.xml
