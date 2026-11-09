@@ -38,15 +38,15 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/character-counter" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/character-counter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Character Counter Online
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/urdu-word-counter" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                <a href="/urdu-word-counter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1.5">
                   <span>Urdu Word Counter</span>
                   <span className="text-[10px] bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-1 rounded">اردو</span>
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/sentence-counter" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -68,9 +68,9 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li>
-                <Link to="/words-to-pages-converter" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/words-to-pages-converter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Words to Pages Converter
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/reading-time-calculator" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -98,24 +98,24 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li>
-                <Link to="/about" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/about/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   About Us
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/contact/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Contact Support
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/privacy-policy" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/privacy-policy/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/terms" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/terms/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Terms of Service
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

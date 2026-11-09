@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urdu Word Counter – Free Online Text & Word Counter</title>
+    <meta name="description" content="Urdu word counter for assignments, essays, and Urdu poetry. Count words, characters, sentences, and paragraphs in Urdu, English, and Roman Urdu online for free." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://wordcounterforassignment.com/urdu-word-counter/" />
+    <meta property="og:title" content="Urdu Word Counter – Free Online Text & Word Counter" />
+    <meta property="og:description" content="Count Urdu words, characters, sentences, and paragraphs in real time. Full support for Urdu Nastaliq font, Khatma (۔) and Sawalia (؟) punctuation marks." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordcounterforassignment.com/urdu-word-counter/" />
+    <meta property="og:site_name" content="Word Counter for Assignment" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Urdu Word Counter – Free Online Text & Word Counter" />
+    <meta name="twitter:description" content="Free Urdu word counter supporting Urdu, Roman Urdu, and English text with instant live word and sentence counts." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Urdu Word Counter",
+          "url": "https://wordcounterforassignment.com/urdu-word-counter/",
+          "description": "Free online word counter for Urdu, English, and Roman Urdu assignments, essays, and poetry with live counts and Urdu punctuation support.",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does the Urdu word counter detect words in Urdu script?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The tool analyzes Unicode character boundaries, distinguishing Urdu alphabetic characters from whitespace, punctuation marks, and control symbols. It accurately groups connected Nastaliq letters into whole words."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does this tool support mixed English, Urdu, and Roman Urdu text?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! The counter automatically detects both Latin and Arabic/Urdu scripts. You can paste bilingual assignments, Roman Urdu notes, or pure Urdu poetry, and all words will be counted correctly."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are my Urdu essays or assignment drafts uploaded to any server?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. All text processing occurs 100% within your web browser using client-side JavaScript. Your confidential essays and drafts are never transmitted over the internet or saved to external databases."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why does Urdu sentence counting need special punctuation marks like Khatma (۔)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard English counters only recognize Western full stops (.), exclamation marks (!), and question marks (?). Urdu uses the Khatma (۔) as a period and Sawalia (؟) as a question mark. Our tool natively recognizes both sets of punctuation to count sentences accurately."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+      :root {
+        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-urdu: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', serif;
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+        --bg-page: #f8fafc;
+        --bg-card: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --stat-bg: #f1f5f9;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-page: #020617;
+          --bg-card: #0f172a;
+          --text-main: #f8fafc;
+          --text-muted: #94a3b8;
+          --border-color: #1e293b;
+          --stat-bg: #1e293b;
+        }
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        border-bottom: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 1rem 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .brand span { color: var(--text-main); }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover, .nav-links a.active {
+        color: var(--color-primary);
+      }
+      main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1.25rem;
+        flex: 1;
+        width: 100%;
+      }
+      .hero {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primary);
+        border-radius: 9999px;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      .subtitle {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .tool-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+        margin-bottom: 2.5rem;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+      }
+      .stat-card {
+        background: var(--stat-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 0.85rem;
+        padding: 0.85rem 1rem;
+        text-align: center;
+      }
+      .stat-card.highlight {
+        border-color: var(--color-primary);
+        background: rgba(37, 99, 235, 0.07);
+      }
+      .stat-value {
+        font-size: 1.65rem;
+        font-weight: 800;
+        color: var(--color-primary);
+        line-height: 1.1;
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-top: 0.25rem;
+      }
+      .textarea-container {
+        position: relative;
+        margin-bottom: 1rem;
+      }
+      textarea {
+        width: 100%;
+        min-height: 220px;
+        padding: 1.25rem;
+        font-family: var(--font-urdu);
+        font-size: 1.25rem;
+        line-height: 2.2;
+        border: 2px solid var(--border-color);
+        border-radius: 0.85rem;
+        background: var(--bg-page);
+        color: var(--text-main);
+        resize: vertical;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      textarea:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+      .btn-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .btn-group {
+        display: flex;
+        gap: 0.5rem;
+      }
+      button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 1.1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: 0.6rem;
+        cursor: pointer;
+        border: 1px solid var(--border-color);
+        background: var(--bg-card);
+        color: var(--text-main);
+        transition: all 0.15s;
+      }
+      button:hover {
+        background: var(--stat-bg);
+      }
+      button.primary {
+        background: var(--color-primary);
+        color: #ffffff;
+        border-color: var(--color-primary);
+      }
+      button.primary:hover {
+        background: var(--color-primary-hover);
+      }
+      .copy-msg {
+        font-size: 0.8rem;
+        color: #16a34a;
+        font-weight: 600;
+        display: none;
+      }
+      .content-section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .content-section h2 {
+        font-size: 1.45rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-main);
+      }
+      .content-section h2:first-child {
+        margin-top: 0;
+      }
+      .content-section p {
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+      .content-section ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1.25rem;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+      .content-section li {
+        margin-bottom: 0.4rem;
+      }
+      .callout {
+        background: rgba(37, 99, 235, 0.06);
+        border-left: 4px solid var(--color-primary);
+        padding: 1rem 1.25rem;
+        border-radius: 0.5rem;
+        margin: 1.25rem 0;
+        font-size: 0.925rem;
+        color: var(--text-main);
+      }
+      .faq-card details {
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 0;
+      }
+      .faq-card details:last-child {
+        border-bottom: none;
+      }
+      .faq-card summary {
+        font-weight: 700;
+        font-size: 1.05rem;
+        cursor: pointer;
+        color: var(--text-main);
+        outline: none;
+      }
+      .faq-card summary:hover {
+        color: var(--color-primary);
+      }
+      .faq-card p {
+        margin-top: 0.75rem;
+        margin-bottom: 0;
+        color: var(--text-muted);
+      }
+      footer {
+        border-top: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 2.5rem 1.5rem 1.5rem;
+        margin-top: 3rem;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+      .footer-grid {
+        max-width: 1100px;
+        margin: 0 auto 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+      .footer-col h4 {
+        color: var(--text-main);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.75rem;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col li {
+        margin-bottom: 0.4rem;
+      }
+      .footer-col a {
+        color: var(--text-muted);
+        text-decoration: none;
+      }
+      .footer-col a:hover {
+        color: var(--color-primary);
+      }
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1.5rem;
+        font-size: 0.8rem;
+      }
+      .footer-bottom a {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="/" class="brand">
+          WordCounter<span>forAssignment</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/urdu-word-counter/" class="active">Urdu Counter</a>
+          <a href="/words-to-pages-converter/">Words to Pages</a>
+          <a href="/character-counter/">Character Counter</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <span class="badge">Bilingual Academic Writing Tool</span>
+        <h1>Urdu Word Counter for Assignments & Essays</h1>
+        <p class="subtitle">Live word, character, sentence, and paragraph counter with native Nastaliq font support and full punctuation recognition for Urdu (۔ ، ؟), English, and Roman Urdu.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-value" id="val-words">0</div>
+            <div class="stat-label">Words (الفاظ)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="val-chars">0</div>
+            <div class="stat-label">Characters (حروف)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="val-chars-no-space">0</div>
+            <div class="stat-label">No Spaces (بغیر فاصلہ)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="val-sentences">0</div>
+            <div class="stat-label">Sentences (جملے)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="val-paragraphs">0</div>
+            <div class="stat-label">Paragraphs (پیراگراف)</div>
+          </div>
+        </div>
+
+        <div class="textarea-container">
+          <label for="urdu-input" class="stat-label" style="display:block; margin-bottom:0.4rem;">اپنا اردو یا انگریزی متن یہاں درج کریں (Type or paste text below):</label>
+          <textarea
+            id="urdu-input"
+            dir="auto"
+            placeholder="یہاں اردو، رومن اردو یا انگریزی متن لکھیں یا پیسٹ کریں... Type or paste Urdu, Roman Urdu, or English assignment text here."
+          ></textarea>
+        </div>
+
+        <div class="btn-row">
+          <div class="btn-group">
+            <button type="button" class="primary" id="btn-copy">
+              <span>📋 Copy Text</span>
+            </button>
+            <button type="button" id="btn-clear">
+              <span>🗑️ Clear</span>
+            </button>
+            <button type="button" id="btn-sample">
+              <span>✍️ Insert Sample Urdu</span>
+            </button>
+          </div>
+          <span class="copy-msg" id="copy-status">Copied to clipboard!</span>
+        </div>
+      </div>
+
+      <article class="content-section">
+        <h2>How to Use the Urdu Word Counter</h2>
+        <p>Writing essays, thesis chapters, or university assignments in Urdu requires specialized text analysis. Most Western word processors struggle with Urdu word boundaries and sentence punctuation. Our online Urdu word counter makes checking your assignment word limits fast, precise, and completely effortless.</p>
+        <p>Follow these quick steps:</p>
+        <ul>
+          <li><strong>Step 1:</strong> Type or paste your text into the box above. The box uses <code>dir="auto"</code>, meaning it automatically switches to Right-to-Left (RTL) mode when you start typing in Urdu script.</li>
+          <li><strong>Step 2:</strong> Check the live stat cards at the top. The counter calculates words, total characters, characters without spaces, sentences, and paragraphs in real time.</li>
+          <li><strong>Step 3:</strong> Use the "Copy Text" button to grab your verified text for submission into your university portal, MS Word, or Google Docs.</li>
+        </ul>
+
+        <h2>Why Urdu & Roman Urdu Counting Matters for Students</h2>
+        <p>Pakistani, Indian, and South Asian university students frequently write bilingual assignments in Urdu, English, and Roman Urdu. Academic courses in Urdu Literature, Pakistan Studies, Islamic History, and Journalism have strict word count guidelines—often with penalties if you write 10% over or under the requested limit.</p>
+        <p>Standard word processors frequently miscalculate Urdu sentences because they only recognize Western periods (<code>.</code>), exclamation points (<code>!</code>), and question marks (<code>?</code>). In Urdu typography, the Khatma (<code>۔</code>) marks the end of a sentence, and the Sawalia Nishan (<code>؟</code>) marks a question. Our tool is specifically programmed to recognize both Western and Urdu punctuation marks, ensuring your sentence structure and paragraph statistics are 100% accurate.</p>
+
+        <div class="callout">
+          <strong>Need an English assignment counter?</strong> Looking to count words for standard English essays, check keyword density, or verify double-spaced page lengths? Check our <a href="/" style="color:var(--color-primary); font-weight:700;">Free word counter for assignments</a>.
+        </div>
+
+        <h2>Differences Between Urdu and English Word Counting</h2>
+        <p>In Urdu, words are formed using Arabic-derived Nastaliq script where letters join together in calligraphic ligatures. Some compound words (like "وزیراعظم" or "دارالحکومت") may be written with zero-width non-joiners or standard spaces depending on the author's keyboard layout. Our algorithm carefully splits tokens using standard Unicode whitespace boundaries to ensure consistent, fair academic counting across all keyboards.</p>
+        <p>For Roman Urdu (Urdu written in the Latin alphabet, such as "kya hal hai"), words are separated by standard spaces. Our counter handles Roman Urdu seamlessly without stripping essential letters, making it the ideal companion for student essays, WhatsApp study groups, and digital coursework.</p>
+
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-card">
+          <details>
+            <summary>How does the Urdu word counter detect words in Urdu script?</summary>
+            <p>The tool analyzes Unicode character boundaries, distinguishing Urdu alphabetic characters from whitespace, punctuation marks, and control symbols. It accurately groups connected Nastaliq letters into whole words without miscounting joined letters.</p>
+          </details>
+          <details>
+            <summary>Does this tool support mixed English, Urdu, and Roman Urdu text?</summary>
+            <p>Yes! The counter automatically detects both Latin and Arabic/Urdu scripts. You can paste bilingual assignments, Roman Urdu notes, or pure Urdu poetry, and all words will be counted correctly.</p>
+          </details>
+          <details>
+            <summary>Are my Urdu essays or assignment drafts uploaded to any server?</summary>
+            <p>No. All text processing occurs 100% within your web browser using client-side JavaScript. Your confidential essays and drafts are never transmitted over the internet or saved to external databases.</p>
+          </details>
+          <details>
+            <summary>Why does Urdu sentence counting need special punctuation marks like Khatma (۔)?</summary>
+            <p>Standard English counters only recognize Western full stops (.), exclamation marks (!), and question marks (?). Urdu uses the Khatma (۔) as a period and Sawalia (؟) as a question mark. Our tool natively recognizes both sets of punctuation to count sentences accurately.</p>
+          </details>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Word Counter for Assignment</h4>
+          <p style="font-size:0.85rem; line-height:1.5;">Free, privacy-first academic writing tools for students in English, Urdu, and Roman Urdu. Processed 100% in your browser.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Core Tools</h4>
+          <ul>
+            <li><a href="/">Free word counter for assignments</a></li>
+            <li><a href="/urdu-word-counter/">Urdu Word Counter</a></li>
+            <li><a href="/words-to-pages-converter/">Words to Pages Converter</a></li>
+            <li><a href="/character-counter/">Character Counter Online</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources & Trust</h4>
+          <ul>
+            <li><a href="/blog/">Academic Blog</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 <a href="/">Word Counter for Assignment</a>. Engineered for students worldwide.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var textarea = document.getElementById('urdu-input');
+        var valWords = document.getElementById('val-words');
+        var valChars = document.getElementById('val-chars');
+        var valCharsNoSpace = document.getElementById('val-chars-no-space');
+        var valSentences = document.getElementById('val-sentences');
+        var valParagraphs = document.getElementById('val-paragraphs');
+        var btnCopy = document.getElementById('btn-copy');
+        var btnClear = document.getElementById('btn-clear');
+        var btnSample = document.getElementById('btn-sample');
+        var copyStatus = document.getElementById('copy-status');
+
+        function updateCounts() {
+          var text = textarea.value || '';
+          
+          // Characters
+          valChars.textContent = text.length;
+          valCharsNoSpace.textContent = text.replace(/\s/g, '').length;
+
+          // Words: split by whitespace
+          var trimmed = text.trim();
+          if (!trimmed) {
+            valWords.textContent = '0';
+            valSentences.textContent = '0';
+            valParagraphs.textContent = '0';
+            return;
+          }
+
+          var words = trimmed.split(/\s+/).filter(Boolean);
+          valWords.textContent = words.length;
+
+          // Sentences: match English (. ! ?) and Urdu (۔ ؟)
+          var sentenceMatches = trimmed.split(/[.!?۔؟]+/).filter(function(s) {
+            return s.trim().length > 0;
+          });
+          valSentences.textContent = sentenceMatches.length;
+
+          // Paragraphs: split by newlines
+          var paragraphs = text.split(/\n+/).filter(function(p) {
+            return p.trim().length > 0;
+          });
+          valParagraphs.textContent = paragraphs.length;
+        }
+
+        textarea.addEventListener('input', updateCounts);
+
+        btnCopy.addEventListener('click', function() {
+          if (!textarea.value) return;
+          navigator.clipboard.writeText(textarea.value).then(function() {
+            copyStatus.style.display = 'inline';
+            setTimeout(function() {
+              copyStatus.style.display = 'none';
+            }, 2500);
+          }).catch(function() {
+            textarea.select();
+            document.execCommand('copy');
+            copyStatus.style.display = 'inline';
+            setTimeout(function() {
+              copyStatus.style.display = 'none';
+            }, 2500);
+          });
+        });
+
+        btnClear.addEventListener('click', function() {
+          textarea.value = '';
+          updateCounts();
+          textarea.focus();
+        });
+
+        btnSample.addEventListener('click', function() {
+          textarea.value = 'تعلیم ہر انسان کے لیے بنیادی حق ہے۔ ایک اچھا طالب علم ہمیشہ وقت کی قدر کرتا ہے، اور محنت سے اپنے اسباق یاد کرتا ہے۔ کیا آپ نے اپنا اسائنمنٹ مکمل کر لیا ہے؟ اگر نہیں، تو آج ہی شروع کریں اور کامیابی حاصل کریں۔';
+          updateCounts();
+          textarea.focus();
+        });
+
+        // Initial run
+        updateCounts();
+      })();
+    </script>
+  </body>
+</html>

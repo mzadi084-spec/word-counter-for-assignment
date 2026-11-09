@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us – Word Counter for Assignment</title>
+    <meta name="description" content="Learn about Word Counter for Assignment, our mission to support students worldwide with free, private, browser-based academic writing and counting tools." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://wordcounterforassignment.com/about/" />
+    <meta property="og:title" content="About Us – Word Counter for Assignment" />
+    <meta property="og:description" content="Learn about our mission to provide free, confidential writing and text counting utilities for students and academic researchers worldwide." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordcounterforassignment.com/about/" />
+    <meta property="og:site_name" content="Word Counter for Assignment" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+        --bg-page: #f8fafc;
+        --bg-card: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --stat-bg: #f1f5f9;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-page: #020617;
+          --bg-card: #0f172a;
+          --text-main: #f8fafc;
+          --text-muted: #94a3b8;
+          --border-color: #1e293b;
+          --stat-bg: #1e293b;
+        }
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        border-bottom: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 1rem 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .brand span { color: var(--text-main); }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover {
+        color: var(--color-primary);
+      }
+      main {
+        max-width: 900px;
+        margin: 2.5rem auto;
+        padding: 0 1.25rem;
+        flex: 1;
+        width: 100%;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primary);
+        border-radius: 9999px;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+      .content-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+        margin-bottom: 2rem;
+      }
+      h2 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-top: 1.75rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-main);
+      }
+      h2:first-child { margin-top: 0; }
+      p {
+        color: var(--text-muted);
+        margin-bottom: 1.2rem;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+      ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-muted);
+      }
+      li { margin-bottom: 0.5rem; }
+      .feature-box {
+        background: var(--stat-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 0.85rem;
+        padding: 1.25rem;
+        margin: 1.5rem 0;
+      }
+      footer {
+        border-top: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 2.5rem 1.5rem 1.5rem;
+        margin-top: 3rem;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+      .footer-grid {
+        max-width: 1100px;
+        margin: 0 auto 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+      .footer-col h4 {
+        color: var(--text-main);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.75rem;
+      }
+      .footer-col ul {
+        list-style: none;
+        margin-left: 0;
+      }
+      .footer-col li {
+        margin-bottom: 0.4rem;
+      }
+      .footer-col a {
+        color: var(--text-muted);
+        text-decoration: none;
+      }
+      .footer-col a:hover {
+        color: var(--color-primary);
+      }
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1.5rem;
+        font-size: 0.8rem;
+      }
+      .footer-bottom a {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="/" class="brand">
+          WordCounter<span>forAssignment</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/urdu-word-counter/">Urdu Counter</a>
+          <a href="/words-to-pages-converter/">Words to Pages</a>
+          <a href="/character-counter/">Character Counter</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <span class="badge">About Our Platform</span>
+      <h1>About Word Counter for Assignment</h1>
+
+      <div class="content-card">
+        <h2>Our Mission</h2>
+        <p><strong>Word Counter for Assignment</strong> was built to solve a universal struggle faced by university, college, and secondary school students: submitting coursework that meets strict word limits, page constraints, and formatting requirements without compromising privacy.</p>
+        <p>Whether you are writing a 1,500-word history essay, converting a 10-page literature review into double-spaced pages, or counting words in an Urdu assignment, our suite of tools delivers instant, reliable feedback directly in your browser.</p>
+
+        <h2>Engineered for Bilingual & International Students</h2>
+        <p>Most online text analyzers are designed solely for standard English. We recognized that millions of students in Pakistan, India, the UK, the US, and across the globe study and write across multiple languages and writing systems—including English, Urdu, and Roman Urdu.</p>
+        <p>Our platform natively supports:</p>
+        <ul>
+          <li><strong>Urdu Nastaliq Script:</strong> Accurate word tokenization and full sentence recognition using authentic Urdu punctuation like the Khatma (<code>۔</code>) and Sawalia Nishan (<code>؟</code>).</li>
+          <li><strong>Roman Urdu:</strong> Seamless analysis for students taking lecture notes and drafting ideas in phonetic Latin Urdu.</li>
+          <li><strong>Academic English:</strong> Stop-word filtering, keyword density tracking, and speaking/reading duration benchmarks at 200 words per minute.</li>
+        </ul>
+
+        <h2>100% Client-Side Privacy Guarantee</h2>
+        <div class="feature-box">
+          <p style="margin-bottom: 0; font-weight: 600; color: var(--text-main);">
+            🔒 Your assignment drafts never leave your device. All counting, text parsing, and page estimation happen in real time using local JavaScript inside your browser. No text is ever uploaded to a database, sent to external APIs, or saved on our servers.
+          </p>
+        </div>
+
+        <h2>Free Forever for Learners Worldwide</h2>
+        <p>Education should be accessible. There are no paywalls, no required registrations, no subscription tiers, and no software installations. Every tool on our website is 100% free for students, teachers, and researchers.</p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Word Counter for Assignment</h4>
+          <p style="font-size:0.85rem; line-height:1.5;">Free, privacy-first academic writing tools for students in English, Urdu, and Roman Urdu. Processed 100% in your browser.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Core Tools</h4>
+          <ul>
+            <li><a href="/">Free word counter for assignments</a></li>
+            <li><a href="/urdu-word-counter/">Urdu Word Counter</a></li>
+            <li><a href="/words-to-pages-converter/">Words to Pages Converter</a></li>
+            <li><a href="/character-counter/">Character Counter Online</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources & Trust</h4>
+          <ul>
+            <li><a href="/blog/">Academic Blog</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 <a href="/">Word Counter for Assignment</a>. Engineered for students worldwide.</p>
+      </div>
+    </footer>
+  </body>
+</html>

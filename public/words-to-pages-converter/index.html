@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Words to Pages Converter – Assignment Page Calculator</title>
+    <meta name="description" content="Convert words to pages or pages to words for assignments and essays. Supports single and double spacing with Times New Roman, Arial, and Calibri font options." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://wordcounterforassignment.com/words-to-pages-converter/" />
+    <meta property="og:title" content="Words to Pages Converter – Assignment Page Calculator" />
+    <meta property="og:description" content="Free academic tool to calculate how many pages your essay or assignment will be. Single spacing, double spacing, and handwritten conversions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordcounterforassignment.com/words-to-pages-converter/" />
+    <meta property="og:site_name" content="Word Counter for Assignment" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Words to Pages Converter – Assignment Page Calculator" />
+    <meta name="twitter:description" content="Quickly convert word count to typed or handwritten pages for university essays and research papers." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Words to Pages Converter",
+          "url": "https://wordcounterforassignment.com/words-to-pages-converter/",
+          "description": "Free online academic converter to calculate pages from words or words from pages for essays, assignments, and research papers.",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How many pages is 1,000 words double-spaced?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In standard academic formatting (Times New Roman 12pt with 1-inch margins), 1,000 words equals exactly 4.0 double-spaced pages. If single-spaced, 1,000 words is approximately 2.0 pages."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do different fonts change the word count per page?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fonts have different character widths (kerning) and x-heights. Times New Roman is a compact serif font fitting roughly 500 single-spaced words per page, while Calibri 11pt has tighter spacing allowing around 550 words per page."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does this converter account for title pages and reference lists?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This converter calculates body text page length. University title pages, tables of contents, references/bibliographies, and appendices usually take additional standalone pages depending on your citation style (APA, MLA, or Harvard)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How accurate is the handwritten words-to-pages estimate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The handwritten benchmark uses an average of 175 words per single-sided lined A4 page. While individual handwriting size varies from compact (220 words) to large (140 words), 175 is the standard academic exam guideline."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+      :root {
+        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+        --bg-page: #f8fafc;
+        --bg-card: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --stat-bg: #f1f5f9;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-page: #020617;
+          --bg-card: #0f172a;
+          --text-main: #f8fafc;
+          --text-muted: #94a3b8;
+          --border-color: #1e293b;
+          --stat-bg: #1e293b;
+        }
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        border-bottom: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 1rem 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .brand span { color: var(--text-main); }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover, .nav-links a.active {
+        color: var(--color-primary);
+      }
+      main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1.25rem;
+        flex: 1;
+        width: 100%;
+      }
+      .hero {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primary);
+        border-radius: 9999px;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      .subtitle {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .tool-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 1.75rem;
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+        margin-bottom: 2.5rem;
+      }
+      .mode-toggle {
+        display: flex;
+        background: var(--stat-bg);
+        padding: 0.35rem;
+        border-radius: 0.75rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border-color);
+        max-width: 360px;
+      }
+      .mode-btn {
+        flex: 1;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        border-radius: 0.55rem;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        color: var(--text-muted);
+        transition: all 0.2s;
+        text-align: center;
+      }
+      .mode-btn.active {
+        background: var(--bg-card);
+        color: var(--color-primary);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.825rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-muted);
+        margin-bottom: 0.4rem;
+      }
+      input[type="number"], select {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: 2px solid var(--border-color);
+        border-radius: 0.75rem;
+        background: var(--bg-page);
+        color: var(--text-main);
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      input[type="number"]:focus, select:focus {
+        border-color: var(--color-primary);
+      }
+      .spacing-selector {
+        display: flex;
+        gap: 0.5rem;
+      }
+      .spacing-btn {
+        flex: 1;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 0.75rem;
+        border: 2px solid var(--border-color);
+        background: var(--bg-page);
+        color: var(--text-main);
+        cursor: pointer;
+        transition: all 0.15s;
+        text-align: center;
+      }
+      .spacing-btn.active {
+        border-color: var(--color-primary);
+        background: rgba(37, 99, 235, 0.08);
+        color: var(--color-primary);
+      }
+      .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+      }
+      .result-card {
+        background: var(--stat-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        padding: 1.25rem 1rem;
+        text-align: center;
+      }
+      .result-card.primary-result {
+        background: rgba(37, 99, 235, 0.06);
+        border-color: var(--color-primary);
+      }
+      .result-value {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: var(--color-primary);
+        line-height: 1;
+        margin-bottom: 0.35rem;
+      }
+      .result-label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--text-main);
+      }
+      .result-sub {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
+      }
+      .content-section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .content-section h2 {
+        font-size: 1.45rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-main);
+      }
+      .content-section h2:first-child {
+        margin-top: 0;
+      }
+      .content-section p {
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+      .content-section ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1.25rem;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+      .content-section li {
+        margin-bottom: 0.4rem;
+      }
+      .table-container {
+        overflow-x: auto;
+        margin: 1.25rem 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+      th, td {
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border-color);
+        text-align: left;
+      }
+      th {
+        background: var(--stat-bg);
+        color: var(--text-main);
+        font-weight: 700;
+      }
+      td {
+        color: var(--text-muted);
+      }
+      .callout {
+        background: rgba(37, 99, 235, 0.06);
+        border-left: 4px solid var(--color-primary);
+        padding: 1rem 1.25rem;
+        border-radius: 0.5rem;
+        margin: 1.25rem 0;
+        font-size: 0.925rem;
+        color: var(--text-main);
+      }
+      .faq-card details {
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 0;
+      }
+      .faq-card details:last-child {
+        border-bottom: none;
+      }
+      .faq-card summary {
+        font-weight: 700;
+        font-size: 1.05rem;
+        cursor: pointer;
+        color: var(--text-main);
+        outline: none;
+      }
+      .faq-card summary:hover {
+        color: var(--color-primary);
+      }
+      .faq-card p {
+        margin-top: 0.75rem;
+        margin-bottom: 0;
+        color: var(--text-muted);
+      }
+      footer {
+        border-top: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 2.5rem 1.5rem 1.5rem;
+        margin-top: 3rem;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+      .footer-grid {
+        max-width: 1100px;
+        margin: 0 auto 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+      .footer-col h4 {
+        color: var(--text-main);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.75rem;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col li {
+        margin-bottom: 0.4rem;
+      }
+      .footer-col a {
+        color: var(--text-muted);
+        text-decoration: none;
+      }
+      .footer-col a:hover {
+        color: var(--color-primary);
+      }
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1.5rem;
+        font-size: 0.8rem;
+      }
+      .footer-bottom a {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="/" class="brand">
+          WordCounter<span>forAssignment</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/urdu-word-counter/">Urdu Counter</a>
+          <a href="/words-to-pages-converter/" class="active">Words to Pages</a>
+          <a href="/character-counter/">Character Counter</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <span class="badge">Academic Page Estimator</span>
+        <h1>Words to Pages Converter for Assignments</h1>
+        <p class="subtitle">Quickly convert words to pages or pages to words for essays, term papers, and dissertations across Times New Roman, Arial, and Calibri formatting.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="mode-toggle">
+          <button type="button" class="mode-btn active" id="btn-mode-w2p">Words to Pages</button>
+          <button type="button" class="mode-btn" id="btn-mode-p2w">Pages to Words</button>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="input-count" id="lbl-input">Word Count</label>
+            <input type="number" id="input-count" value="1000" min="1" max="500000" step="50" />
+          </div>
+
+          <div class="form-group">
+            <label for="select-font">Font & Size</label>
+            <select id="select-font">
+              <option value="times" selected>Times New Roman (12 pt)</option>
+              <option value="arial">Arial (11 pt)</option>
+              <option value="calibri">Calibri (11 pt)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Line Spacing</label>
+            <div class="spacing-selector">
+              <button type="button" class="spacing-btn active" data-spacing="double" id="btn-double">Double Space</button>
+              <button type="button" class="spacing-btn" data-spacing="single" id="btn-single">Single Space</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card primary-result">
+            <div class="result-value" id="res-primary">4.0</div>
+            <div class="result-label" id="res-primary-label">Double-Spaced Pages</div>
+            <div class="result-sub" id="res-primary-sub">Standard University Assignment</div>
+          </div>
+          <div class="result-card">
+            <div class="result-value" id="res-secondary">2.0</div>
+            <div class="result-label" id="res-secondary-label">Single-Spaced Pages</div>
+            <div class="result-sub" id="res-secondary-sub">Compact Research Paper</div>
+          </div>
+          <div class="result-card">
+            <div class="result-value" id="res-handwritten">5.7</div>
+            <div class="result-label" id="res-handwritten-label">Handwritten A4 Pages</div>
+            <div class="result-sub">Average student penmanship (~175 words/page)</div>
+          </div>
+        </div>
+      </div>
+
+      <article class="content-section">
+        <h2>How to Use the Words to Pages Converter</h2>
+        <p>University professors often assign essays in terms of pages (e.g., "submit a 5-page critical analysis"), while rubric guidelines specify word counts (e.g., "1,250 to 1,500 words"). Navigating the difference between pages and words can feel stressful, especially when font choices and line spacing change your layout dramatically.</p>
+        <p>Our academic converter supports bidirectional calculations:</p>
+        <ul>
+          <li><strong>Words to Pages:</strong> Enter your target or current word count, select your institution's required font and line spacing, and see the exact page count rounded to one decimal place.</li>
+          <li><strong>Pages to Words:</strong> Toggle to "Pages to Words", enter the number of required pages, and discover the exact word count required to meet your syllabus deadline.</li>
+        </ul>
+
+        <h2>Why Academic Spacing and Font Formatting Matter</h2>
+        <p>Academic style guides such as APA 7th Edition, MLA 9th Edition, and Chicago Manual of Style universally specify 1-inch (2.54 cm) margins on all sides. However, word density varies noticeably based on typeface selection:</p>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Font & Point Size</th>
+                <th>Single-Spaced Page</th>
+                <th>Double-Spaced Page</th>
+                <th>Primary Use Case</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Times New Roman (12 pt)</strong></td>
+                <td>~500 words</td>
+                <td>~250 words</td>
+                <td>Traditional APA, MLA, and Chicago papers</td>
+              </tr>
+              <tr>
+                <td><strong>Arial (11 pt)</strong></td>
+                <td>~500 words</td>
+                <td>~250 words</td>
+                <td>Modern STEM, scientific reports, and lab journals</td>
+              </tr>
+              <tr>
+                <td><strong>Calibri (11 pt)</strong></td>
+                <td>~550 words</td>
+                <td>~275 words</td>
+                <td>Microsoft Word default, corporate coursework</td>
+              </tr>
+              <tr>
+                <td><strong>Handwritten A4 Sheet</strong></td>
+                <td>~175 words</td>
+                <td>~175 words</td>
+                <td>Exam blue books, handwritten tutorials & essays</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Because double spacing introduces a full blank line of vertical space between text rows, it cuts the word capacity of each printed page almost exactly in half. For instance, a 2,500-word term paper formatted in double-spaced Times New Roman will span 10 full pages, whereas a single-spaced draft would only cover 5 pages.</p>
+
+        <div class="callout">
+          <strong>Need to check your draft's real-time count?</strong> Paste your draft into our <a href="/" style="color:var(--color-primary); font-weight:700;">Free word counter for assignments</a> to monitor word limits, reading duration, and keyword frequencies.
+        </div>
+
+        <h2>Factors That Affect Your Real Printed Page Length</h2>
+        <p>While our calculator gives you the most reliable mathematical estimate for academic standards, several formatting elements can shift your actual document length:</p>
+        <ul>
+          <li><strong>Paragraph Frequency:</strong> Short paragraphs leave white space at the end of each paragraph line, which slightly increases your page count.</li>
+          <li><strong>Block Quotations:</strong> Quotes over 40 words are indented as a standalone block in APA and MLA, often single-spaced.</li>
+          <li><strong>Headings & Subheadings:</strong> Section titles with extra before/after paragraph spacing push content onto subsequent pages.</li>
+          <li><strong>In-Text Citations & Tables:</strong> Parenthetical citations with numerous co-authors and inserted charts take up considerable physical space.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-card">
+          <details>
+            <summary>How many pages is 1,000 words double-spaced?</summary>
+            <p>In standard academic formatting (Times New Roman 12pt with 1-inch margins), 1,000 words equals exactly 4.0 double-spaced pages. If single-spaced, 1,000 words is approximately 2.0 pages.</p>
+          </details>
+          <details>
+            <summary>Why do different fonts change the word count per page?</summary>
+            <p>Fonts have different character widths (kerning) and x-heights. Times New Roman is a compact serif font fitting roughly 500 single-spaced words per page, while Calibri 11pt has tighter spacing allowing around 550 words per page.</p>
+          </details>
+          <details>
+            <summary>Does this converter account for title pages and reference lists?</summary>
+            <p>This converter calculates body text page length. University title pages, tables of contents, references/bibliographies, and appendices usually take additional standalone pages depending on your citation style (APA, MLA, or Harvard).</p>
+          </details>
+          <details>
+            <summary>How accurate is the handwritten words-to-pages estimate?</summary>
+            <p>The handwritten benchmark uses an average of 175 words per single-sided lined A4 page. While individual handwriting size varies from compact (220 words) to large (140 words), 175 is the standard academic exam guideline.</p>
+          </details>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Word Counter for Assignment</h4>
+          <p style="font-size:0.85rem; line-height:1.5;">Free, privacy-first academic writing tools for students in English, Urdu, and Roman Urdu. Processed 100% in your browser.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Core Tools</h4>
+          <ul>
+            <li><a href="/">Free word counter for assignments</a></li>
+            <li><a href="/urdu-word-counter/">Urdu Word Counter</a></li>
+            <li><a href="/words-to-pages-converter/">Words to Pages Converter</a></li>
+            <li><a href="/character-counter/">Character Counter Online</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources & Trust</h4>
+          <ul>
+            <li><a href="/blog/">Academic Blog</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 <a href="/">Word Counter for Assignment</a>. Engineered for students worldwide.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var mode = 'w2p'; // 'w2p' or 'p2w'
+        var currentSpacing = 'double'; // 'double' or 'single'
+        var inputCount = document.getElementById('input-count');
+        var selectFont = document.getElementById('select-font');
+        var btnDouble = document.getElementById('btn-double');
+        var btnSingle = document.getElementById('btn-single');
+        var btnModeW2P = document.getElementById('btn-mode-w2p');
+        var btnModeP2W = document.getElementById('btn-mode-p2w');
+        var lblInput = document.getElementById('lbl-input');
+
+        var resPrimary = document.getElementById('res-primary');
+        var resPrimaryLabel = document.getElementById('res-primary-label');
+        var resPrimarySub = document.getElementById('res-primary-sub');
+        var resSecondary = document.getElementById('res-secondary');
+        var resSecondaryLabel = document.getElementById('res-secondary-label');
+        var resSecondarySub = document.getElementById('res-secondary-sub');
+        var resHandwritten = document.getElementById('res-handwritten');
+        var resHandwrittenLabel = document.getElementById('res-handwritten-label');
+
+        var fontFactors = {
+          times: { single: 500, double: 250 },
+          arial: { single: 500, double: 250 },
+          calibri: { single: 550, double: 275 }
+        };
+
+        function calculate() {
+          var val = parseFloat(inputCount.value) || 0;
+          var font = selectFont.value;
+          var factorSingle = fontFactors[font].single;
+          var factorDouble = fontFactors[font].double;
+          var handwrittenFactor = 175;
+
+          if (mode === 'w2p') {
+            // Words to Pages
+            var pagesDouble = (val / factorDouble).toFixed(1);
+            var pagesSingle = (val / factorSingle).toFixed(1);
+            var pagesHw = (val / handwrittenFactor).toFixed(1);
+
+            if (currentSpacing === 'double') {
+              resPrimary.textContent = pagesDouble;
+              resPrimaryLabel.textContent = 'Double-Spaced Pages';
+              resPrimarySub.textContent = 'Based on ' + factorDouble + ' words/page (' + selectFont.options[selectFont.selectedIndex].text + ')';
+
+              resSecondary.textContent = pagesSingle;
+              resSecondaryLabel.textContent = 'Single-Spaced Pages';
+              resSecondarySub.textContent = 'Based on ' + factorSingle + ' words/page';
+            } else {
+              resPrimary.textContent = pagesSingle;
+              resPrimaryLabel.textContent = 'Single-Spaced Pages';
+              resPrimarySub.textContent = 'Based on ' + factorSingle + ' words/page (' + selectFont.options[selectFont.selectedIndex].text + ')';
+
+              resSecondary.textContent = pagesDouble;
+              resSecondaryLabel.textContent = 'Double-Spaced Pages';
+              resSecondarySub.textContent = 'Based on ' + factorDouble + ' words/page';
+            }
+
+            resHandwritten.textContent = pagesHw;
+            resHandwrittenLabel.textContent = 'Handwritten A4 Pages';
+          } else {
+            // Pages to Words
+            var wordsDouble = Math.round(val * factorDouble);
+            var wordsSingle = Math.round(val * factorSingle);
+            var wordsHw = Math.round(val * handwrittenFactor);
+
+            if (currentSpacing === 'double') {
+              resPrimary.textContent = wordsDouble.toLocaleString();
+              resPrimaryLabel.textContent = 'Words for Double Spacing';
+              resPrimarySub.textContent = 'For ' + val + ' pages at ' + factorDouble + ' words/page';
+
+              resSecondary.textContent = wordsSingle.toLocaleString();
+              resSecondaryLabel.textContent = 'Words for Single Spacing';
+              resSecondarySub.textContent = 'For ' + val + ' pages at ' + factorSingle + ' words/page';
+            } else {
+              resPrimary.textContent = wordsSingle.toLocaleString();
+              resPrimaryLabel.textContent = 'Words for Single Spacing';
+              resPrimarySub.textContent = 'For ' + val + ' pages at ' + factorSingle + ' words/page';
+
+              resSecondary.textContent = wordsDouble.toLocaleString();
+              resSecondaryLabel.textContent = 'Words for Double Spacing';
+              resSecondarySub.textContent = 'For ' + val + ' pages at ' + factorDouble + ' words/page';
+            }
+
+            resHandwritten.textContent = wordsHw.toLocaleString();
+            resHandwrittenLabel.textContent = 'Words in Handwritten Pages';
+          }
+        }
+
+        btnModeW2P.addEventListener('click', function() {
+          if (mode === 'w2p') return;
+          mode = 'w2p';
+          btnModeW2P.classList.add('active');
+          btnModeP2W.classList.remove('active');
+          lblInput.textContent = 'Word Count';
+          inputCount.value = '1000';
+          inputCount.step = '50';
+          calculate();
+        });
+
+        btnModeP2W.addEventListener('click', function() {
+          if (mode === 'p2w') return;
+          mode = 'p2w';
+          btnModeP2W.classList.add('active');
+          btnModeW2P.classList.remove('active');
+          lblInput.textContent = 'Number of Pages';
+          inputCount.value = '4';
+          inputCount.step = '0.5';
+          calculate();
+        });
+
+        btnDouble.addEventListener('click', function() {
+          currentSpacing = 'double';
+          btnDouble.classList.add('active');
+          btnSingle.classList.remove('active');
+          calculate();
+        });
+
+        btnSingle.addEventListener('click', function() {
+          currentSpacing = 'single';
+          btnSingle.classList.add('active');
+          btnDouble.classList.remove('active');
+          calculate();
+        });
+
+        inputCount.addEventListener('input', calculate);
+        selectFont.addEventListener('change', calculate);
+
+        calculate();
+      })();
+    </script>
+  </body>
+</html>

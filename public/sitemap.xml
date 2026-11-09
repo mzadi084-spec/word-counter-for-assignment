@@ -21,57 +21,37 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://wordcounterforassignment.com/character-counter</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/sentence-counter</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/urdu-word-counter</loc>
+    <loc>https://wordcounterforassignment.com/urdu-word-counter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wordcounterforassignment.com/essay-word-counter</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/paragraph-counter</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/reading-time-calculator</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/words-to-pages-converter</loc>
+    <loc>https://wordcounterforassignment.com/words-to-pages-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wordcounterforassignment.com/about</loc>
+    <loc>https://wordcounterforassignment.com/character-counter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://wordcounterforassignment.com/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://wordcounterforassignment.com/contact</loc>
+    <loc>https://wordcounterforassignment.com/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://wordcounterforassignment.com/privacy-policy</loc>
+    <loc>https://wordcounterforassignment.com/privacy-policy/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://wordcounterforassignment.com/terms</loc>
+    <loc>https://wordcounterforassignment.com/terms/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
