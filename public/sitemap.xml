@@ -6,6 +6,21 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://wordcounterforassignment.com/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://wordcounterforassignment.com/blog/how-many-words-is-2-pages.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wordcounterforassignment.com/blog/how-to-reduce-word-count-in-assignment.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://wordcounterforassignment.com/character-counter</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -39,41 +54,6 @@
     <loc>https://wordcounterforassignment.com/words-to-pages-converter</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/blog/how-to-check-assignment-word-count</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/blog/how-long-should-an-assignment-be</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/blog/how-to-write-strong-assignment-introduction</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/blog/how-to-avoid-plagiarism-in-assignments</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/blog/how-to-increase-word-count-without-filler</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://wordcounterforassignment.com/blog/how-many-words-on-a-page-single-vs-double-spacing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://wordcounterforassignment.com/about</loc>

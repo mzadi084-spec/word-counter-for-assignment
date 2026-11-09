@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment Writing Blog & Guides – Word Counter for Assignment</title>
+    <meta name="description" content="Explore practical academic writing guides, word count strategies, page length calculations, and essay editing tips for university and college students." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://wordcounterforassignment.com/blog/" />
+    <meta property="og:title" content="Assignment Writing Blog & Guides – Word Counter for Assignment" />
+    <meta property="og:description" content="Explore practical academic writing guides, word count strategies, page length calculations, and essay editing tips for university and college students." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordcounterforassignment.com/blog/" />
+    <meta property="og:site_name" content="Word Counter for Assignment" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+        --bg-page: #f8fafc;
+        --bg-card: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-page: #020617;
+          --bg-card: #0f172a;
+          --text-main: #f8fafc;
+          --text-muted: #94a3b8;
+          --border-color: #1e293b;
+        }
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        border-bottom: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 1rem 1.5rem;
+      }
+      .nav-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .brand span { color: var(--text-main); }
+      .back-link {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .back-link:hover { text-decoration: underline; }
+      main {
+        max-width: 1000px;
+        margin: 2.5rem auto;
+        padding: 0 1.5rem;
+        flex: 1;
+        width: 100%;
+      }
+      .hero {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primary);
+        border-radius: 9999px;
+        margin-bottom: 0.75rem;
+      }
+      h1 {
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.02em;
+      }
+      .subtitle {
+        color: var(--text-muted);
+        font-size: 1.125rem;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .article-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 1.75rem;
+        transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .article-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--color-primary);
+        box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08);
+      }
+      .tag {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+      }
+      .article-card h2 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+      }
+      .article-card h2 a {
+        color: var(--text-main);
+        text-decoration: none;
+      }
+      .article-card h2 a:hover {
+        color: var(--color-primary);
+      }
+      .article-card p {
+        color: var(--text-muted);
+        font-size: 0.925rem;
+        margin-bottom: 1.5rem;
+        flex: 1;
+      }
+      .read-more {
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .read-more:hover { text-decoration: underline; }
+      footer {
+        border-top: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 2rem 1.5rem;
+        margin-top: 4rem;
+        text-align: center;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+      footer a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="/" class="brand">
+          WordCounter<span>forAssignment</span>
+        </a>
+        <a href="/" class="back-link">← Back to Word Counter Tool</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <span class="badge">Student Academic Writing Guides</span>
+        <h1>Assignment Writing & Word Count Blog</h1>
+        <p class="subtitle">Expert strategies for university coursework, understanding page length conversions, and staying within assignment word limits.</p>
+      </div>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <div>
+            <div class="tag">Formatting & Layout</div>
+            <h2><a href="/blog/how-many-words-is-2-pages.html">How Many Words is 2 Pages? (Single vs Double Spacing)</a></h2>
+            <p>Find out exactly how many words are in 2 pages for double spacing (500 words), single spacing (1,000 words), and handwritten A4 sheets (350 words) with font and margin benchmarks.</p>
+          </div>
+          <a href="/blog/how-many-words-is-2-pages.html" class="read-more">Read Full Guide →</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Academic Editing</div>
+            <h2><a href="/blog/how-to-reduce-word-count-in-assignment.html">How to Reduce Word Count in an Assignment: 10 Proven Strategies</a></h2>
+            <p>Discovered your essay is hundreds of words over the limit? Learn 10 actionable academic editing techniques to cut word count without sacrificing clarity or marks.</p>
+          </div>
+          <a href="/blog/how-to-reduce-word-count-in-assignment.html" class="read-more">Read Full Guide →</a>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 <a href="/">Word Counter for Assignment</a>. Free student tool for English, Urdu & Roman Urdu coursework.</p>
+    </footer>
+  </body>
+</html>

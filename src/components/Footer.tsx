@@ -83,10 +83,10 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                <a href="/blog/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1">
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>Student Writing Guides</span>
-                </Link>
+                  <span>Blog</span>
+                </a>
               </li>
             </ul>
           </div>
