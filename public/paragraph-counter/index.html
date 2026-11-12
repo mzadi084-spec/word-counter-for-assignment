@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paragraph Counter - Free Online Paragraph &amp; Word Counter</title>
+    <meta name="description" content="Free online paragraph counter to count paragraphs, words, sentences, characters, and average words per paragraph in real time. Fast and private in your browser." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://wordcounterforassignment.com/paragraph-counter/" />
+    <meta property="og:title" content="Paragraph Counter - Free Online Paragraph &amp; Word Counter" />
+    <meta property="og:description" content="Count paragraphs, sentences, words, characters, and average words per paragraph in real time for essays and assignments." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordcounterforassignment.com/paragraph-counter/" />
+    <meta property="og:site_name" content="Word Counter for Assignment" />
+    <meta property="og:image" content="https://wordcounterforassignment.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Paragraph Counter - Free Online Paragraph &amp; Word Counter" />
+    <meta name="twitter:description" content="Free online paragraph counter for essays and assignments with live word, sentence, and average words per paragraph counts." />
+    <meta name="twitter:image" content="https://wordcounterforassignment.com/og-image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Online Paragraph Counter",
+          "url": "https://wordcounterforassignment.com/paragraph-counter/",
+          "description": "Free online paragraph counter that calculates total paragraphs, sentences, words, characters, and average words per paragraph in real time.",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does this paragraph counter define a paragraph?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The tool counts each block of text separated by one or more blank lines as one paragraph. Single line breaks inside a block keep lines grouped together in the same paragraph."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many words should an academic essay paragraph have?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most university body paragraphs average about 100 to 200 words, or roughly 4 to 7 well-developed sentences covering one main point with evidence and analysis."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the paragraph counter support Urdu and bilingual text?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Both word and sentence counting recognize standard English punctuation (. ! ?) as well as Urdu sentence marks (۔ and ؟), and paragraphs are detected cleanly in both scripts."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my essay saved or uploaded when I paste it here?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Every calculation happens locally inside your web browser using JavaScript. Your draft never leaves your device or gets stored on a server."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+      :root {
+        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+        --bg-page: #f8fafc;
+        --bg-card: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --stat-bg: #f1f5f9;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-page: #020617;
+          --bg-card: #0f172a;
+          --text-main: #f8fafc;
+          --text-muted: #94a3b8;
+          --border-color: #1e293b;
+          --stat-bg: #1e293b;
+        }
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        border-bottom: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 1rem 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .brand span { color: var(--text-main); }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover, .nav-links a.active {
+        color: var(--color-primary);
+      }
+      main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1.25rem;
+        flex: 1;
+        width: 100%;
+      }
+      .hero {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primary);
+        border-radius: 9999px;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      .subtitle {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .tool-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+        margin-bottom: 2.5rem;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+      }
+      .stat-card {
+        background: var(--stat-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 0.85rem;
+        padding: 0.85rem 1rem;
+        text-align: center;
+      }
+      .stat-card.highlight {
+        border-color: var(--color-primary);
+        background: rgba(37, 99, 235, 0.07);
+      }
+      .stat-value {
+        font-size: 1.65rem;
+        font-weight: 800;
+        color: var(--color-primary);
+        line-height: 1.1;
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-top: 0.25rem;
+      }
+      .textarea-container {
+        position: relative;
+        margin-bottom: 1rem;
+      }
+      textarea {
+        width: 100%;
+        min-height: 220px;
+        padding: 1rem 1.25rem;
+        font-family: var(--font-sans);
+        font-size: 1.05rem;
+        line-height: 1.6;
+        border: 2px solid var(--border-color);
+        border-radius: 0.85rem;
+        background: var(--bg-page);
+        color: var(--text-main);
+        resize: vertical;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      textarea:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+      .btn-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .btn-group {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 1.1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: 0.6rem;
+        cursor: pointer;
+        border: 1px solid var(--border-color);
+        background: var(--bg-card);
+        color: var(--text-main);
+        transition: all 0.15s;
+      }
+      button:hover {
+        background: var(--stat-bg);
+      }
+      button.primary {
+        background: var(--color-primary);
+        color: #ffffff;
+        border-color: var(--color-primary);
+      }
+      button.primary:hover {
+        background: var(--color-primary-hover);
+      }
+      .copy-msg {
+        font-size: 0.8rem;
+        color: #16a34a;
+        font-weight: 600;
+        display: none;
+      }
+      .content-section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .content-section h2 {
+        font-size: 1.45rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-main);
+      }
+      .content-section h2:first-child {
+        margin-top: 0;
+      }
+      .content-section p {
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+      .content-section ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1.25rem;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+      .content-section li {
+        margin-bottom: 0.4rem;
+      }
+      .callout {
+        background: rgba(37, 99, 235, 0.06);
+        border-left: 4px solid var(--color-primary);
+        padding: 1rem 1.25rem;
+        border-radius: 0.5rem;
+        margin: 1.25rem 0;
+        font-size: 0.925rem;
+        color: var(--text-main);
+      }
+      .faq-card details {
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 0;
+      }
+      .faq-card details:last-child {
+        border-bottom: none;
+      }
+      .faq-card summary {
+        font-weight: 700;
+        font-size: 1.05rem;
+        cursor: pointer;
+        color: var(--text-main);
+        outline: none;
+      }
+      .faq-card summary:hover {
+        color: var(--color-primary);
+      }
+      .faq-card p {
+        margin-top: 0.75rem;
+        margin-bottom: 0;
+        color: var(--text-muted);
+      }
+      footer {
+        border-top: 1px solid var(--border-color);
+        background: var(--bg-card);
+        padding: 2.5rem 1.5rem 1.5rem;
+        margin-top: 3rem;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+      .footer-grid {
+        max-width: 1100px;
+        margin: 0 auto 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+      .footer-col h4 {
+        color: var(--text-main);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.75rem;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col li {
+        margin-bottom: 0.4rem;
+      }
+      .footer-col a {
+        color: var(--text-muted);
+        text-decoration: none;
+      }
+      .footer-col a:hover {
+        color: var(--color-primary);
+      }
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1.5rem;
+        font-size: 0.8rem;
+      }
+      .footer-bottom a {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="/" class="brand">
+          WordCounter<span>forAssignment</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/urdu-word-counter/">Urdu Counter</a>
+          <a href="/words-to-pages-converter/">Words to Pages</a>
+          <a href="/character-counter/">Character Counter</a>
+          <a href="/paragraph-counter/" class="active">Paragraph Counter</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <span class="badge">Essay Structure &amp; Section Analyzer</span>
+        <h1>Paragraph Counter &amp; Essay Structure Tool</h1>
+        <p class="subtitle">Count paragraphs, sentences, words, characters, and average words per paragraph instantly in your browser—ideal for essays, reports, and assignments.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="stats-grid">
+          <div class="stat-card highlight">
+            <div class="stat-value" id="val-paragraphs">0</div>
+            <div class="stat-label">Paragraphs</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="val-sentences">0</div>
+            <div class="stat-label">Sentences</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="val-words">0</div>
+            <div class="stat-label">Words</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="val-chars">0</div>
+            <div class="stat-label">Characters</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="val-avg-words">0</div>
+            <div class="stat-label">Avg Words / Paragraph</div>
+          </div>
+        </div>
+
+        <div class="textarea-container">
+          <label for="paragraph-input" class="stat-label" style="display:block; margin-bottom:0.4rem;">Type or paste your essay (separate paragraphs with a blank line):</label>
+          <textarea
+            id="paragraph-input"
+            dir="auto"
+            placeholder="Paste your essay or assignment here. Leave a blank line (press Enter twice) between paragraphs to count each section accurately..."
+          ></textarea>
+        </div>
+
+        <div class="btn-row">
+          <div class="btn-group">
+            <button type="button" class="primary" id="btn-copy">
+              <span>Copy Text</span>
+            </button>
+            <button type="button" id="btn-clear">
+              <span>Clear</span>
+            </button>
+            <button type="button" id="btn-sample">
+              <span>Insert Sample Essay</span>
+            </button>
+          </div>
+          <span class="copy-msg" id="copy-status">Copied to clipboard!</span>
+        </div>
+      </div>
+
+      <article class="content-section">
+        <h2>How to Use the Online Paragraph Counter</h2>
+        <p>Checking how many paragraphs your essay or report contains helps you organize arguments evenly from introduction to conclusion. Rather than counting sections manually down a long Google Doc or Word file, simply paste your text above for immediate structural feedback.</p>
+        <ul>
+          <li><strong>Step 1:</strong> Type directly or paste your assignment into the text field. Make sure each paragraph is separated by at least one blank line (hitting Enter twice).</li>
+          <li><strong>Step 2:</strong> Watch the five live metrics update as you edit: total paragraphs, sentences, words, characters, and average words per paragraph.</li>
+          <li><strong>Step 3:</strong> Review your average words per paragraph to spot overly dense "walls of text" or choppy, underdeveloped sections before turning in your paper.</li>
+        </ul>
+
+        <h2>Why Paragraph Count and Pacing Matter for Essays</h2>
+        <p>Strong academic writing depends on clear pacing as much as persuasive evidence. A classic five-paragraph essay introduces a thesis, explores three distinct supporting arguments in the body, and synthesizes them in the conclusion. Longer university papers—such as 1,500-word or 2,500-word research essays—typically span 8 to 15 focused paragraphs, each dedicated to a single claim.</p>
+        <p>Monitoring your <strong>average words per paragraph</strong> reveals structural imbalances immediately:</p>
+        <ul>
+          <li><strong>Under 75 words per paragraph:</strong> In analytical essays, very short averages often indicate disconnected points that need deeper explanation, examples, or scholarly citations.</li>
+          <li><strong>100 to 200 words per paragraph:</strong> This is the standard academic sweet spot—long enough to introduce a topic sentence, present evidence, and explain its significance without overwhelming the reader.</li>
+          <li><strong>Over 250 words per paragraph:</strong> Paragraphs stretching past half a page risk losing the reader's focus. Splitting a 350-word block into two cohesive paragraphs makes your reasoning far easier to follow and grade.</li>
+        </ul>
+        <p>Because our paragraph counter defines a paragraph as any block of text separated by one or more blank lines, multi-line bullet notes or wrapped lines without an empty line in between stay accurately grouped as a single unit.</p>
+
+        <div class="callout">
+          <strong>Planning page lengths or strict word caps?</strong> Check our <a href="/" style="color:var(--color-primary); font-weight:700;">Free Word Counter for Assignment</a> for word-limit progress tracking, or estimate printed pages with our <a href="/words-to-pages-converter/" style="color:var(--color-primary); font-weight:700;">Words to Pages Converter</a>.
+        </div>
+
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-card">
+          <details>
+            <summary>How does this paragraph counter define a paragraph?</summary>
+            <p>The tool counts each block of text separated by one or more blank lines as one paragraph. Single line breaks inside a block keep lines grouped together in the same paragraph.</p>
+          </details>
+          <details>
+            <summary>How many words should an academic essay paragraph have?</summary>
+            <p>Most university body paragraphs average about 100 to 200 words, or roughly 4 to 7 well-developed sentences covering one main point with evidence and analysis.</p>
+          </details>
+          <details>
+            <summary>Does the paragraph counter support Urdu and bilingual text?</summary>
+            <p>Yes. Both word and sentence counting recognize standard English punctuation (. ! ?) as well as Urdu sentence marks (۔ and ؟), and paragraphs are detected cleanly in both scripts.</p>
+          </details>
+          <details>
+            <summary>Is my essay saved or uploaded when I paste it here?</summary>
+            <p>No. Every calculation happens locally inside your web browser using JavaScript. Your draft never leaves your device or gets stored on a server.</p>
+          </details>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Word Counter for Assignment</h4>
+          <p style="font-size:0.85rem; line-height:1.5;">Free, privacy-first academic writing tools for students in English, Urdu, and Roman Urdu. Processed 100% in your browser.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Core Tools</h4>
+          <ul>
+            <li><a href="/">Free word counter for assignments</a></li>
+            <li><a href="/urdu-word-counter/">Urdu Word Counter</a></li>
+            <li><a href="/words-to-pages-converter/">Words to Pages Converter</a></li>
+            <li><a href="/character-counter/">Character Counter Online</a></li>
+            <li><a href="/paragraph-counter/">Paragraph Counter</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources &amp; Trust</h4>
+          <ul>
+            <li><a href="/blog/">Academic Blog</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 <a href="/">Word Counter for Assignment</a>. Engineered for students worldwide.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        var textarea = document.getElementById('paragraph-input');
+        var valParagraphs = document.getElementById('val-paragraphs');
+        var valSentences = document.getElementById('val-sentences');
+        var valWords = document.getElementById('val-words');
+        var valChars = document.getElementById('val-chars');
+        var valAvgWords = document.getElementById('val-avg-words');
+        var btnCopy = document.getElementById('btn-copy');
+        var btnClear = document.getElementById('btn-clear');
+        var btnSample = document.getElementById('btn-sample');
+        var copyStatus = document.getElementById('copy-status');
+
+        function updateCounts() {
+          var text = textarea.value || '';
+          valChars.textContent = text.length;
+
+          var trimmed = text.trim();
+          if (!trimmed) {
+            valParagraphs.textContent = '0';
+            valSentences.textContent = '0';
+            valWords.textContent = '0';
+            valAvgWords.textContent = '0';
+            return;
+          }
+
+          // Paragraphs: blocks of text separated by one or more blank lines
+          var paragraphs = trimmed
+            .split(/(?:\r?\n|\r)(?:[ \t]*(?:\r?\n|\r))+/)
+            .filter(function(p) {
+              return p.trim().length > 0;
+            });
+          var paragraphCount = paragraphs.length;
+          valParagraphs.textContent = paragraphCount;
+
+          // Words: split by whitespace
+          var words = trimmed.split(/\s+/).filter(Boolean);
+          var wordCount = words.length;
+          valWords.textContent = wordCount;
+
+          // Sentences: support English (. ! ?) and Urdu (۔ ؟)
+          var sentences = trimmed
+            .split(/[.!?۔؟]+/)
+            .filter(function(s) {
+              return s.trim().length > 0;
+            });
+          valSentences.textContent = sentences.length;
+
+          // Average words per paragraph
+          if (paragraphCount > 0) {
+            var avg = Number((wordCount / paragraphCount).toFixed(1));
+            valAvgWords.textContent = avg;
+          } else {
+            valAvgWords.textContent = '0';
+          }
+        }
+
+        textarea.addEventListener('input', updateCounts);
+
+        btnCopy.addEventListener('click', function() {
+          if (!textarea.value) return;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(textarea.value).then(showCopied).catch(fallbackCopy);
+          } else {
+            fallbackCopy();
+          }
+        });
+
+        function fallbackCopy() {
+          textarea.select();
+          document.execCommand('copy');
+          showCopied();
+        }
+
+        function showCopied() {
+          copyStatus.style.display = 'inline';
+          setTimeout(function() {
+            copyStatus.style.display = 'none';
+          }, 2500);
+        }
+
+        btnClear.addEventListener('click', function() {
+          textarea.value = '';
+          updateCounts();
+          textarea.focus();
+        });
+
+        btnSample.addEventListener('click', function() {
+          textarea.value =
+            'Academic essays rely on clear paragraph organization so readers can follow an argument step by step. Each body paragraph should focus on one central claim supported by reliable evidence.\n\n' +
+            'When paragraphs grow too long, important ideas get buried inside dense blocks of text. Splitting a long discussion into focused sections improves readability and helps instructors evaluate your reasoning.\n\n' +
+            'Finally, a strong conclusion ties your main points back to the thesis without introducing unrelated topics. Checking your average words per paragraph ensures balanced pacing from start to finish.';
+          updateCounts();
+          textarea.focus();
+        });
+
+        updateCounts();
+      })();
+    </script>
+  </body>
+</html>
