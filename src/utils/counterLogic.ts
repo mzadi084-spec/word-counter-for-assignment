@@ -187,7 +187,7 @@ export function calculateWordLimit(wordCount: number, limit: number): WordLimitR
 
   let statusMessage = '';
   if (wordCount === safeLimit) {
-    statusMessage = 'Goal reached (exact limit)';
+    statusMessage = 'Goal reached (target limit)';
   } else if (isOver) {
     statusMessage = `${wordsOver} ${wordsOver === 1 ? 'word' : 'words'} over`;
   } else {

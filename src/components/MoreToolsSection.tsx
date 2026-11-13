@@ -65,7 +65,7 @@ export const ALL_TOOLS = [
     name: 'Reading Time Calculator',
     path: '/reading-time-calculator',
     icon: Clock,
-    desc: 'Calculate silent reading (200 wpm) and speaking time (130 wpm).',
+    desc: 'Estimate silent reading (~200 wpm) and speaking time (~130 wpm).',
   },
 ];
 

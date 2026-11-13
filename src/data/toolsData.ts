@@ -30,7 +30,7 @@ export const TOOLS_CONFIG: Record<string, ToolConfig> = {
     h1: 'Free Word Counter for Assignment & Essays',
     tagline: 'Track words, characters, sentences, and paragraph limits instantly in English, Urdu, and Roman Urdu.',
     highlightStat: 'words',
-    romanUrduTip: 'Apna assignment text yahan paste karein ya type karein taake exact word count aur word limit check kar sakein.',
+    romanUrduTip: 'Apna assignment text yahan paste karein ya type karein taake word count aur word limit check kar sakein.',
     guideTitle: 'Complete Guide: Why Word Count Matters for Academic Assignments',
     guideParagraphs: [
       'Writing an academic assignment requires adhering strictly to university and college grading guidelines. Most professors and exam boards specify a word limit with an accepted margin of variation, typically plus or minus 10%. Submitting an assignment that falls short can mean missing critical analytical arguments, while exceeding the ceiling risks penalties or having excess paragraphs left unread by markers.',
@@ -97,7 +97,7 @@ export const TOOLS_CONFIG: Record<string, ToolConfig> = {
       },
       {
         question: 'Why do research journals ask for character counts rather than word counts?',
-        answer: 'Print and digital journal layouts rely on physical column width and page volume. Measuring exact characters ensures abstracts and short communications fit onto designated column inches without awkward line breaks.'
+        answer: 'Print and digital journal layouts rely on physical column width and page volume. Measuring character counts helps keep abstracts and short communications within designated layout limits.'
       },
       {
         question: 'Are Urdu and Arabic characters calculated the same way as Latin letters?',
@@ -236,16 +236,16 @@ export const TOOLS_CONFIG: Record<string, ToolConfig> = {
     path: '/reading-time-calculator',
     title: 'Reading Time Calculator',
     metaTitle: 'Reading Time Calculator – Reading & Speaking Speed',
-    metaDescription: 'Free reading time calculator for students and speakers. Calculate silent reading time (200 wpm) and presentation speaking time (130 wpm) instantly.',
+    metaDescription: 'Free reading time calculator for students and speakers. Estimate silent reading time (~200 wpm) and presentation speaking time (~130 wpm).',
     h1: 'Online Reading Time & Presentation Speaking Calculator',
-    tagline: 'Calculate accurate silent reading time and oral presentation delivery time for your assignments and defense slides.',
+    tagline: 'Estimate silent reading time and oral presentation delivery time for your assignments and defense slides.',
     highlightStat: 'readingTime',
-    romanUrduTip: 'Apna speech ya presentation ka waqt calculate karein. Silent reading 200 words/min aur bolne ka waqt 130 words/min hota hai.',
+    romanUrduTip: 'Apni speech ya presentation ka andazan waqt dekhein. Silent reading ~200 words/min aur bolne ka standard andaza ~130 words/min hota hai.',
     guideTitle: 'How to Time Academic Readings, Speeches, and Presentations',
     guideParagraphs: [
       'In academic environments, students frequently need to estimate how long a research paper or essay takes to read, or calibrate an oral presentation for a strict seminar slot. Delivering an assignment viva, conference presentation, or thesis defense requires careful pacing so you do not exceed your allocated time limit or rush through complex data.',
-      'Scientifically, silent reading speed differs substantially from spoken verbal delivery. Research indicates that the average adult reads silently at approximately 200 to 250 words per minute (WPM), while natural, articulate academic speech runs at approximately 130 to 140 words per minute. Speaking any faster risks losing your audience, while speaking slower can lead to disengagement.',
-      'Our Reading Time Calculator computes both metrics simultaneously. For written assignments and blog posts, it displays silent reading time based on 200 WPM. For presentation cue cards, speech scripts, and slides, it displays speaking time calibrated to the standard 130 WPM academic presentation pace.'
+      'Silent reading speed differs substantially from spoken verbal delivery. As a general estimate, adults often read silently at roughly 200 to 250 words per minute (WPM), while natural, articulate academic speech often falls near 130 to 140 words per minute—though real times vary by person, familiarity with the topic, and delivery style.',
+      'Our Reading Time Calculator displays standard estimates for both metrics simultaneously: silent reading time using ~200 WPM and speaking time using ~130 WPM as baseline planning guides.'
     ],
     tipsTitle: 'Presentation Timing Rules of Thumb',
     tips: [
@@ -256,12 +256,12 @@ export const TOOLS_CONFIG: Record<string, ToolConfig> = {
     ],
     faqs: [
       {
-        question: 'What reading speed is used to calculate reading time?',
-        answer: 'Our calculator uses the globally accepted benchmark of 200 words per minute (WPM) for silent reading, which represents comfortable comprehension for academic and professional texts.'
+        question: 'What reading speed is used to estimate reading time?',
+        answer: 'Our calculator uses a standard planning estimate of about 200 words per minute (WPM) for silent reading, though individual reading speed varies by person and text complexity.'
       },
       {
         question: 'What speaking speed is used for presentations and speeches?',
-        answer: 'We calibrate speaking time to 130 words per minute (WPM), the proven standard for clear academic lectures, thesis defenses, and student presentations.'
+        answer: 'We estimate speaking time using a standard rate of about 130 words per minute (WPM), a common planning benchmark for presentations that still varies by speaker and pacing.'
       },
       {
         question: 'How many words can I speak in a 10-minute university presentation?',

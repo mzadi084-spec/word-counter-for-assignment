@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm">
                 <FileText className="w-4 h-4" />
               </div>
-              <span className="text-blue-600 dark:text-blue-400 font-extrabold">
-                WordCounter<span className="text-slate-900 dark:text-white">.study</span>
+              <span className="text-blue-600 dark:text-blue-400 font-extrabold text-base">
+                Word Counter<span className="text-slate-900 dark:text-white"> for Assignment</span>
               </span>
             </Link>
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">

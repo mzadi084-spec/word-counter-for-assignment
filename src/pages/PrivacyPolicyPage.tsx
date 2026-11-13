@@ -7,7 +7,7 @@ export const PrivacyPolicyPage: React.FC = () => {
     <>
       <SEOHead
         title="Privacy Policy – Word Counter for Assignment"
-        description="Our privacy policy details client-side processing, cookies, Google Analytics, Google AdSense disclosures, and zero-retention data protection."
+        description="Read our privacy policy. Word Counter for Assignment processes your text locally in your browser with zero server storage and no ad or analytics trackers."
         canonicalPath="/privacy-policy"
       />
 
@@ -21,7 +21,7 @@ export const PrivacyPolicyPage: React.FC = () => {
             Privacy Policy
           </h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Last Updated: November 2026 • Effective Date: Immediately
+            Last Updated: November 13, 2026 • Effective Date: January 1, 2026
           </p>
         </header>
 
@@ -51,62 +51,44 @@ export const PrivacyPolicyPage: React.FC = () => {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <Cookie className="w-5 h-5 text-blue-600" />
-              <span>2. Cookies and Tracking Technologies</span>
+              <span>2. Local Browser Storage & Essential Functionality</span>
             </h2>
             <p>
-              Cookies are small text files placed on your device to ensure website functionality, remember interface preferences (such as dark mode preferences), and analyze web traffic patterns. We may use both session cookies (which expire once you close your browser) and persistent cookies to enhance your browsing experience.
+              We do not run advertising networks, behavioral tracking scripts, or third-party analytics trackers on your assignment text. Your browser may store basic technical preferences locally (such as theme preference) to keep the interface usable. You can clear or block site storage in your browser settings at any time without losing core counting features.
             </p>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <Eye className="w-5 h-5 text-blue-600" />
-              <span>3. Google Analytics Disclosure</span>
+              <span>3. Standard Server Logs & External Links</span>
             </h2>
             <p>
-              We use <strong>Google Analytics</strong> to analyze overall website usage trends, popular pages (e.g. which counter tools students use most), bounce rates, and referring websites. Google Analytics collects anonymized data such as your browser type, device category, approximate geographic location (country/city level), and time spent on site.
+              Like most websites, our static hosting provider may record routine HTTP request metadata (such as requested page URL, browser user agent, and timestamp) strictly for security, uptime, and error diagnostics. None of the text you type or paste into our tools is ever sent in those requests.
             </p>
             <p>
-              Google Analytics does <strong>not</strong> have access to the text you paste into our word counter tools. You can opt out of Google Analytics tracking across all websites by installing the official <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">Google Analytics Opt-out Browser Add-on</a>.
+              Our articles and guides may link to external educational or university resources. We are not responsible for the privacy practices of external third-party websites.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-blue-600" />
-              <span>4. Google AdSense & Third-Party Advertising</span>
-            </h2>
-            <p>
-              To maintain our service as 100% free for students worldwide without charging subscriptions, we may display third-party advertisements served by <strong>Google AdSense</strong>.
-            </p>
-            <p>
-              Google and its advertising partners use cookies (such as the DoubleClick DART cookie) to serve relevant advertisements to users based on prior visits to our site and other websites on the internet.
-            </p>
-            <ul className="list-disc pl-5 space-y-1.5 text-slate-600 dark:text-slate-400">
-              <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
-              <li>Google's use of advertising cookies enables it and its partners to serve ads based on their visit to your sites and/or other sites on the Internet.</li>
-              <li>Users may opt out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">Google Ads Settings</a> or <a href="https://aboutads.info" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 underline">aboutads.info</a>.</li>
-            </ul>
-          </section>
-
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">5. Children's Online Privacy Protection (COPPA)</h2>
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">4. Children's Online Privacy Protection (COPPA)</h2>
             <p>
               Our website is designed for students, educators, and general writers. We do not knowingly collect any personally identifiable information from children under the age of 13. Because our service requires no account registration, no personal data from minors is gathered or retained.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">6. Changes to this Policy</h2>
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">5. Changes to this Policy</h2>
             <p>
               We may update this Privacy Policy from time to time to reflect operational or regulatory changes. Any updates will be posted on this page with an updated effective date.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">7. Contact Information</h2>
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">6. Contact Information</h2>
             <p>
-              If you have any questions regarding this Privacy Policy or your data protection rights, please contact our privacy officer at: <a href="mailto:mzadi084@gmail.com" className="text-blue-600 dark:text-blue-400 font-semibold underline">mzadi084@gmail.com</a>.
+              If you have any questions regarding this Privacy Policy or your data protection rights, please contact us at: <a href="mailto:mzadi084@gmail.com" className="text-blue-600 dark:text-blue-400 font-semibold underline">mzadi084@gmail.com</a>.
             </p>
           </section>
         </div>

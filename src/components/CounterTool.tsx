@@ -141,7 +141,7 @@ export const CounterTool: React.FC<CounterToolProps> = ({
       romanLabel: 'Parhne ka waqt',
       value: stats.readingTimeText,
       icon: Clock,
-      tooltip: 'Silent reading speed (~200 wpm)',
+      tooltip: 'Estimated silent reading speed (~200 wpm, varies by reader)',
     },
     {
       id: 'speakingTime' as HighlightMetric,
@@ -149,7 +149,7 @@ export const CounterTool: React.FC<CounterToolProps> = ({
       romanLabel: 'Bolne ka waqt',
       value: stats.speakingTimeText,
       icon: Mic,
-      tooltip: 'Presentation speech speed (~130 wpm)',
+      tooltip: 'Estimated speaking speed (~130 wpm, varies by speaker)',
     },
   ];
 

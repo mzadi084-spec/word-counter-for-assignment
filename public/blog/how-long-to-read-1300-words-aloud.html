@@ -26,6 +26,25 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Long to Read 1,300 Words Aloud? Timing Guide",
+      "description": "How long does it take to read 1,300 words aloud? About 9 to 10 minutes at a normal speaking pace, or about 5 to 6.5 minutes silently. Includes timing tables.",
+      "url": "https://wordcounterforassignment.com/blog/how-long-to-read-1300-words-aloud.html",
+      "image": "https://wordcounterforassignment.com/og-image.png",
+      "dateModified": "2026-11-13",
+      "author": {
+        "@type": "Organization",
+        "name": "Word Counter for Assignment"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Word Counter for Assignment"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -104,21 +123,31 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
       }
       .brand {
         font-weight: 800;
         font-size: 1.15rem;
         color: var(--color-primary);
         text-decoration: none;
+        margin-right: 0;
       }
       .brand span { color: var(--text-main); }
-      .back-link {
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
         font-size: 0.875rem;
         font-weight: 600;
-        color: var(--color-primary);
+        color: var(--text-muted);
         text-decoration: none;
+        margin-right: 0;
       }
-      .back-link:hover { text-decoration: underline; }
+      .nav-links a:hover, .nav-links a.active { color: var(--color-primary); }
       article {
         max-width: 860px;
         margin: 2.5rem auto;
@@ -276,6 +305,27 @@
       .cta-btn:hover {
         background: var(--color-primary-hover);
       }
+      .related-guides {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        padding: 1.5rem 1.75rem;
+        margin-top: 2.5rem;
+      }
+      .related-guides h2 {
+        margin-top: 0;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .related-guides ul {
+        margin: 0 0 0 1.25rem;
+      }
+      .related-guides a {
+        color: var(--color-primary);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .related-guides a:hover { text-decoration: underline; }
       footer {
         border-top: 1px solid var(--border-color);
         background: var(--bg-card);
@@ -289,6 +339,7 @@
         color: var(--color-primary);
         text-decoration: none;
         font-weight: 600;
+        margin: 0 0.5rem;
       }
     </style>
   </head>
@@ -296,9 +347,16 @@
     <header>
       <div class="nav-container">
         <a href="/" class="brand">
-          WordCounter<span>forAssignment</span>
+          Word Counter<span> for Assignment</span>
         </a>
-        <a href="/" class="back-link">← Back to Word Counter Tool</a>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/urdu-word-counter/">Urdu Counter</a>
+          <a href="/words-to-pages-converter/">Words to Pages</a>
+          <a href="/character-counter/">Character Counter</a>
+          <a href="/paragraph-counter/">Paragraph Counter</a>
+          <a href="/blog/" class="active">Blog</a>
+        </nav>
       </div>
     </header>
 
@@ -435,12 +493,33 @@
 
       <div class="cta-box">
         <h3>Time Your Own Speech or Essay Draft</h3>
-        <p>Paste your text into our free browser-based word counter to check words, paragraphs, silent reading duration, and speaking time in real time.</p>
+        <p>Paste your text into our free browser-based <a href="/">word counter</a> to estimate words, <a href="/paragraph-counter/">paragraphs</a>, silent reading time (~200 wpm), and speaking time (~130 wpm), keeping in mind that real pacing varies by person and topic.</p>
         <a href="/" class="cta-btn">Open Free Word Counter</a>
       </div>
+
+      <section class="related-guides">
+        <h2>Related guides</h2>
+        <ul>
+          <li><a href="/blog/how-many-words-per-minute-speaking.html">Words Per Minute Speaking: Speech Length Guide</a></li>
+          <li><a href="/blog/how-many-words-is-5-pages.html">How Many Words Is 5 Pages? Single &amp; Double Spaced</a></li>
+          <li><a href="/blog/how-to-reduce-word-count-in-assignment.html">How to Reduce Word Count in an Assignment: 10 Proven Tips</a></li>
+        </ul>
+      </section>
     </article>
 
     <footer>
+      <p style="margin-bottom: 0.75rem;">
+        <a href="/">Word Counter</a>
+        <a href="/urdu-word-counter/">Urdu Counter</a>
+        <a href="/words-to-pages-converter/">Words to Pages</a>
+        <a href="/character-counter/">Character Counter</a>
+        <a href="/paragraph-counter/">Paragraph Counter</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms/">Terms</a>
+      </p>
       <p>&copy; 2026 <a href="/">Word Counter for Assignment</a>. Free student tool for English, Urdu &amp; Roman Urdu coursework.</p>
     </footer>
   </body>

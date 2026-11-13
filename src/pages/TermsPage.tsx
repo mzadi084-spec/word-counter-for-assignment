@@ -50,7 +50,7 @@ export const TermsPage: React.FC = () => {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">4. Academic Responsibility Disclaimer</h2>
             <p>
-              While our calculation algorithms are engineered for maximum accuracy across English, Urdu, and Roman Urdu syntax, academic institutions and departments often have unique submission rules (such as specific citation counting exemptions or proprietary Turnitin filters).
+              Our tools provide standard estimates for word counts, character counts, reading times (~200 words per minute), speaking times (~130 words per minute), and page conversions (~500 single-spaced, ~250 double-spaced, and ~175 handwritten words per page). Actual totals vary by person, font, formatting, software, and institution.
             </p>
             <p>
               It remains the student's sole responsibility to confirm final submission requirements with their university syllabus, course instructor, or exam board. <strong>Word Counter for Assignment</strong> is provided "as is" without warranty of any kind, and we are not liable for any grading outcomes, mark deductions, or submission disqualifications.

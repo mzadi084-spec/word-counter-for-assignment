@@ -69,11 +69,11 @@ test('calculateWordLimit calculates words left and words over correctly', () => 
   assert.equal(over.isOver, true);
   assert.equal(over.statusMessage, '35 words over');
 
-  // Exact limit
+  // Target limit
   const exact = calculateWordLimit(200, 200);
   assert.equal(exact.wordsLeft, 0);
   assert.equal(exact.wordsOver, 0);
-  assert.equal(exact.statusMessage, 'Goal reached (exact limit)');
+  assert.equal(exact.statusMessage, 'Goal reached (target limit)');
 });
 
 test('analyzeText filters stop words and words < 3 characters in topWords', () => {

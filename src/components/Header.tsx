@@ -49,8 +49,8 @@ export const Header: React.FC = () => {
               <FileText className="w-5 h-5" />
             </div>
             <div className="flex flex-col">
-              <span className="leading-tight text-blue-600 dark:text-blue-400 font-extrabold text-base sm:text-lg">
-                WordCounter<span className="text-slate-900 dark:text-white">.study</span>
+              <span className="leading-tight text-blue-600 dark:text-blue-400 font-extrabold text-sm sm:text-base">
+                Word Counter<span className="text-slate-900 dark:text-white"> for Assignment</span>
               </span>
               <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium tracking-normal -mt-0.5">
                 For Assignments & Essays

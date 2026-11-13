@@ -76,6 +76,22 @@
             },
             {
               "@type": "Question",
+              "name": "How do I convert pages to words?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Select the Pages to Words tab above, enter the number of pages, pick your font and line spacing, and the calculator shows about how many words are needed—around 250 words per double-spaced page or about 500 words per single-spaced page."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I convert text to pages?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To convert text to page estimates, check your word count using the word counter on our home page, then enter that total into the Words to Pages tab above to see about how many single-spaced or double-spaced pages your draft covers."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "How accurate is the handwritten words-to-pages estimate?",
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -457,13 +473,14 @@
     <header>
       <div class="nav-container">
         <a href="/" class="brand">
-          WordCounter<span>forAssignment</span>
+          Word Counter<span> for Assignment</span>
         </a>
         <nav class="nav-links">
           <a href="/">Home</a>
           <a href="/urdu-word-counter/">Urdu Counter</a>
           <a href="/words-to-pages-converter/" class="active">Words to Pages</a>
           <a href="/character-counter/">Character Counter</a>
+          <a href="/paragraph-counter/">Paragraph Counter</a>
           <a href="/blog/">Blog</a>
         </nav>
       </div>
@@ -477,6 +494,7 @@
       </div>
 
       <div class="tool-card">
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.85rem;"><strong>Pages to Words &amp; Words to Pages:</strong> Choose a mode below—enter your pages or words, pick your font and spacing, and see about how many words or pages your assignment takes.</p>
         <div class="mode-toggle">
           <button type="button" class="mode-btn active" id="btn-mode-w2p">Words to Pages</button>
           <button type="button" class="mode-btn" id="btn-mode-p2w">Pages to Words</button>
@@ -576,7 +594,7 @@
           </table>
         </div>
 
-        <p>Because double spacing introduces a full blank line of vertical space between text rows, it cuts the word capacity of each printed page by about half. For instance, a 2,500-word term paper formatted in double-spaced Times New Roman will span 10 full pages, whereas a single-spaced draft would only cover 5 pages.</p>
+        <p>Because double spacing introduces a full blank line of vertical space between text rows, it cuts the word capacity of each printed page by about half. For instance, a 2,500-word term paper formatted in double-spaced Times New Roman spans roughly 10 pages, whereas a single-spaced draft covers roughly 5 pages. These page totals are standard estimates (~500 words per page single-spaced, ~250 double-spaced, ~175 handwritten) that vary by person, font, formatting, and institution—always follow your own course guidelines.</p>
 
         <div class="callout">
           <strong>Need to check your draft's real-time count?</strong> Paste your draft into our <a href="/" style="color:var(--color-primary); font-weight:700;">Free word counter for assignments</a> to monitor word limits, reading duration, and keyword frequencies.
@@ -610,10 +628,26 @@
             <p>To convert word count to pages, divide your total words by about 250 for double-spaced Times New Roman (12 pt) or about 500 for single-spaced pages. You can also enter your total into our word to page converter above, pick your font and spacing, and see an approximate page estimate immediately.</p>
           </details>
           <details>
+            <summary>How do I convert pages to words?</summary>
+            <p>Select the Pages to Words tab above, enter the number of pages, pick your font and line spacing, and the calculator shows about how many words are needed—around 250 words per double-spaced page or about 500 words per single-spaced page.</p>
+          </details>
+          <details>
+            <summary>How do I convert text to pages?</summary>
+            <p>To convert text to page estimates, check your word count using the word counter on our home page, then enter that total into the Words to Pages tab above to see about how many single-spaced or double-spaced pages your draft covers.</p>
+          </details>
+          <details>
             <summary>How accurate is the handwritten words-to-pages estimate?</summary>
             <p>The handwritten benchmark uses an average of about 175 words per single-sided lined A4 page. While individual handwriting size varies from compact (220 words) to large (140 words), 175 is the standard academic exam guideline.</p>
           </details>
         </div>
+
+        <h2>Helpful guides</h2>
+        <p>Read our step-by-step page estimation guides for common assignment lengths:</p>
+        <ul>
+          <li><a href="/blog/how-many-words-is-2-pages.html" style="color:var(--color-primary); font-weight:600;">How Many Words is 2 Pages? Single &amp; Double Spacing Guide</a></li>
+          <li><a href="/blog/how-many-words-is-5-pages.html" style="color:var(--color-primary); font-weight:600;">How Many Words Is 5 Pages? Single &amp; Double Spaced</a></li>
+          <li><a href="/blog/how-many-pages-is-10000-words.html" style="color:var(--color-primary); font-weight:600;">How Many Pages Is 10,000 Words? Page Count Guide</a></li>
+        </ul>
       </article>
     </main>
 
@@ -630,6 +664,7 @@
             <li><a href="/urdu-word-counter/">Urdu Word Counter</a></li>
             <li><a href="/words-to-pages-converter/">Words to Pages Converter</a></li>
             <li><a href="/character-counter/">Character Counter Online</a></li>
+            <li><a href="/paragraph-counter/">Paragraph Counter</a></li>
           </ul>
         </div>
         <div class="footer-col">

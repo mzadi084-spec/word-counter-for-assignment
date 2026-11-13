@@ -24,7 +24,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'Assignment Strategy',
     author: 'Academic Skills Team',
     summary: 'Learn how to accurately audit your coursework word count, handle citations and appendices, and avoid harsh university penalties.',
-    romanUrduSummary: 'Apne assignment ka exact word count kaise check karein, references aur citations ka kya hisaab hota hai, aur 10% rule ko kaise follow karein.',
+    romanUrduSummary: 'Apne assignment ka word count kaise check karein, references aur citations ka kya hisaab hota hai, aur 10% rule ko kaise follow karein.',
     relatedTools: [
       { name: 'Word Counter for Assignment', path: '/' },
       { name: 'Essay Word Counter', path: '/essay-word-counter' },
@@ -37,7 +37,7 @@ In modern academic assessment, adhering strictly to assignment length specificat
 
 Submitting an assignment that falls significantly short of the word requirement indicates that the student has failed to explore the research question in sufficient depth, omitted essential empirical evidence, or skipped crucial counter-arguments. Conversely, massively exceeding the upper word limit demonstrates poor conciseness, an inability to edit oneself, or an unfair advantage over peers who adhered to constraints.
 
-In this comprehensive guide, we will unpack the exact mechanics of assignment word counting, define the universally applied 10% tolerance rule, clarify what university rubrics exclude from counts, and demonstrate how to use dedicated online counters to safeguard your grade.
+In this comprehensive guide, we will unpack the practical mechanics of assignment word counting, define the widely applied 10% tolerance rule, clarify what university rubrics often exclude from counts, and show how to use dedicated online counters to review your draft before submission.
 
 ---
 
@@ -216,7 +216,7 @@ Academic examiners spend countless hours reading stacks of student submissions. 
 
 The introduction does not merely announce what you plan to talk about; it establishes your scholarly voice, frames the intellectual stakes of your inquiry, and proves that you have grasped the prompt. A vague, meandering opening filled with sweeping clichés ("Since the dawn of human civilization...") signals unpreparedness. A sharp, incisive opening immediately builds examiner confidence.
 
-In this guide, we break down the battle-tested **Funnel Framework** for writing university introductions, examine exact word allocations, and provide before-and-after examples.
+In this guide, we break down the battle-tested **Funnel Framework** for writing university introductions, examine typical word allocations, and provide before-and-after examples.
 
 ---
 
@@ -309,7 +309,7 @@ However, avoiding plagiarism does not mean you cannot rely on outside scholarshi
 Most student plagiarism is not deliberate copy-pasting from Wikipedia; it stems from poor note-taking practices and sloppy referencing:
 
 ### 1. Direct Copying Without Quotation Marks
-Taking verbatim sentences from a journal article, website, or peer's paper without enclosing them in quotation marks—even if you include an author citation at the end—constitutes plagiarism. Quotation marks are mandatory for exact phrasing.
+Taking verbatim sentences from a journal article, website, or peer's paper without enclosing them in quotation marks—even if you include an author citation at the end—constitutes plagiarism. Quotation marks are mandatory for quoted phrasing.
 
 ### 2. "Patchwriting" (The Paraphrasing Trap)
 This occurs when a student copies a source sentence and simply swaps out three or four words with synonyms using a thesaurus, retaining the original grammatical syntax. Similarity engines easily flag patchwriting.
@@ -435,7 +435,7 @@ Revisit your introduction and initial background section. Did your chosen debate
 - **Replacing simple words with clunky synonyms:** Writing "utilize" instead of "use" or "a large proportion of" instead of "many".
 - **Empty transition sentences:** "Now that we have looked at point A, let us now turn our careful attention to look into point B."
 - **Over-quoting long excerpts:** Padding two 80-word block quotes where a concise 20-word paraphrase was appropriate.
-- **Inflating typography:** Increasing line spacing or margins. Turnitin reports the exact digital character and word count regardless of visual formatting.
+- **Inflating typography:** Increasing line spacing or margins. Turnitin counts the digital words and characters in your submitted file regardless of visual spacing.
 
 Use our [Word Counter for Assignment](/) to monitor your progress in real time as you add genuine scholarly substance.
 `
@@ -444,7 +444,7 @@ Use our [Word Counter for Assignment](/) to monitor your progress in real time a
     slug: 'how-many-words-on-a-page-single-vs-double-spacing',
     title: 'How Many Words on a Page? Single vs Double Spacing Guide',
     metaTitle: 'How Many Words on a Page? Single vs Double Spacing',
-    metaDescription: 'Find out exactly how many words are on a page for single spacing (500), double spacing (250), and handwritten A4 (175). Includes full conversion chart.',
+    metaDescription: 'Find out about how many words fit on a page for single spacing (~500), double spacing (~250), and handwritten A4 (~175). Includes full conversion chart.',
     publishedDate: 'November 2026',
     readTime: '5 min read',
     category: 'Formatting & Layout',
@@ -497,7 +497,7 @@ Assuming standard academic formatting (standard **12-point font** such as Times 
 
 Use this handy table to quickly convert your word target to physical page lengths:
 
-| Word Count Target | Single Spaced (500 w/p) | Double Spaced (250 w/p) | 1.5 Spaced (350 w/p) | Handwritten A4 (175 w/p) |
+| Word Count Target | Single Spaced (~500 w/p) | Double Spaced (~250 w/p) | 1.5 Spaced (~350 w/p) | Handwritten A4 (~175 w/p) |
 | :--- | :--- | :--- | :--- | :--- |
 | **250 words** | 0.5 pages | 1.0 page | 0.7 pages | 1.4 pages |
 | **500 words** | 1.0 page | 2.0 pages | 1.4 pages | 2.9 pages |
