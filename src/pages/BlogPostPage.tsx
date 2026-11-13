@@ -12,6 +12,7 @@ import {
   ExternalLink,
   Sparkles,
 } from 'lucide-react';
+import { isStaticPagePath, getStaticPageHref } from '../utils/seo';
 
 export const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -25,13 +26,13 @@ export const BlogPostPage: React.FC = () => {
         <p className="text-slate-600 dark:text-slate-300">
           The requested guide could not be located. Browse all writing resources on our blog.
         </p>
-        <Link
-          to="/blog"
+        <a
+          href="/blog/"
           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Articles</span>
-        </Link>
+        </a>
       </main>
     );
   }
@@ -72,19 +73,20 @@ export const BlogPostPage: React.FC = () => {
         description={article.metaDescription}
         canonicalPath={`/blog/${article.slug}`}
         type="article"
+        noindex={true}
         schema={articleSchema}
       />
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         {/* Breadcrumb / Back button */}
         <div className="mb-6">
-          <Link
-            to="/blog"
+          <a
+            href="/blog/"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to All Articles</span>
-          </Link>
+          </a>
         </div>
 
         {/* Article Header (One H1) */}
@@ -129,16 +131,26 @@ export const BlogPostPage: React.FC = () => {
             <span>Tools Recommended for This Guide:</span>
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            {article.relatedTools.map((tool) => (
-              <Link
-                key={tool.path}
-                to={tool.path}
-                className="px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-semibold text-xs hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors flex items-center gap-1"
-              >
-                <span>{tool.name}</span>
-                <ExternalLink className="w-3 h-3" />
-              </Link>
-            ))}
+            {article.relatedTools.map((tool) => {
+              const toolClassName =
+                'px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-semibold text-xs hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors flex items-center gap-1';
+              const content = (
+                <>
+                  <span>{tool.name}</span>
+                  <ExternalLink className="w-3 h-3" />
+                </>
+              );
+
+              return isStaticPagePath(tool.path) ? (
+                <a key={tool.path} href={getStaticPageHref(tool.path)} className={toolClassName}>
+                  {content}
+                </a>
+              ) : (
+                <Link key={tool.path} to={tool.path} className={toolClassName}>
+                  {content}
+                </Link>
+              );
+            })}
           </div>
         </div>
 
@@ -277,12 +289,12 @@ export const BlogPostPage: React.FC = () => {
             >
               Open Word Counter
             </Link>
-            <Link
-              to="/words-to-pages-converter"
+            <a
+              href="/words-to-pages-converter/"
               className="px-5 py-2.5 rounded-xl bg-blue-800/80 text-white font-bold text-sm hover:bg-blue-800 transition-colors border border-blue-400/40"
             >
               Convert Words to Pages
-            </Link>
+            </a>
           </div>
         </section>
       </main>

@@ -12,13 +12,21 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { buildCanonicalUrl } from '../utils/seo';
 
 interface ToolPageProps {
   toolKey: keyof typeof TOOLS_CONFIG;
 }
 
+const NOINDEX_TOOL_KEYS = new Set<keyof typeof TOOLS_CONFIG>([
+  'sentenceCounter',
+  'essayWordCounter',
+  'readingTimeCalculator',
+]);
+
 export const ToolPage: React.FC<ToolPageProps> = ({ toolKey }) => {
   const config: ToolConfig = TOOLS_CONFIG[toolKey] || TOOLS_CONFIG.home;
+  const isNoindex = NOINDEX_TOOL_KEYS.has(toolKey);
 
   // Generate FAQ JSON-LD Schema
   const faqSchema = {
@@ -38,6 +46,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolKey }) => {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: config.title,
+    url: buildCanonicalUrl(config.path),
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'All',
     description: config.metaDescription,
@@ -54,6 +63,7 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolKey }) => {
         title={config.metaTitle}
         description={config.metaDescription}
         canonicalPath={config.path}
+        noindex={isNoindex}
         schema={[webAppSchema, faqSchema]}
       />
 

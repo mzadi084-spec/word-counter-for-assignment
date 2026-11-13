@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from 'lucide-react';
+import { buildCanonicalUrl } from '../utils/seo';
 
 const FAQS = [
   {
@@ -60,6 +61,7 @@ export const WordsToPagesPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Words to Pages Converter',
+    url: buildCanonicalUrl('/words-to-pages-converter'),
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'All',
     description: 'Estimate words to pages for single spacing (~500 w/p), double spacing (~250 w/p), and handwritten A4 (~175 w/p).',

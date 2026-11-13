@@ -307,6 +307,41 @@
         color: var(--text-muted);
         margin-bottom: 1rem;
       }
+      .limit-controls {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.85rem;
+        margin-bottom: 1rem;
+      }
+      .limit-control-group label {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        margin-bottom: 0.35rem;
+      }
+      .limit-control-group select,
+      .limit-control-group input[type="number"] {
+        width: 100%;
+        padding: 0.55rem 0.8rem;
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1.5px solid var(--border-color);
+        border-radius: 0.6rem;
+        background: var(--bg-page);
+        color: var(--text-main);
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .limit-control-group select:focus,
+      .limit-control-group input[type="number"]:focus {
+        border-color: var(--color-primary);
+      }
+      .limit-card.target-card {
+        border-color: var(--color-primary);
+        margin-bottom: 1.25rem;
+      }
       .limits-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -534,7 +569,38 @@
         </div>
 
         <div class="limits-section">
-          <div class="limits-title">Common Platform Limits</div>
+          <div class="limits-title">Target Limit Selector</div>
+          <div class="limit-controls">
+            <div class="limit-control-group">
+              <label for="limit-preset">Select Character Limit</label>
+              <select id="limit-preset">
+                <option value="280" data-label="Twitter / X Post" selected>Twitter / X Post (280 characters)</option>
+                <option value="150" data-label="Instagram Bio">Instagram Bio (150 characters)</option>
+                <option value="160" data-label="SEO Meta Description">SEO Meta Description (160 characters)</option>
+                <option value="160-sms" data-label="Standard SMS">Standard SMS (160 characters)</option>
+                <option value="2500" data-label="Research Abstract">Research Abstract (2,500 characters)</option>
+                <option value="4000" data-label="UCAS Personal Statement">UCAS Personal Statement (4,000 characters)</option>
+                <option value="custom" data-label="Custom Limit">Custom limit</option>
+              </select>
+            </div>
+            <div class="limit-control-group">
+              <label for="custom-limit">Custom limit</label>
+              <input type="number" id="custom-limit" min="1" max="1000000" placeholder="Enter custom limit (e.g. 1000)" />
+            </div>
+          </div>
+
+          <div class="limit-card target-card" id="card-target">
+            <div class="limit-header">
+              <span class="limit-name" id="target-name">Twitter / X Post</span>
+              <span class="limit-count"><span id="target-count">0</span> / <span id="target-limit-val">280</span></span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" id="target-bar"></div>
+            </div>
+            <div class="limit-status" id="target-status">280 characters left</div>
+          </div>
+
+          <div class="limits-title">Common Platform &amp; Academic Limits</div>
           <div class="limits-grid">
             <div class="limit-card" id="card-twitter">
               <div class="limit-header">
@@ -578,6 +644,28 @@
                 <div class="progress-fill" id="sms-bar"></div>
               </div>
               <div class="limit-status" id="sms-status">160 characters left</div>
+            </div>
+
+            <div class="limit-card" id="card-abstract">
+              <div class="limit-header">
+                <span class="limit-name">Research Abstract</span>
+                <span class="limit-count"><span id="abs-count">0</span> / 2,500</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" id="abs-bar"></div>
+              </div>
+              <div class="limit-status" id="abs-status">2500 characters left</div>
+            </div>
+
+            <div class="limit-card" id="card-ucas">
+              <div class="limit-header">
+                <span class="limit-name">UCAS Personal Statement</span>
+                <span class="limit-count"><span id="ucas-count">0</span> / 4,000</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-fill" id="ucas-bar"></div>
+              </div>
+              <div class="limit-status" id="ucas-status">4000 characters left</div>
             </div>
           </div>
         </div>
@@ -699,8 +787,46 @@
         var smsBar = document.getElementById('sms-bar');
         var smsStatus = document.getElementById('sms-status');
 
+        var absCount = document.getElementById('abs-count');
+        var absBar = document.getElementById('abs-bar');
+        var absStatus = document.getElementById('abs-status');
+
+        var ucasCount = document.getElementById('ucas-count');
+        var ucasBar = document.getElementById('ucas-bar');
+        var ucasStatus = document.getElementById('ucas-status');
+
+        var limitPreset = document.getElementById('limit-preset');
+        var customLimitInput = document.getElementById('custom-limit');
+        var targetNameEl = document.getElementById('target-name');
+        var targetCountEl = document.getElementById('target-count');
+        var targetLimitValEl = document.getElementById('target-limit-val');
+        var targetBarEl = document.getElementById('target-bar');
+        var targetStatusEl = document.getElementById('target-status');
+
+        function getActiveTarget() {
+          var presetVal = limitPreset.value;
+          if (presetVal === 'custom') {
+            var parsed = parseInt(customLimitInput.value, 10);
+            if (!isNaN(parsed) && parsed > 0) {
+              return { label: 'Custom Limit', limit: parsed };
+            }
+            return { label: 'Custom Limit', limit: 0 };
+          }
+          var numeric = parseInt(presetVal, 10);
+          var selectedOption = limitPreset.options[limitPreset.selectedIndex];
+          var label = (selectedOption && selectedOption.getAttribute('data-label')) || 'Selected Limit';
+          return { label: label, limit: isNaN(numeric) ? 280 : numeric };
+        }
+
         function updateProgress(count, limit, countEl, barEl, statusEl) {
           countEl.textContent = count;
+          if (!limit || limit <= 0) {
+            barEl.style.width = '0%';
+            barEl.classList.remove('over');
+            statusEl.classList.remove('over');
+            statusEl.textContent = 'Enter a positive custom limit';
+            return;
+          }
           var pct = Math.min((count / limit) * 100, 100);
           barEl.style.width = pct + '%';
           
@@ -736,12 +862,32 @@
             valLines.textContent = lines;
           }
 
-          // Update platform limits
+          // Update target limit selector card
+          var target = getActiveTarget();
+          targetNameEl.textContent = target.label;
+          targetLimitValEl.textContent = target.limit > 0 ? target.limit.toLocaleString() : '—';
+          updateProgress(charsWithSpaces, target.limit, targetCountEl, targetBarEl, targetStatusEl);
+
+          // Update platform & academic limits
           updateProgress(charsWithSpaces, 280, twCount, twBar, twStatus);
           updateProgress(charsWithSpaces, 150, igCount, igBar, igStatus);
           updateProgress(charsWithSpaces, 160, metaCount, metaBar, metaStatus);
           updateProgress(charsWithSpaces, 160, smsCount, smsBar, smsStatus);
+          updateProgress(charsWithSpaces, 2500, absCount, absBar, absStatus);
+          updateProgress(charsWithSpaces, 4000, ucasCount, ucasBar, ucasStatus);
         }
+
+        limitPreset.addEventListener('change', function() {
+          if (limitPreset.value === 'custom' && !customLimitInput.value) {
+            customLimitInput.focus();
+          }
+          updateCounts();
+        });
+
+        customLimitInput.addEventListener('input', function() {
+          limitPreset.value = 'custom';
+          updateCounts();
+        });
 
         textarea.addEventListener('input', updateCounts);
 

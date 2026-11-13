@@ -10,6 +10,7 @@ import {
   FileSpreadsheet,
   ArrowRight,
 } from 'lucide-react';
+import { isStaticPagePath, getStaticPageHref } from '../utils/seo';
 
 interface MoreToolsSectionProps {
   currentPath?: string;
@@ -44,28 +45,10 @@ export const ALL_TOOLS = [
     desc: 'Count total characters with and without spaces for abstracts.',
   },
   {
-    name: 'Sentence Counter',
-    path: '/sentence-counter',
-    icon: AlignLeft,
-    desc: 'Detect sentences and check readability across English & Urdu.',
-  },
-  {
-    name: 'Essay Word Counter',
-    path: '/essay-word-counter',
-    icon: BookOpen,
-    desc: 'Section-by-section word allocation and 10% tolerance safety.',
-  },
-  {
     name: 'Paragraph Counter',
     path: '/paragraph-counter',
     icon: AlignLeft,
     desc: 'Measure paragraph count and average words per paragraph.',
-  },
-  {
-    name: 'Reading Time Calculator',
-    path: '/reading-time-calculator',
-    icon: Clock,
-    desc: 'Estimate silent reading (~200 wpm) and speaking time (~130 wpm).',
   },
 ];
 
@@ -91,12 +74,10 @@ export const MoreToolsSection: React.FC<MoreToolsSectionProps> = ({ currentPath 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredTools.map((tool) => {
           const Icon = tool.icon;
-          return (
-            <Link
-              key={tool.path}
-              to={tool.path}
-              className="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/5 transition-all flex flex-col justify-between"
-            >
+          const cardClassName =
+            'group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/5 transition-all flex flex-col justify-between';
+          const cardContent = (
+            <>
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <div className="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -120,6 +101,16 @@ export const MoreToolsSection: React.FC<MoreToolsSectionProps> = ({ currentPath 
                 <span>Use tool free</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
+            </>
+          );
+
+          return isStaticPagePath(tool.path) ? (
+            <a key={tool.path} href={getStaticPageHref(tool.path)} className={cardClassName}>
+              {cardContent}
+            </a>
+          ) : (
+            <Link key={tool.path} to={tool.path} className={cardClassName}>
+              {cardContent}
             </Link>
           );
         })}

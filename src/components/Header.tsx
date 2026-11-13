@@ -10,6 +10,7 @@ import {
   ChevronDown,
   Sparkles,
 } from 'lucide-react';
+import { isStaticPagePath, getStaticPageHref } from '../utils/seo';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,10 +25,7 @@ export const Header: React.FC = () => {
 
   const subTools = [
     { name: 'Character Counter', path: '/character-counter', desc: 'Characters with & without spaces' },
-    { name: 'Sentence Counter', path: '/sentence-counter', desc: 'Sentence counts & readability' },
-    { name: 'Essay Word Counter', path: '/essay-word-counter', desc: 'Word limits & section weights' },
     { name: 'Paragraph Counter', path: '/paragraph-counter', desc: 'Paragraph density & structure' },
-    { name: 'Reading Time Calculator', path: '/reading-time-calculator', desc: 'Silent reading & speaking time' },
   ];
 
   const isActive = (path: string) => {
@@ -60,24 +58,33 @@ export const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1.5" aria-label="Main Navigation">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 ${
-                  isActive(link.path)
-                    ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
-                }`}
-              >
-                {link.name}
-                {link.badge && (
-                  <span className="px-1.5 py-0.5 text-[10px] rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-semibold">
-                    {link.badge}
-                  </span>
-                )}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const linkClassName = `px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                isActive(link.path)
+                  ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
+              }`;
+              const content = (
+                <>
+                  {link.name}
+                  {link.badge && (
+                    <span className="px-1.5 py-0.5 text-[10px] rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-semibold">
+                      {link.badge}
+                    </span>
+                  )}
+                </>
+              );
+
+              return isStaticPagePath(link.path) ? (
+                <a key={link.path} href={getStaticPageHref(link.path)} className={linkClassName}>
+                  {content}
+                </a>
+              ) : (
+                <Link key={link.path} to={link.path} className={linkClassName}>
+                  {content}
+                </Link>
+              );
+            })}
 
             <a
               href="/blog/"
@@ -108,21 +115,39 @@ export const Header: React.FC = () => {
                   <div className="px-3 py-1.5 text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
                     Specialized Counters
                   </div>
-                  {subTools.map((tool) => (
-                    <Link
-                      key={tool.path}
-                      to={tool.path}
-                      onClick={() => setToolsDropdownOpen(false)}
-                      className={`block px-3 py-2.5 rounded-xl transition-colors ${
-                        location.pathname === tool.path
-                          ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400'
-                          : 'hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-700 dark:text-slate-300'
-                      }`}
-                    >
-                      <div className="text-sm font-semibold">{tool.name}</div>
-                      <div className="text-xs text-slate-500 dark:text-slate-400">{tool.desc}</div>
-                    </Link>
-                  ))}
+                  {subTools.map((tool) => {
+                    const toolClassName = `block px-3 py-2.5 rounded-xl transition-colors ${
+                      location.pathname === tool.path
+                        ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400'
+                        : 'hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-700 dark:text-slate-300'
+                    }`;
+                    const content = (
+                      <>
+                        <div className="text-sm font-semibold">{tool.name}</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400">{tool.desc}</div>
+                      </>
+                    );
+
+                    return isStaticPagePath(tool.path) ? (
+                      <a
+                        key={tool.path}
+                        href={getStaticPageHref(tool.path)}
+                        onClick={() => setToolsDropdownOpen(false)}
+                        className={toolClassName}
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <Link
+                        key={tool.path}
+                        to={tool.path}
+                        onClick={() => setToolsDropdownOpen(false)}
+                        className={toolClassName}
+                      >
+                        {content}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -130,13 +155,13 @@ export const Header: React.FC = () => {
 
           {/* Quick Action / Language Callout */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link
-              to="/urdu-word-counter"
+            <a
+              href="/urdu-word-counter/"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             >
               <Languages className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
               <span>اردو سپورٹ</span>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -158,17 +183,13 @@ export const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-6 space-y-3">
           <div className="space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-3 py-2.5 rounded-xl text-base font-medium ${
-                  isActive(link.path)
-                    ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
-                    : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
-              >
+            {navLinks.map((link) => {
+              const mobileLinkClass = `block px-3 py-2.5 rounded-xl text-base font-medium ${
+                isActive(link.path)
+                  ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
+                  : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`;
+              const content = (
                 <div className="flex items-center justify-between">
                   <span>{link.name}</span>
                   {link.badge && (
@@ -177,8 +198,28 @@ export const Header: React.FC = () => {
                     </span>
                   )}
                 </div>
-              </Link>
-            ))}
+              );
+
+              return isStaticPagePath(link.path) ? (
+                <a
+                  key={link.path}
+                  href={getStaticPageHref(link.path)}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={mobileLinkClass}
+                >
+                  {content}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={mobileLinkClass}
+                >
+                  {content}
+                </Link>
+              );
+            })}
 
             <a
               href="/blog/"
@@ -194,36 +235,49 @@ export const Header: React.FC = () => {
               More Student Tools
             </div>
             <div className="grid grid-cols-1 gap-1">
-              {subTools.map((tool) => (
-                <Link
-                  key={tool.path}
-                  to={tool.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-sm ${
-                    location.pathname === tool.path
-                      ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
-                      : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                  }`}
-                >
-                  {tool.name}
-                </Link>
-              ))}
+              {subTools.map((tool) => {
+                const mobileToolClass = `block px-3 py-2 rounded-lg text-sm ${
+                  location.pathname === tool.path
+                    ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
+                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`;
+
+                return isStaticPagePath(tool.path) ? (
+                  <a
+                    key={tool.path}
+                    href={getStaticPageHref(tool.path)}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={mobileToolClass}
+                  >
+                    {tool.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={tool.path}
+                    to={tool.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={mobileToolClass}
+                  >
+                    {tool.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
           <div className="pt-2 border-t border-slate-200 dark:border-slate-800 grid grid-cols-2 gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="p-2 hover:underline">
+            <a href="/about/" onClick={() => setMobileMenuOpen(false)} className="p-2 hover:underline">
               About
-            </Link>
-            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="p-2 hover:underline">
+            </a>
+            <a href="/contact/" onClick={() => setMobileMenuOpen(false)} className="p-2 hover:underline">
               Contact
-            </Link>
-            <Link to="/privacy-policy" onClick={() => setMobileMenuOpen(false)} className="p-2 hover:underline">
+            </a>
+            <a href="/privacy-policy/" onClick={() => setMobileMenuOpen(false)} className="p-2 hover:underline">
               Privacy Policy
-            </Link>
-            <Link to="/terms" onClick={() => setMobileMenuOpen(false)} className="p-2 hover:underline">
+            </a>
+            <a href="/terms/" onClick={() => setMobileMenuOpen(false)} className="p-2 hover:underline">
               Terms of Use
-            </Link>
+            </a>
           </div>
         </div>
       )}

@@ -49,14 +49,9 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <Link to="/sentence-counter" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Sentence Counter
-                </Link>
-              </li>
-              <li>
-                <Link to="/paragraph-counter" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/paragraph-counter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Paragraph Counter
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -71,16 +66,6 @@ export const Footer: React.FC = () => {
                 <a href="/words-to-pages-converter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Words to Pages Converter
                 </a>
-              </li>
-              <li>
-                <Link to="/reading-time-calculator" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Reading & Speaking Time
-                </Link>
-              </li>
-              <li>
-                <Link to="/essay-word-counter" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Essay Word Counter
-                </Link>
               </li>
               <li>
                 <a href="/blog/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1">

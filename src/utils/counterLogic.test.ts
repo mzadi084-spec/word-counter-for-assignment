@@ -100,3 +100,26 @@ test('convertWordsToPages calculates single, double, and handwritten pages accur
   assert.equal(zero.doubleSpacing, 0);
   assert.equal(zero.handwrittenA4, 0);
 });
+
+test('analyzeText ignores periods in common abbreviations when counting sentences', () => {
+  const text =
+    'Dr. Smith and Prof. Lee met Mr. Khan, Mrs. Ali, Ms. Zara, and St. Jude vs. local teams in the U.S. about e.g. topics, i.e. syntax, etc., in class. Then they left!';
+  const result = analyzeText(text);
+
+  assert.equal(result.sentences, 2);
+});
+
+test('analyzeText ignores decimal points in numbers when counting sentences', () => {
+  const text = 'The average GPA rose from 3.5 to 3.85 this term. Did 98.6% pass? Yes!';
+  const result = analyzeText(text);
+
+  assert.equal(result.sentences, 3);
+});
+
+test('analyzeText handles decimals and abbreviations alongside Urdu sentence marks', () => {
+  const text = 'Dr. Ahmed scored 3.5 out of 4.0. کیا یہ درست ہے؟ جی ہاں۔';
+  const result = analyzeText(text);
+
+  assert.equal(result.sentences, 3);
+});
+

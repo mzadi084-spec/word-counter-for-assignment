@@ -96,8 +96,14 @@ export function analyzeText(text: string): CounterStats {
     .filter((p) => p.length > 0).length;
 
   // 5. Sentences: supports English . ! ? as well as Urdu marks ۔ (U+06D4) and ؟ (U+061F)
-  // We use regex split on [.!?۔؟]+ and filter empty trimmed parts
-  const rawSentences = text
+  // Ignore decimal numbers (e.g. 3.5) and periods belonging to common abbreviations
+  const sentenceNormalizedText = text
+    .replace(/(\d)\.(?=\d)/g, '$1')
+    .replace(/\b(?:mr|mrs|ms|dr|prof|st|vs|etc|e\.g|i\.e|u\.s)\.(?=\s|$|[,;:)\]"'”’?!])/gi, (match) =>
+      match.replace(/\./g, '')
+    );
+
+  const rawSentences = sentenceNormalizedText
     .split(/[.!?۔؟\n]+/g)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);

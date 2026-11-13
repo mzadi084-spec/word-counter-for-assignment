@@ -591,7 +591,9 @@
             return;
           }
 
-          var words = trimmed.split(/\s+/).filter(Boolean);
+          var words = trimmed.split(/\s+/).filter(function(token) {
+            return /[\p{L}\p{N}]/u.test(token);
+          });
           valWords.textContent = words.length;
 
           // Sentences: match English (. ! ?) and Urdu (۔ ؟)

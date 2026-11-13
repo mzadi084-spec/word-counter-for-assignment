@@ -3,6 +3,7 @@ import { CounterTool } from '../components/CounterTool';
 import { SEOHead } from '../components/SEOHead';
 import { MoreToolsSection } from '../components/MoreToolsSection';
 import { BookOpen, HelpCircle, Lightbulb, ChevronDown, CheckCircle2, Languages } from 'lucide-react';
+import { buildCanonicalUrl } from '../utils/seo';
 
 const URDU_FAQS = [
   {
@@ -41,6 +42,7 @@ export const UrduWordCounterPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Urdu Word Counter – اردو ورڈ کاؤنٹر',
+    url: buildCanonicalUrl('/urdu-word-counter'),
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'All',
     description: 'Free Urdu word counter online. Count Urdu words, characters, sentences with (۔) and (؟), and reading time instantly.',
