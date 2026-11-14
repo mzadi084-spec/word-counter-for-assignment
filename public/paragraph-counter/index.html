@@ -598,18 +598,26 @@
           var paragraphCount = paragraphs.length;
           valParagraphs.textContent = paragraphCount;
 
-          // Words: split by whitespace
-          var words = trimmed.split(/\s+/).filter(Boolean);
+          // Words: match words and numeric values (including decimals/thousands separators) as one word
+          var rawWords = trimmed.match(/(?:\p{N}+(?:[.,]\p{N}+)+|[\p{L}\p{M}\p{N}'’\-_]+)/gu) || [];
+          var words = rawWords.filter(function(token) {
+            return /[\p{L}\p{N}]/u.test(token);
+          });
           var wordCount = words.length;
           valWords.textContent = wordCount;
 
-          // Sentences: support English (. ! ?) and Urdu (۔ ؟)
-          var sentences = trimmed
-            .split(/[.!?۔؟]+/)
+          // Sentences: support English (. ! ?) and Urdu (۔ ؟), ignoring decimals and common abbreviations
+          var sentenceNormalized = trimmed
+            .replace(/(\d)\.(?=\d)/g, '$1')
+            .replace(/\b(?:rs|no|fig|approx|inc|ltd|co|jr|sr|a\.m|p\.m|mr|mrs|ms|dr|prof|st|vs|etc|e\.g|i\.e|u\.s)\.(?=\s|$|[,;:)\]"'”’?!])/gi, function(match) {
+              return match.replace(/\./g, '');
+            });
+          var sentences = sentenceNormalized
+            .split(/[.!?۔؟\n]+/)
             .filter(function(s) {
               return s.trim().length > 0;
             });
-          valSentences.textContent = sentences.length;
+          valSentences.textContent = Math.max(wordCount > 0 ? 1 : 0, sentences.length);
 
           // Average words per paragraph
           if (paragraphCount > 0) {

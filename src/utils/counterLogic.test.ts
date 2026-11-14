@@ -123,3 +123,30 @@ test('analyzeText handles decimals and abbreviations alongside Urdu sentence mar
   assert.equal(result.sentences, 3);
 });
 
+test('analyzeText counts Dr. Ali and Rs. 500 text as 11 words and 2 sentences', () => {
+  const text = 'Dr. Ali bought 3.5 kg of apples. He paid Rs. 500.';
+  const result = analyzeText(text);
+
+  assert.equal(result.words, 11);
+  assert.equal(result.sentences, 2);
+});
+
+test('analyzeText counts numbers with thousands separators and decimals as one word', () => {
+  const text = 'The total is 1,000.50 rupees.';
+  const result = analyzeText(text);
+
+  assert.equal(result.words, 5);
+  assert.equal(result.sentences, 1);
+
+  const integerFormatted = analyzeText('Population reached 1,000 and 2.75 million.');
+  assert.equal(integerFormatted.words, 6);
+  assert.equal(integerFormatted.sentences, 1);
+});
+
+test('analyzeText ignores extended abbreviation list case-insensitively in sentence count', () => {
+  const text =
+    'See Fig. 2, No. 5, and Acme Co., Inc. (approx. 10 Ltd. units) with Jr. and Sr. leads from 9:30 a.m. to 5:00 P.M. at Rs. 1,000.';
+  const result = analyzeText(text);
+
+  assert.equal(result.sentences, 1);
+});

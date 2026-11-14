@@ -856,7 +856,10 @@
             valWords.textContent = '0';
             valLines.textContent = '0';
           } else {
-            var words = trimmed.split(/\s+/).filter(Boolean);
+            var rawWords = trimmed.match(/(?:\p{N}+(?:[.,]\p{N}+)+|[\p{L}\p{M}\p{N}'’\-_]+)/gu) || [];
+            var words = rawWords.filter(function(token) {
+              return /[\p{L}\p{N}]/u.test(token);
+            });
             valWords.textContent = words.length;
             var lines = text.split(/\r\n|\r|\n/).length;
             valLines.textContent = lines;

@@ -591,16 +591,22 @@
             return;
           }
 
-          var words = trimmed.split(/\s+/).filter(function(token) {
+          var rawWords = trimmed.match(/(?:\p{N}+(?:[.,]\p{N}+)+|[\p{L}\p{M}\p{N}'’\-_]+)/gu) || [];
+          var words = rawWords.filter(function(token) {
             return /[\p{L}\p{N}]/u.test(token);
           });
           valWords.textContent = words.length;
 
-          // Sentences: match English (. ! ?) and Urdu (۔ ؟)
-          var sentenceMatches = trimmed.split(/[.!?۔؟]+/).filter(function(s) {
+          // Sentences: match English (. ! ?) and Urdu (۔ ؟), ignoring decimals and common abbreviations
+          var sentenceNormalized = trimmed
+            .replace(/(\d)\.(?=\d)/g, '$1')
+            .replace(/\b(?:rs|no|fig|approx|inc|ltd|co|jr|sr|a\.m|p\.m|mr|mrs|ms|dr|prof|st|vs|etc|e\.g|i\.e|u\.s)\.(?=\s|$|[,;:)\]"'”’?!])/gi, function(match) {
+              return match.replace(/\./g, '');
+            });
+          var sentenceMatches = sentenceNormalized.split(/[.!?۔؟\n]+/).filter(function(s) {
             return s.trim().length > 0;
           });
-          valSentences.textContent = sentenceMatches.length;
+          valSentences.textContent = Math.max(words.length > 0 ? 1 : 0, sentenceMatches.length);
 
           // Paragraphs: split by newlines
           var paragraphs = text.split(/\n+/).filter(function(p) {

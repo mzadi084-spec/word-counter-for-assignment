@@ -84,9 +84,10 @@ export function analyzeText(text: string): CounterStats {
   // 2. Characters without spaces (including line breaks, tabs)
   const charactersNoSpaces = text.replace(/\s+/g, '').length;
 
-  // 3. Words: match contiguous letters, digits, apostrophes, Urdu Arabic unicode letters
-  // Matches Latin, Urdu/Arabic range (\u0600-\u06FF, \u0750-\u077F, \uFB50-\uFDFF, \uFE70-\uFEFF), numbers
-  const wordTokens = text.trim().match(/[\p{L}\p{N}'’\-_]+/gu) || [];
+  // 3. Words: match numbers with decimal/thousands separators as one token, or letters/combining marks/digits/connectors
+  const rawWordTokens =
+    text.trim().match(/(?:\p{N}+(?:[.,]\p{N}+)+|[\p{L}\p{M}\p{N}'’\-_]+)/gu) || [];
+  const wordTokens = rawWordTokens.filter((token) => /[\p{L}\p{N}]/u.test(token));
   const words = wordTokens.length;
 
   // 4. Paragraphs: split by single or multiple newlines with content
@@ -99,8 +100,9 @@ export function analyzeText(text: string): CounterStats {
   // Ignore decimal numbers (e.g. 3.5) and periods belonging to common abbreviations
   const sentenceNormalizedText = text
     .replace(/(\d)\.(?=\d)/g, '$1')
-    .replace(/\b(?:mr|mrs|ms|dr|prof|st|vs|etc|e\.g|i\.e|u\.s)\.(?=\s|$|[,;:)\]"'”’?!])/gi, (match) =>
-      match.replace(/\./g, '')
+    .replace(
+      /\b(?:rs|no|fig|approx|inc|ltd|co|jr|sr|a\.m|p\.m|mr|mrs|ms|dr|prof|st|vs|etc|e\.g|i\.e|u\.s)\.(?=\s|$|[,;:)\]"'”’?!])/gi,
+      (match) => match.replace(/\./g, '')
     );
 
   const rawSentences = sentenceNormalizedText
