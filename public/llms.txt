@@ -1,0 +1,22 @@
+# Word Counter for Assignment
+
+> Free, browser-based word counter and academic writing tools for students in English, Urdu, and Roman Urdu.
+
+## Main Tool Pages
+
+- [Word Counter for Assignment](https://wordcounterforassignment.com/): Live word, character, sentence, and paragraph counter with target word limit tracking and reading/speaking time estimates.
+- [Urdu Word Counter](https://wordcounterforassignment.com/urdu-word-counter/): Counts Urdu, Roman Urdu, and English words, characters, sentences (including ۔ and ؟), and paragraphs.
+- [Words to Pages Converter](https://wordcounterforassignment.com/words-to-pages-converter/): Converts word counts to pages and pages to words across standard academic fonts, line spacing, and handwriting estimates.
+- [Character Counter](https://wordcounterforassignment.com/character-counter/): Counts characters with and without spaces, words, and lines with preset character limit trackers.
+- [Paragraph Counter](https://wordcounterforassignment.com/paragraph-counter/): Counts paragraphs, sentences, words, characters, and average words per paragraph for essays and assignments.
+
+## Blog Posts
+
+- [Academic Writing & Word Count Blog](https://wordcounterforassignment.com/blog/): Index of student guides on assignment word limits, page lengths, and speaking times.
+- [How Many Words Is 2 Pages?](https://wordcounterforassignment.com/blog/how-many-words-is-2-pages.html): Guide to approximate word counts for 2 single-spaced, double-spaced, and handwritten pages.
+- [How to Reduce Word Count in an Assignment](https://wordcounterforassignment.com/blog/how-to-reduce-word-count-in-assignment.html): Ten practical editing strategies to shorten an assignment draft without losing meaning.
+- [How Many Words Is 5 Pages?](https://wordcounterforassignment.com/blog/how-many-words-is-5-pages.html): Approximate word counts, formatting factors, and a section outline for a 5-page paper.
+- [Words Per Minute Speaking: Speech Length Guide](https://wordcounterforassignment.com/blog/how-many-words-per-minute-speaking.html): Typical speaking rates, speech duration tables, and pacing tips for class presentations.
+- [How Long to Read 1,300 Words Aloud?](https://wordcounterforassignment.com/blog/how-long-to-read-1300-words-aloud.html): Estimated speaking and silent reading times for a 1,300-word script or essay.
+- [University Assignment Word Count: Rules & Tips](https://wordcounterforassignment.com/blog/university-assignment-word-count.html): Overview of common word limit rules, margins, and what usually counts toward an assignment total.
+- [How Many Pages Is 10,000 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-10000-words.html): Approximate page counts, section planning tables, and formatting tips for a 10,000-word project.

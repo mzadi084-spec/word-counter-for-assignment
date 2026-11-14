@@ -21,7 +21,7 @@ export const PrivacyPolicyPage: React.FC = () => {
             Privacy Policy
           </h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Last Updated: November 13, 2026 • Effective Date: January 1, 2026
+            Last Updated: November 14, 2026
           </p>
         </header>
 

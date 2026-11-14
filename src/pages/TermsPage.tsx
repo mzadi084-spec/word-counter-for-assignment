@@ -21,7 +21,7 @@ export const TermsPage: React.FC = () => {
             Terms of Service
           </h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Last Updated: November 2026 • Please read carefully before using our tools.
+            Last Updated: November 14, 2026
           </p>
         </header>
 
