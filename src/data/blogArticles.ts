@@ -138,7 +138,7 @@ In this guide, we map out standard word count expectations across all academic s
 - **Standard Mid-term & Final Coursework:** 1,500 to 2,500 words.
 - **Extended Research Essays & Term Papers:** 3,000 to 4,500 words.
 - **Final Year Undergraduate Dissertation:** 8,000 to 12,000 words.
-- **Focus:** Critical engagement with peer-reviewed literature, developing an independent academic argument, and precise Harvard/APA citation.
+- **Focus:** Critical engagement with peer-reviewed literature, developing an independent academic argument, and accurate Harvard/APA citation.
 
 ### 3. Postgraduate Master's Degree (MA, MSc, MBA, LLM)
 - **Coursework Modules & Critical Reviews:** 2,500 to 4,000 words.

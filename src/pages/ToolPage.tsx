@@ -139,9 +139,9 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolKey }) => {
                   <div className="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-xs mb-2">
                     3
                   </div>
-                  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Audit Keywords & Copy</h4>
+                  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Review Metrics &amp; Copy</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
-                    Review repetitive words, copy clean text, or convert to pages with one click.
+                    Check your live words, characters, sentences, paragraphs, reading time, speaking time, and repetitive words, or copy clean text.
                   </p>
                 </div>
               </div>

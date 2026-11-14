@@ -308,7 +308,7 @@ export const WordsToPagesPage: React.FC = () => {
             </div>
 
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-              Key Formatting Tips for Precise Page Counts
+              Key Formatting Tips for Estimated Page Counts
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">

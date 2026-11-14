@@ -25,15 +25,15 @@ export const TOOLS_CONFIG: Record<string, ToolConfig> = {
     id: 'home',
     path: '/',
     title: 'Word Counter for Assignment',
-    metaTitle: 'Word Counter for Assignment – Free Online Student Tool',
+    metaTitle: 'Word Counter for Assignment – Free Online Counter Tool',
     metaDescription: 'Free online word counter for assignment writing with live word count, Urdu text support, word limit tracking, reading time, and words to pages converter.',
     h1: 'Free Word Counter for Assignment & Essays',
-    tagline: 'Track words, characters, sentences, and paragraph limits instantly in English, Urdu, and Roman Urdu.',
+    tagline: 'Use this free online counter to track words, characters, sentences, reading time, and paragraph limits in English, Urdu, and Roman Urdu.',
     highlightStat: 'words',
     romanUrduTip: 'Apna assignment text yahan paste karein ya type karein taake word count aur word limit check kar sakein.',
     guideTitle: 'Complete Guide: Why Word Count Matters for Academic Assignments',
     guideParagraphs: [
-      'Writing an academic assignment requires adhering strictly to university and college grading guidelines. Most professors and exam boards specify a word limit with an accepted margin of variation, typically plus or minus 10%. Submitting an assignment that falls short can mean missing critical analytical arguments, while exceeding the ceiling risks penalties or having excess paragraphs left unread by markers.',
+      'Word Counter for Assignment is a free online counter built for university, college, and high-school students working under strict essay and report limits. Paste or type your draft to check live words, characters, sentences, paragraphs, and approximate reading and speaking times right in your browser without uploads or signups.',
       'Our Word Counter for Assignment is custom-built for university, college, and high-school students worldwide, with specialized character-set awareness for English, Urdu, and Roman Urdu. Because all text calculations execute directly inside your browser sandbox, your unpublished assignment drafts remain 100% confidential and safe from web scraping or cloud storage.',
       'Unlike basic word processors that hide punctuation nuances, our engine provides comprehensive live analytics: total words, character count with and without spaces, complete sentence metrics, paragraph density, estimated reading time, and speaking time for seminar presentations. The integrated Word Limit Tracker continuously updates as you write, preventing accidental deductions before final submission.'
     ],
@@ -56,6 +56,10 @@ export const TOOLS_CONFIG: Record<string, ToolConfig> = {
       {
         question: 'Is my assignment text stored or uploaded to any server?',
         answer: 'No. Our tool performs all calculations locally in your browser using modern client-side JavaScript. Your text is never transmitted over the internet, never sent to external servers, and never saved in any database, ensuring total academic privacy.'
+      },
+      {
+        question: 'How does this free online counter work?',
+        answer: 'Paste or type your draft into the editor above, and the online counter computes words, characters with and without spaces, sentences, paragraphs, and approximate reading and speaking times locally inside your browser.'
       },
       {
         question: 'What is the acceptable word count tolerance in university grading?',
@@ -118,7 +122,7 @@ export const TOOLS_CONFIG: Record<string, ToolConfig> = {
     guideTitle: 'The Importance of Sentence Structure in Higher Education',
     guideParagraphs: [
       'Sentence structure directly influences how easily professors, tutors, and reviewers can digest your academic arguments. Run-on sentences that stretch over 40 or 50 words confuse the reader and obscure core theses, while an overabundance of short, choppy sentences makes academic writing feel simplistic.',
-      'Our Sentence Counter accurately analyzes text by recognizing traditional western end-punctuation marks (periods, exclamation marks, and question marks) alongside non-Western and Islamic script marks including the Urdu full stop (۔) and the inverted question mark (؟). This ensures bilingual scholars writing in Urdu or mixed Roman Urdu receive precise sentence tallies.',
+      'Our Sentence Counter accurately analyzes text by recognizing traditional western end-punctuation marks (periods, exclamation marks, and question marks) alongside non-Western and Islamic script marks including the Urdu full stop (۔) and the inverted question mark (؟). This ensures bilingual scholars writing in Urdu or mixed Roman Urdu receive accurate sentence tallies.',
       'By dividing total words by the number of sentences, you can quickly evaluate your average sentence length. The optimal target for university academic writing is between 15 and 22 words per sentence, creating a rhythmic and persuasive reading flow.'
     ],
     tipsTitle: 'Strategies for Varied Sentence Length in Essays',
