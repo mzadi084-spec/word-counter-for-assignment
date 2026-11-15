@@ -185,6 +185,32 @@
         gap: 0.25rem;
       }
       .read-more:hover { text-decoration: underline; }
+      .featured-hub {
+        background: rgba(37, 99, 235, 0.06);
+        border: 2px solid var(--color-primary);
+        border-radius: 1.25rem;
+        padding: 1.75rem 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .featured-hub h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+      .featured-hub h2 a {
+        color: var(--text-main);
+        text-decoration: none;
+      }
+      .featured-hub h2 a:hover {
+        color: var(--color-primary);
+      }
+      .featured-hub p {
+        color: var(--text-muted);
+        font-size: 0.98rem;
+      }
       footer {
         border-top: 1px solid var(--border-color);
         background: var(--bg-card);
@@ -225,7 +251,52 @@
         <p class="subtitle">Practical guides for university coursework, page length estimates, speaking pace, and staying within assignment word limits.</p>
       </div>
 
+      <section class="featured-hub" aria-label="Start here">
+        <div class="tag">Start Here &bull; Complete Student Hub</div>
+        <h2><a href="/blog/assignment-word-count-guide.html">Start here: Assignment Word Count Guide</a></h2>
+        <p>Your step-by-step hub for assignment word limits, checking documents or sections, converting words to pages, timing speeches, and trimming drafts.</p>
+        <div>
+          <a href="/blog/assignment-word-count-guide.html" class="read-more">Read the Complete Hub Guide →</a>
+        </div>
+      </section>
+
       <div class="articles-grid">
+        <article class="article-card">
+          <div>
+            <div class="tag">Student Hub Guide</div>
+            <h2><a href="/blog/assignment-word-count-guide.html">Assignment Word Count Guide: Limits, Counting &amp; Tips</a></h2>
+            <p>A complete overview of assignment word limits, what counts, section budgets, page conversions, and editing strategies.</p>
+          </div>
+          <a href="/blog/assignment-word-count-guide.html" class="read-more">Read Full Guide →</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Academic Formatting</div>
+            <h2><a href="/blog/how-many-pages-is-3300-words.html">How Many Pages Is 3,300 Words? Single &amp; Double Spaced</a></h2>
+            <p>Approximate page counts for 3,300 words across single, double, and handwritten sheets, plus reading time and a sample essay plan.</p>
+          </div>
+          <a href="/blog/how-many-pages-is-3300-words.html" class="read-more">Read Full Guide →</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">How-To Guide</div>
+            <h2><a href="/blog/how-to-check-word-count-in-a-document.html">How to Check Word Count in a Document (Word, Docs, Pages)</a></h2>
+            <p>Step-by-step ways to view word counts in Microsoft Word, Google Docs, Apple Pages, phones, and a private browser tool.</p>
+          </div>
+          <a href="/blog/how-to-check-word-count-in-a-document.html" class="read-more">Read Full Guide →</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Editing &amp; Structure</div>
+            <h2><a href="/blog/how-to-count-words-in-a-specific-section.html">How to Count Words in a Specific Section of Your Essay</a></h2>
+            <p>Measure a single paragraph or section in Word, Google Docs, or our browser counter while keeping references out of your total.</p>
+          </div>
+          <a href="/blog/how-to-count-words-in-a-specific-section.html" class="read-more">Read Full Guide →</a>
+        </article>
+
         <article class="article-card">
           <div>
             <div class="tag">Academic Formatting</div>
