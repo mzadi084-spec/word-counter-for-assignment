@@ -2,6 +2,8 @@ import React from 'react';
 import { CounterTool } from '../components/CounterTool';
 import { SEOHead } from '../components/SEOHead';
 import { MoreToolsSection } from '../components/MoreToolsSection';
+import { PopularGuidesSection } from '../components/PopularGuidesSection';
+import { STATIC_BLOG_GUIDES } from '../data/staticBlogGuides';
 import { BookOpen, HelpCircle, Lightbulb, ChevronDown, CheckCircle2, Languages } from 'lucide-react';
 import { buildCanonicalUrl } from '../utils/seo';
 
@@ -224,6 +226,22 @@ export const UrduWordCounterPage: React.FC = () => {
 
         {/* More Free Tools */}
         <MoreToolsSection currentPath="/urdu-word-counter" />
+
+        {/* Helpful Urdu & Assignment Guides */}
+        <PopularGuidesSection
+          title="Helpful Urdu & Assignment Guides"
+          subtitle="Learn how Urdu punctuation and spacing affect counts, plus university limit rules and presentation pacing."
+          guides={STATIC_BLOG_GUIDES.filter((g) =>
+            [
+              '/blog/how-to-count-words-in-urdu.html',
+              '/blog/assignment-word-count-guide.html',
+              '/blog/university-assignment-word-count.html',
+              '/blog/how-to-check-word-count-in-a-document.html',
+              '/blog/how-many-words-per-minute-speaking.html',
+              '/blog/how-long-to-read-1300-words-aloud.html',
+            ].includes(g.href)
+          )}
+        />
       </main>
     </>
   );

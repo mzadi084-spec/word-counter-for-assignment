@@ -3,6 +3,8 @@ import { TOOLS_CONFIG, ToolConfig } from '../data/toolsData';
 import { CounterTool } from '../components/CounterTool';
 import { SEOHead } from '../components/SEOHead';
 import { MoreToolsSection } from '../components/MoreToolsSection';
+import { PopularGuidesSection } from '../components/PopularGuidesSection';
+import { STATIC_BLOG_GUIDES } from '../data/staticBlogGuides';
 import {
   HelpCircle,
   Lightbulb,
@@ -206,6 +208,24 @@ export const ToolPage: React.FC<ToolPageProps> = ({ toolKey }) => {
 
         {/* More Free Tools Internal Links */}
         <MoreToolsSection currentPath={config.path} />
+
+        {/* Popular Blog Guides Internal Links */}
+        <PopularGuidesSection
+          guides={
+            toolKey === 'home'
+              ? STATIC_BLOG_GUIDES
+              : STATIC_BLOG_GUIDES.filter((g) =>
+                  [
+                    '/blog/assignment-word-count-guide.html',
+                    '/blog/university-assignment-word-count.html',
+                    '/blog/how-to-check-word-count-in-a-document.html',
+                    '/blog/how-to-count-words-in-a-specific-section.html',
+                    '/blog/how-to-reduce-word-count-in-assignment.html',
+                    '/blog/how-many-pages-is-1000-words.html',
+                  ].includes(g.href)
+                )
+          }
+        />
       </main>
     </>
   );

@@ -8,7 +8,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://wordcounterforassignment.com/about/" />
     <meta property="og:title" content="About Us – Word Counter for Assignment" />
-    <meta property="og:description" content="Learn about our mission to provide free, confidential writing and text counting utilities for students and academic researchers worldwide." />
+    <meta property="og:description" content="Learn about Word Counter for Assignment, our mission to support students worldwide with free, private, browser-based academic writing and counting tools." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://wordcounterforassignment.com/about/" />
     <meta property="og:site_name" content="Word Counter for Assignment" />
@@ -17,7 +17,7 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About Us – Word Counter for Assignment" />
-    <meta name="twitter:description" content="Learn about our mission to provide free, confidential writing and text counting utilities for students and academic researchers worldwide." />
+    <meta name="twitter:description" content="Learn about Word Counter for Assignment, our mission to support students worldwide with free, private, browser-based academic writing and counting tools." />
     <meta name="twitter:image" content="https://wordcounterforassignment.com/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,15 +25,46 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Word Counter for Assignment",
-      "url": "https://wordcounterforassignment.com/",
-      "logo": "https://wordcounterforassignment.com/og-image.png",
-      "email": "mzadi084@gmail.com",
-      "founder": {
-        "@type": "Person",
-        "name": "Farwa Naveed"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://wordcounterforassignment.com/#organization",
+          "name": "Word Counter for Assignment",
+          "url": "https://wordcounterforassignment.com/",
+          "logo": "https://wordcounterforassignment.com/og-image.png",
+          "email": "mzadi084@gmail.com",
+          "founder": {
+            "@type": "Person",
+            "name": "Farwa Naveed"
+          }
+        },
+        {
+          "@type": "AboutPage",
+          "name": "About Word Counter for Assignment",
+          "url": "https://wordcounterforassignment.com/about/",
+          "description": "Learn about Word Counter for Assignment, our mission to support students worldwide with free, private, browser-based academic writing and counting tools.",
+          "mainEntity": {
+            "@id": "https://wordcounterforassignment.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://wordcounterforassignment.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About Us",
+              "item": "https://wordcounterforassignment.com/about/"
+            }
+          ]
+        }
+      ]
     }
     </script>
     <style>

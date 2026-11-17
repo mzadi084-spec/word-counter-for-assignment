@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BLOG_ARTICLES, BlogArticle } from '../data/blogArticles';
+import { STATIC_BLOG_GUIDES } from '../data/staticBlogGuides';
+import { PopularGuidesSection } from '../components/PopularGuidesSection';
 import { SEOHead } from '../components/SEOHead';
 import { BookOpen, Clock, Calendar, ArrowRight, Search, Sparkles, Languages } from 'lucide-react';
 
@@ -119,6 +121,13 @@ export const BlogListPage: React.FC = () => {
             No articles match your search criteria. Try a different keyword like "word count" or "essay".
           </div>
         )}
+
+        <PopularGuidesSection
+          title="Complete Assignment & Word Count Guides"
+          subtitle="Direct links to all in-depth formatting, page-length, document-counting, Urdu, and speaking-pace guides."
+          guides={STATIC_BLOG_GUIDES}
+          showViewAll={false}
+        />
       </main>
     </>
   );

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { convertWordsToPages, PagesResult } from '../utils/counterLogic';
 import { SEOHead } from '../components/SEOHead';
 import { MoreToolsSection } from '../components/MoreToolsSection';
+import { PopularGuidesSection } from '../components/PopularGuidesSection';
+import { STATIC_BLOG_GUIDES } from '../data/staticBlogGuides';
 import {
   FileText,
   Calculator,
@@ -365,6 +367,15 @@ export const WordsToPagesPage: React.FC = () => {
 
         {/* More Tools */}
         <MoreToolsSection currentPath="/words-to-pages-converter" />
+
+        {/* Helpful Formatting & Page Conversion Guides */}
+        <PopularGuidesSection
+          title="Words to Pages Formatting Guides"
+          subtitle="Detailed page-count charts and section plans for 1,000, 3,300, and 10,000-word assignments as well as 2-page and 5-page papers."
+          guides={STATIC_BLOG_GUIDES.filter(
+            (g) => g.cluster === 'pages' || g.cluster === 'hub'
+          )}
+        />
       </main>
     </>
   );

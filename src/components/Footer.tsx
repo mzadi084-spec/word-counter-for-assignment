@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
           {/* Academic Calculators & Blog */}
           <div>
             <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">
-              Calculators & Blog
+              Calculators &amp; Blog
             </h3>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li>
@@ -70,7 +70,22 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="/blog/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1">
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>Blog</span>
+                  <span>All Blog Guides</span>
+                </a>
+              </li>
+              <li>
+                <a href="/blog/assignment-word-count-guide.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Assignment Word Count Guide
+                </a>
+              </li>
+              <li>
+                <a href="/blog/how-to-count-words-in-urdu.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Urdu Word Count Guide
+                </a>
+              </li>
+              <li>
+                <a href="/blog/how-many-pages-is-1000-words.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  How Many Pages Is 1,000 Words?
                 </a>
               </li>
             </ul>
