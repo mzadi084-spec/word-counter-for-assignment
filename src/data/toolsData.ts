@@ -7,11 +7,18 @@ export interface ToolConfig {
   id: string;
   path: string;
   title: string;
-  metaTitle: string; // under 60 chars
-  metaDescription: string; // under 155 chars
+  metaTitle: string;
+  metaDescription: string;
   h1: string;
   tagline: string;
-  highlightStat: 'words' | 'characters' | 'charactersNoSpaces' | 'sentences' | 'paragraphs' | 'readingTime' | 'speakingTime';
+  highlightStat:
+    | 'words'
+    | 'characters'
+    | 'charactersNoSpaces'
+    | 'sentences'
+    | 'paragraphs'
+    | 'readingTime'
+    | 'speakingTime';
   romanUrduTip: string;
   guideTitle: string;
   guideParagraphs: string[];
@@ -25,256 +32,299 @@ export const TOOLS_CONFIG: Record<string, ToolConfig> = {
     id: 'home',
     path: '/',
     title: 'Word Counter for Assignment',
-    metaTitle: 'Word Counter for Assignment – Free Online Counter Tool',
-    metaDescription: 'Free online word counter for assignment writing with live word count, Urdu text support, word limit tracking, reading time, and words to pages converter.',
-    h1: 'Free Word Counter for Assignment & Essays',
-    tagline: 'Use this free online counter to track words, characters, sentences, reading time, and paragraph limits in English, Urdu, and Roman Urdu.',
+    metaTitle: 'Free Online Word Counter for Assignments | Word Counter for Assignment',
+    metaDescription:
+      'Free online word counter for assignments with live word count, character count with and without spaces, sentence, paragraph, reading and speaking time in your browser.',
+    h1: 'Free Online Word Counter for Assignments',
+    tagline:
+      'Paste or type your draft to check live words, characters with and without spaces, sentences, paragraphs, and reading or speaking times in English, Urdu, and Roman Urdu.',
     highlightStat: 'words',
-    romanUrduTip: 'Apna assignment text yahan paste karein ya type karein taake word count aur word limit check kar sakein.',
-    guideTitle: 'Complete Guide: Why Word Count Matters for Academic Assignments',
+    romanUrduTip:
+      'Apna assignment text yahan paste karein ya type karein taake live word count, sentences, aur word limit check kar sakein.',
+    guideTitle: 'How This Free Online Word Counter Works',
     guideParagraphs: [
-      'Word Counter for Assignment is a free online counter built for university, college, and high-school students working under strict essay and report limits. Paste or type your draft to check live words, characters, sentences, paragraphs, and approximate reading and speaking times right in your browser without uploads or signups.',
-      'Our Word Counter for Assignment is custom-built for university, college, and high-school students worldwide, with specialized character-set awareness for English, Urdu, and Roman Urdu. Because all text calculations execute directly inside your browser sandbox, your unpublished assignment drafts remain 100% confidential and safe from web scraping or cloud storage.',
-      'Unlike basic word processors that hide punctuation nuances, our engine provides comprehensive live analytics: total words, character count with and without spaces, complete sentence metrics, paragraph density, estimated reading time, and speaking time for seminar presentations. The integrated Word Limit Tracker continuously updates as you write, preventing accidental deductions before final submission.'
+      'Word Counter for Assignment runs directly inside your web browser using client-side JavaScript. As soon as you paste or type coursework into the editor above, the counter scans word tokens, character counts with and without spaces, complete sentences (including English periods, question marks, exclamation points, and Urdu punctuation marks ۔ and ؟), and paragraphs.',
+      'Drafts are processed locally inside your browser session rather than submitted to an external user-text database. That makes it practical for essays, university reports, thesis chapters, dissertation body sections, and study notes across desktop, tablet, and mobile screens.',
+      'Beyond basic totals, you can set a target assignment word limit above the editor to track remaining or exceeded words against a goal, inspect your top five most repeated words to reduce filler, and open dedicated calculators for Roman Urdu, words-to-pages conversion, customizable assignment tolerance limits, reading/speaking times, line counting, unique words, and local PDF word counting.',
     ],
-    tipsTitle: 'Top Assignment Writing Tips for Students',
+    tipsTitle: 'Why Students Use Word Counter for Assignment',
     tips: [
-      'Check the 10% rule: Most universities allow 10% below or above the required word count (e.g., 1,800 to 2,200 words for a 2,000-word essay).',
-      'Exclusions check: Always verify whether your lecturer includes citations, footnotes, abstract, and references in the total word count.',
-      'Trim wordy phrases: Replace phrases like "due to the fact that" with "because", and "in the event that" with "if" to tighten your prose.',
-      'Track paragraphs: Academic paragraphs are ideally 100 to 200 words long, developing a single clear argument supported by evidence.'
+      'Prevent grading penalties across course limits: Some modules enforce strict 0% caps while others permit ±5% or ±10% margins (e.g., 1,800 to 2,200 words for a 2,000-word essay).',
+      'Run counts locally in your browser: Counting happens inside browser memory with no account logins, paywalls, or draft upload forms.',
+      'Verify bilingual & Urdu coursework: Recognizes Latin, Roman Urdu, and Unicode Urdu script plus Urdu full stop (۔) and question mark (؟).',
+      'Spot repeated words before submitting: Review the Top Repeated Words strip to tighten repetitive phrasing and improve academic vocabulary.',
     ],
     faqs: [
       {
-        question: 'Do in-text citations and reference lists count towards my assignment word limit?',
-        answer: 'This depends on your university guidelines. Most UK, Australian, and US institutions count in-text citations (such as Harvard or APA author-date citations) in the core word count, but exclude the bibliography or reference list, appendices, and title pages. Always check your module syllabus or rubric.'
+        question: 'Do in-text citations and reference lists count toward my assignment word limit?',
+        answer:
+          'Rules depend on your university or department syllabus. Most UK, US, and Australian institutions include in-text author-date citations in the word count while excluding the reference list or bibliography, appendices, and cover page. Always check your module handbook.',
       },
       {
         question: 'How does the word counter handle hyphenated words and abbreviations?',
-        answer: 'Standard academic word counters treat hyphenated compound terms (like "evidence-based" or "state-of-the-art") as single words unless separated by whitespace. Abbreviations with periods (like "e.g." or "i.e.") are treated as individual words without incorrectly splitting your sentences.'
+        answer:
+          'Standard academic counters treat hyphenated terms (such as "evidence-based" or "short-term") as one word when joined without spaces. Abbreviations like "e.g.", "i.e.", or "Dr." are handled without breaking your sentence tally prematurely.',
       },
       {
         question: 'Is my assignment text stored or uploaded to any server?',
-        answer: 'No. Our tool performs all calculations locally in your browser using modern client-side JavaScript. Your text is never transmitted over the internet, never sent to external servers, and never saved in any database, ensuring total academic privacy.'
+        answer:
+          'No. Counting runs locally in browser memory via JavaScript with no draft submission form or user database storing your pasted essays.',
       },
       {
-        question: 'How does this free online counter work?',
-        answer: 'Paste or type your draft into the editor above, and the online counter computes words, characters with and without spaces, sentences, paragraphs, and approximate reading and speaking times locally inside your browser.'
+        question: 'How does this free online word counter work for reading and speaking times?',
+        answer:
+          'Once you paste text, the counter estimates silent reading time at about 200 words per minute and presentation speaking time at about 130 words per minute. Actual times vary by reader, topic complexity, and speaking pace.',
       },
       {
-        question: 'What is the acceptable word count tolerance in university grading?',
-        answer: 'Most universities follow the standard plus or minus 10% margin. For a 3,000-word assignment, this means any submission between 2,700 and 3,300 words is accepted without penalty. If you are under 2,700 or over 3,300, marks may be deducted.'
-      }
-    ]
+        question: 'What is the usual word count tolerance in university assignments?',
+        answer:
+          'Many institutions allow a margin of plus or minus 10% around the stated word limit, meaning a 3,000-word target commonly accepts roughly 2,700 to 3,300 words. Some strict exams and journals enforce a hard maximum with zero tolerance above the limit.',
+      },
+    ],
   },
   characterCounter: {
     id: 'character-counter',
     path: '/character-counter',
     title: 'Character Counter Online',
     metaTitle: 'Character Counter Online – Free Text & Space Counter',
-    metaDescription: 'Free online character counter. Count characters with and without spaces, words, and sentences in real time. Ideal for assignments, abstracts, and applications.',
+    metaDescription:
+      'Free online character counter. Count characters with and without spaces, words, and sentences in real time for assignments, abstracts, and forms.',
     h1: 'Online Character Counter with & without Spaces',
-    tagline: 'Accurately count total characters, whitespace, and letters for university application forms and research abstracts.',
+    tagline:
+      'Accurately count total characters, whitespace, and letters for university application forms, abstracts, and assignment portals.',
     highlightStat: 'characters',
-    romanUrduTip: 'Characters with spaces aur without spaces count karein. Application forms aur journal abstracts ke liye bohot mufeed hai.',
+    romanUrduTip:
+      'Characters with spaces aur without spaces count karein. Application forms aur journal abstracts ke liye mufeed hai.',
     guideTitle: 'Understanding Character Limits in Academic Writing & Applications',
     guideParagraphs: [
-      'While general coursework often specifies word limits, competitive scholarship forms, UCAS personal statements, conference abstracts, and job applications usually mandate strict character limits. For instance, UCAS applications enforce a 4,000 character maximum (including spaces), and many scientific journals cap structured abstracts at 1,500 to 2,500 characters.',
-      'Our Character Counter helps students monitor their character metrics with real-time feedback. It distinguishes between total characters (including spaces, newlines, and punctuation) and characters excluding whitespace. This distinction is vital because some online submission portals count spaces while others only count alphanumeric symbols.',
-      'By using this tool alongside our frequency detector, you can identify repetitive adjectives and unnecessary filler words that consume valuable character allotments, giving you the precision needed for tightly bounded submission fields.'
+      'While general coursework specifies word limits, scholarship forms, UCAS personal statements, conference abstracts, and online submission portals often impose strict character limits. Knowing whether spaces are included helps you stay inside box cutoffs.',
+      'Our Character Counter distinguishes between total characters (including spaces, punctuation, and line breaks) and characters without spaces so you can verify exact portal constraints before pasting.',
+      'Combine character metrics with the repeated-word breakdown below the editor to replace wordy phrases with clear active verbs.',
     ],
     tipsTitle: 'How to Cut Down Character Count Without Losing Meaning',
     tips: [
-      'Eliminate passive voice: Changing "The experiment was carried out by the researcher" to "The researcher conducted the experiment" saves 11 characters.',
-      'Avoid duplicate adjectives: Words like "completely unique" or "basic fundamentals" contain redundant characters that should be streamlined.',
-      'Use active verbs: Strong verbs replace weak verb-noun pairings (e.g., use "decided" instead of "came to a decision").',
-      'Format spaces cleanly: Avoid double spacing between sentences; single spacing is standard modern academic practice.'
+      'Use active verbs instead of passive constructions to shorten sentences naturally.',
+      'Remove redundant modifiers such as "completely unique" or "basic fundamentals".',
+      'Use single spaces after periods rather than double spacing between sentences.',
+      'Check whether your submission portal counts spaces before trimming your draft.',
     ],
     faqs: [
       {
         question: 'What is the difference between characters with spaces and without spaces?',
-        answer: 'Characters with spaces include every keystroke: letters, numbers, punctuation marks, spacebar spaces, and line break returns. Characters without spaces exclude all whitespace characters (spaces, tabs, and newlines), counting only printable glyphs.'
+        answer:
+          'Characters with spaces include letters, numbers, punctuation marks, spaces, and line breaks. Characters without spaces exclude whitespace characters such as spaces, tabs, and line returns.',
       },
       {
         question: 'What is the character limit for a UCAS personal statement?',
-        answer: 'A UCAS personal statement has a strict maximum of 4,000 characters (including spaces) and 47 lines of text, whichever limit is reached first.'
+        answer:
+          'UCAS personal statements enforce a maximum of 4,000 characters including spaces (and 47 lines), depending on the active admission format.',
       },
       {
-        question: 'Why do research journals ask for character counts rather than word counts?',
-        answer: 'Print and digital journal layouts rely on physical column width and page volume. Measuring character counts helps keep abstracts and short communications within designated layout limits.'
+        question: 'Why do research portals ask for character counts rather than word counts?',
+        answer:
+          'Database fields, printed abstract booklets, and web forms allocate fixed visual space based on character count rather than word boundaries.',
       },
       {
-        question: 'Are Urdu and Arabic characters calculated the same way as Latin letters?',
-        answer: 'Yes. In Unicode character encoding, each Urdu glyph, diacritic, and punctuation mark is counted as one character glyph in your total character count.'
-      }
-    ]
+        question: 'Are Urdu and Arabic letters counted accurately?',
+        answer:
+          'Yes. Unicode characters, punctuation marks, and spaces in Urdu and English scripts are counted accurately in your browser.',
+      },
+    ],
   },
   sentenceCounter: {
     id: 'sentence-counter',
     path: '/sentence-counter',
     title: 'Sentence Counter Online',
-    metaTitle: 'Sentence Counter Online – Detect & Count Sentences',
-    metaDescription: 'Free sentence counter for students. Detect sentences accurately with English, Urdu (۔) and question marks (؟). Improve essay readability and structure.',
+    metaTitle: 'Sentence Counter Online – Count Sentences & Average Length',
+    metaDescription:
+      'Free online sentence counter for assignments. Count English and Urdu sentences (۔ ؟), inspect average sentence length, and improve essay readability.',
     h1: 'Online Sentence Counter & Readability Tool',
-    tagline: 'Track sentence count, average sentence length, and sentence variety across English and Urdu texts.',
+    tagline:
+      'Count total sentences, measure average sentence length, and inspect sentence-by-sentence word counts in English and Urdu.',
     highlightStat: 'sentences',
-    romanUrduTip: 'Har sentence ka hisaab rakhein. Lambi sentences ko chota karein taake assignment ki readability behtar ho sake.',
-    guideTitle: 'The Importance of Sentence Structure in Higher Education',
+    romanUrduTip:
+      'Har sentence ka hisaab rakhein. Lambay sentences ko chota karein taake assignment ki readability behtar ho.',
+    guideTitle: 'Why Sentence Length Balance Matters in Academic Essays',
     guideParagraphs: [
-      'Sentence structure directly influences how easily professors, tutors, and reviewers can digest your academic arguments. Run-on sentences that stretch over 40 or 50 words confuse the reader and obscure core theses, while an overabundance of short, choppy sentences makes academic writing feel simplistic.',
-      'Our Sentence Counter accurately analyzes text by recognizing traditional western end-punctuation marks (periods, exclamation marks, and question marks) alongside non-Western and Islamic script marks including the Urdu full stop (۔) and the inverted question mark (؟). This ensures bilingual scholars writing in Urdu or mixed Roman Urdu receive accurate sentence tallies.',
-      'By dividing total words by the number of sentences, you can quickly evaluate your average sentence length. The optimal target for university academic writing is between 15 and 22 words per sentence, creating a rhythmic and persuasive reading flow.'
+      'Sentence variety affects how clearly lecturers and graders follow your argument. Very long sentences (over 35 to 45 words) frequently bury your main verb and obscure your claim, while an unbroken string of six-word sentences sounds choppy.',
+      'University writing typically reads most clearly when sentences average roughly 15 to 22 words, mixing concise topic sentences with well-structured analytical explanations.',
+      'Our Sentence Counter recognizes English terminal punctuation (. ! ?) as well as Urdu full stops (۔) and question marks (؟) while avoiding false splits inside numbers and common abbreviations such as "e.g.", "i.e.", and "Dr.".',
     ],
-    tipsTitle: 'Strategies for Varied Sentence Length in Essays',
+    tipsTitle: 'Strategies for Clearer Academic Sentences',
     tips: [
-      'Aim for an average of 18–22 words per sentence to maintain clarity and academic gravity.',
-      'Vary sentence openings: Avoid beginning consecutive sentences with "This shows", "The author", or "Furthermore".',
-      'Split compound-complex sentences: If a sentence contains three separate clauses connected by "and" or "which", split it into two coherent sentences.',
-      'Use transitions thoughtfully: Connect sentences using signposts like "Consequently", "In contrast", and "Simultaneously".'
+      'Aim for an overall average between 15 and 22 words per sentence.',
+      'Split sentences over 35 words into two focused statements connected by clear transitions.',
+      'Vary sentence openings instead of repeating "This shows" or "Furthermore" back-to-back.',
+      'Check Urdu assignments using the Urdu full stop (۔) so sentences divide accurately.',
     ],
     faqs: [
       {
-        question: 'How does the sentence counter detect sentences?',
-        answer: 'Our engine identifies sentence boundaries by checking for sentence-terminating punctuation marks (. ! ? and Urdu ۔ ؟) followed by whitespace, newlines, or text endings, while ignoring common abbreviation dots like etc., e.g., and Dr.'
+        question: 'How does the sentence counter detect sentence boundaries?',
+        answer:
+          'It detects terminal punctuation marks (. ! ? and Urdu ۔ ؟) plus line breaks while ignoring decimal numbers and common academic abbreviations such as e.g., i.e., Fig., and Dr.',
       },
       {
-        question: 'What is a good average sentence length for university assignments?',
-        answer: 'Between 15 and 22 words per sentence is the sweet spot for academic essays, balancing scholarly depth with syntactic readability.'
+        question: 'What is a healthy average sentence length for university writing?',
+        answer:
+          'Most style guides suggest averaging roughly 15 to 22 words per sentence, mixing short direct claims with moderately detailed analysis sentences.',
       },
       {
-        question: 'Can this tool detect run-on sentences?',
-        answer: 'While it tallies total sentences, you can instantly compare your total word count against the sentence count. If 300 words yield only 3 sentences, your average sentence is 100 words—a clear indication of run-ons.'
+        question: 'Can this tool highlight overly long run-on sentences?',
+        answer:
+          'Yes. The breakdown table lists each detected sentence alongside its individual word count so you can spot and split long sentences quickly.',
       },
       {
-        question: 'Does the tool support Urdu punctuation marks?',
-        answer: 'Yes! The counter fully supports the Urdu full stop (۔ U+06D4) and Urdu question mark (؟ U+061F), making it the ideal tool for Urdu literature, journalism, and bilingual papers.'
-      }
-    ]
+        question: 'Does the sentence counter work with Urdu punctuation?',
+        answer:
+          'Yes. It supports both the Urdu full stop (۔) and Urdu question mark (؟) alongside standard English punctuation.',
+      },
+    ],
   },
   essayWordCounter: {
     id: 'essay-word-counter',
     path: '/essay-word-counter',
     title: 'Essay Word Counter',
-    metaTitle: 'Essay Word Counter – Calculate Word Limits & Sections',
-    metaDescription: 'Free essay word counter for students. Set target word limits, monitor introduction, body, and conclusion ratios, and prevent essay length penalties.',
+    metaTitle: 'Essay Word Counter – Track Word Limits & Sections',
+    metaDescription:
+      'Free essay word counter for students. Set target word limits, monitor introduction, body, and conclusion ratios, and prevent length penalties.',
     h1: 'Essay Word Counter & Academic Section Planner',
-    tagline: 'Set custom word limits with live progress bar alerts. Balance introduction, body paragraphs, and conclusions effortlessly.',
+    tagline:
+      'Set custom essay word limits with live progress tracking. Keep introductions, body paragraphs, and conclusions balanced.',
     highlightStat: 'words',
-    romanUrduTip: 'Essay ka word limit set karein. Green bar batayegi ke aap limit ke andar hain ya limit cross ho chuki hai.',
+    romanUrduTip:
+      'Essay ka word limit set karein aur live progress track karein taake introduction aur body paragraphs mutawazin rahein.',
     guideTitle: 'Mastering Essay Word Distribution and Structure',
     guideParagraphs: [
-      'A successful university essay is not merely a collection of words; it is an organized argument structured into well-proportioned sections. Academic conventions typically allocate 10% of the total word count to the introduction, 80% to the body paragraphs, and 10% to the concluding synthesis. For a 2,000-word paper, that equates to a 200-word introduction, approximately eight 200-word body paragraphs, and a 200-word conclusion.',
-      'Our Essay Word Counter provides a built-in Target Word Limit feature with dynamic visual indicators. As you draft your paper, the interactive progress bar shifts smoothly from blue to green when approaching your goal, and turns red if you overshoot your assigned ceiling. Status banners immediately display how many words you have left or by how much you have exceeded the requirement.',
-      'Additionally, our top 5 most used words breakdown highlights whether you have over-indexed on specific terminology or repeated key thesis words too frequently throughout your body sections.'
+      'Strong essays allocate space intentionally across sections rather than spending 30% of the budget on background context. A widely taught planning baseline allocates roughly 10% to the introduction, 80% to body paragraphs, and 10% to the conclusion.',
+      'For a 2,000-word essay, that equals about 200 words for the introduction, about 1,600 words across 7 to 9 focused body paragraphs, and about 200 words for the conclusion.',
+      'Set your target limit above the editor to monitor live remaining words or overage, and review the repeated-words list before exporting back to Microsoft Word or Google Docs.',
     ],
     tipsTitle: 'How to Allocate Words Across Essay Sections',
     tips: [
-      'Introduction (10%): Hook the reader, outline background context, and state your definitive thesis statement.',
-      'Body Paragraphs (80%): Dedicate each paragraph to one point using the PEEL method (Point, Evidence, Explanation, Link).',
-      'Conclusion (10%): Synthesize findings, answer the research question, and discuss broader implications without introducing new evidence.',
-      'Keep your word limit goal active: Use the target limit input box above to maintain steady pace as you write each section.'
+      'Introduction (~10%): Present topic context, scope, and your thesis statement concisely.',
+      'Body paragraphs (~80%): Dedicate roughly 150 to 220 words per paragraph to one clear analytical point.',
+      'Conclusion (~10%): Synthesize main findings and answer the prompt without adding new citations.',
+      'Check your department syllabus for whether citations and headings count toward your limit.',
     ],
     faqs: [
       {
-        question: 'How do I know how many words each essay section should be?',
-        answer: 'Use the standard 10-80-10 rule: 10% for Introduction, 80% for Body Paragraphs, and 10% for Conclusion. For example, a 1,500-word essay requires ~150 words for intro, ~1,200 words for body arguments, and ~150 words for the conclusion.'
+        question: 'How do I allocate words across essay sections?',
+        answer:
+          'Use the 10-80-10 guideline as a starting point: about 10% for the introduction, 80% for body paragraphs, and 10% for the conclusion, adjusted for any rubric instructions.',
       },
       {
         question: 'What happens if my essay exceeds the maximum word limit?',
-        answer: 'Most universities penalize essays exceeding the 10% threshold by deducting 1 to 5 marks per 100 words over, or professors may refuse to read and grade any text past the limit.'
+        answer:
+          'Many courses apply mark deductions past a +10% margin or stop grading after the word cutoff. Always verify your syllabus policy.',
       },
       {
-        question: 'Does the essay counter work for dissertation chapters?',
-        answer: 'Yes. You can paste individual chapters (such as Literature Review or Methodology, typically 3,000 to 5,000 words) and set custom word targets to monitor each chapter separately.'
+        question: 'Can I check individual thesis or dissertation chapters?',
+        answer:
+          'Yes. Paste any section such as your literature review or methodology chapter and enter that section word target.',
       },
       {
-        question: 'Can I copy my edited essay directly back to Microsoft Word or Google Docs?',
-        answer: 'Yes! Simply click the "Copy Text" button to copy your entire essay draft to your system clipboard, preserving line breaks and paragraph spacing.'
-      }
-    ]
+        question: 'Can I copy my edited essay back into Word or Google Docs?',
+        answer:
+          'Yes. Click Copy Text above the editor to copy your draft with line breaks intact.',
+      },
+    ],
   },
   paragraphCounter: {
     id: 'paragraph-counter',
     path: '/paragraph-counter',
     title: 'Paragraph Counter Online',
     metaTitle: 'Paragraph Counter Online – Count & Structure Paragraphs',
-    metaDescription: 'Free online paragraph counter. Count paragraphs, average words per paragraph, and improve the flow and structure of your academic assignments.',
+    metaDescription:
+      'Free online paragraph counter. Count paragraphs, average words per paragraph, and improve the structure of your academic assignments.',
     h1: 'Online Paragraph Counter & Structure Analyzer',
-    tagline: 'Track total paragraphs and ensure balanced academic argument chunks across essays and reports.',
+    tagline:
+      'Track total paragraphs and ensure balanced academic argument blocks across essays and reports.',
     highlightStat: 'paragraphs',
-    romanUrduTip: 'Paragraphs ki tadaad check karein. Bohat lambe paragraphs ko break karein taake examiner ko parhne mein asaani ho.',
+    romanUrduTip:
+      'Paragraphs ki tadaad check karein. Bohat lambay paragraphs ko break karein taake parhne mein asaani ho.',
     guideTitle: 'The Role of Effective Paragraphing in Assignment Grading',
     guideParagraphs: [
-      'In academic assessment, clear paragraphing is a direct indicator of logical thinking. Examiners look for focused thematic units where each paragraph begins with a clear topic sentence, provides cited evidence or data, analyzes the implications, and concludes with a transitional link to the next theme.',
-      'When students produce "mega-paragraphs" that span an entire page (over 350 words), examiners struggle to identify the main argument. Conversely, single-sentence paragraphs disrupt flow and signal undeveloped ideas. A healthy academic essay features paragraphs that average between 120 and 220 words.',
-      'Our Paragraph Counter automatically breaks your text down into discrete thematic blocks by tracking newline returns. By comparing your total word count with the paragraph count, you can instantly gauge your average words-per-paragraph metric and refine your assignment layout.'
+      'Clear paragraph breaks help examiners trace each step of your argument. Overly long paragraphs spanning 350+ words make evidence difficult to locate, while single-sentence paragraphs often feel underdeveloped.',
+      'Most academic essays read best when body paragraphs stay around 120 to 220 words, each focused on one claim supported by evidence and analysis.',
+      'Our Paragraph Counter counts non-empty text blocks separated by line breaks in real time inside your browser.',
     ],
     tipsTitle: 'Best Practices for Academic Paragraphing',
     tips: [
-      'Follow the PEEL model: Point (topic sentence), Evidence (quote/citation), Explanation (critical analysis), Link (connect to thesis).',
-      'Optimal length: Strive for 4 to 8 sentences per paragraph, roughly 120 to 200 words.',
-      'Break up text walls: If a paragraph fills more than two-thirds of a standard page, split it where a sub-argument begins.',
-      'One main idea: Never pack two competing arguments into the same paragraph; give each point its own dedicated space.'
+      'Follow the PEEL structure: Point, Evidence, Explanation, and Link back to your thesis.',
+      'Target roughly 120 to 200 words per analytical paragraph.',
+      'Split long walls of text where a new piece of evidence or counterpoint starts.',
+      'Reserve single-sentence transitions only where permitted by your discipline style.',
     ],
     faqs: [
       {
         question: 'How many paragraphs should a 1,000-word essay have?',
-        answer: 'A standard 1,000-word essay typically contains between 5 and 7 paragraphs: 1 introduction paragraph (100–120 words), 3 to 5 body paragraphs (150–200 words each), and 1 conclusion paragraph (100–120 words).'
+        answer:
+          'A typical 1,000-word essay contains about 6 to 8 paragraphs: an introduction, 4 to 6 body paragraphs of around 140 to 180 words each, and a conclusion.',
       },
       {
-        question: 'How does the tool distinguish between paragraphs?',
-        answer: 'The counter detects standard line breaks (Enter or Shift+Enter) separating text blocks, ignoring empty blank lines between them.'
+        question: 'How does the paragraph counter count paragraphs?',
+        answer:
+          'It counts non-empty text blocks separated by line breaks while ignoring blank spacing lines.',
       },
       {
-        question: 'Can a paragraph be only one sentence in an academic assignment?',
-        answer: 'In academic writing, one-sentence paragraphs should be avoided because a single sentence rarely provides sufficient evidence and critical analysis for an academic claim.'
+        question: 'Are one-sentence paragraphs acceptable in university essays?',
+        answer:
+          'Generally avoid one-sentence paragraphs in formal essays because a single sentence rarely provides sufficient claim, evidence, and analysis.',
       },
       {
-        question: 'Why do examiners complain about long paragraphs?',
-        answer: 'Long paragraphs burden the reader with multiple ideas at once, making it difficult to award marks for specific criteria in the assessment rubric.'
-      }
-    ]
+        question: 'Why do markers comment on long paragraphs?',
+        answer:
+          'Dense multi-topic paragraphs blend separate arguments together, making it harder for readers to follow your reasoning.',
+      },
+    ],
   },
   readingTimeCalculator: {
     id: 'reading-time-calculator',
     path: '/reading-time-calculator',
     title: 'Reading Time Calculator',
-    metaTitle: 'Reading Time Calculator – Reading & Speaking Speed',
-    metaDescription: 'Free reading time calculator for students and speakers. Estimate silent reading time (~200 wpm) and presentation speaking time (~130 wpm).',
-    h1: 'Online Reading Time & Presentation Speaking Calculator',
-    tagline: 'Estimate silent reading time and oral presentation delivery time for your assignments and defense slides.',
+    metaTitle: 'Reading Time Calculator – Estimate Silent Reading Duration',
+    metaDescription:
+      'Free reading time calculator for students. Estimate silent reading time across slow (~150 WPM), average (~200 WPM), and fast (~250 WPM) reading speeds.',
+    h1: 'Online Reading Time Calculator',
+    tagline:
+      'Estimate silent reading duration by pasting text or entering a word count across slow, average, and fast reading speeds.',
     highlightStat: 'readingTime',
-    romanUrduTip: 'Apni speech ya presentation ka andazan waqt dekhein. Silent reading ~200 words/min aur bolne ka standard andaza ~130 words/min hota hai.',
-    guideTitle: 'How to Time Academic Readings, Speeches, and Presentations',
+    romanUrduTip:
+      'Apne essay ya article ko parhne ka andazan waqt dekhein. Aam silent reading speed taqreeban 200 words per minute hoti hai.',
+    guideTitle: 'How Reading Time Estimates Work for Study Planning',
     guideParagraphs: [
-      'In academic environments, students frequently need to estimate how long a research paper or essay takes to read, or calibrate an oral presentation for a strict seminar slot. Delivering an assignment viva, conference presentation, or thesis defense requires careful pacing so you do not exceed your allocated time limit or rush through complex data.',
-      'Silent reading speed differs substantially from spoken verbal delivery. As a general estimate, adults often read silently at roughly 200 to 250 words per minute (WPM), while natural, articulate academic speech often falls near 130 to 140 words per minute—though real times vary by person, familiarity with the topic, and delivery style.',
-      'Our Reading Time Calculator displays standard estimates for both metrics simultaneously: silent reading time using ~200 WPM and speaking time using ~130 WPM as baseline planning guides.'
+      'Estimating reading time helps students budget study sessions before seminars and lets writers gauge how long a blog guide or report feels to read.',
+      'Silent adult reading speeds commonly range around 200 words per minute for general prose, slower (~150 WPM) for dense technical or legal material, and faster (~250 to 300 WPM) when skimming familiar topics.',
+      'Use either pasted text or a direct word count to compare reading durations across multiple speeds.',
     ],
-    tipsTitle: 'Presentation Timing Rules of Thumb',
+    tipsTitle: 'Reading Speed Planning Tips',
     tips: [
-      '5-minute presentation: Aim for 600 to 650 spoken words total to allow time for slide transitions and emphasis.',
-      '10-minute presentation: Write between 1,200 and 1,300 words for your spoken script.',
-      'Allow Q&A buffer: Always finish your oral delivery 1 to 2 minutes before the strict session cutoff.',
-      'Practice with pauses: Intersperse deliberate 2-second pauses after introducing key equations, charts, or quotes.'
+      'Use ~150 WPM when scheduling reading time for technical, scientific, or statutory texts.',
+      'Use ~200 WPM as a general planning average for essays, articles, and coursework.',
+      'Include extra margin when taking notes, highlighting citations, or translating vocabulary.',
+      'Switch to the Speech Time Calculator when preparing an oral presentation or viva.',
     ],
     faqs: [
       {
-        question: 'What reading speed is used to estimate reading time?',
-        answer: 'Our calculator uses a standard planning estimate of about 200 words per minute (WPM) for silent reading, though individual reading speed varies by person and text complexity.'
+        question: 'What reading speed is used as the default estimate?',
+        answer:
+          'The default baseline uses about 200 words per minute (WPM), while also letting you compare slower (~150 WPM), faster (~250 WPM), or custom speeds.',
       },
       {
-        question: 'What speaking speed is used for presentations and speeches?',
-        answer: 'We estimate speaking time using a standard rate of about 130 words per minute (WPM), a common planning benchmark for presentations that still varies by speaker and pacing.'
+        question: 'How long does it take to read 1,000 words silently?',
+        answer:
+          'At an average speed of about 200 WPM, reading 1,000 words silently takes approximately 5 minutes. Dense academic papers can take 6 to 8 minutes.',
       },
       {
-        question: 'How many words can I speak in a 10-minute university presentation?',
-        answer: 'At an optimal speaking rate of 130 WPM, a 10-minute presentation corresponds to approximately 1,200 to 1,300 words. Leaving 100 words of buffer ensures you do not get cut off by the session chair.'
+        question: 'Is silent reading faster than reading aloud?',
+        answer:
+          'Yes. Silent reading typically runs about 200 to 250 WPM, whereas clear oral speech typically averages about 120 to 150 WPM.',
       },
       {
-        question: 'Does technical or mathematical terminology affect reading time?',
-        answer: 'Yes. Heavily mathematical, medical, or legal texts often require slower reading (around 150 WPM) for full comprehension. You should allow 20% extra time when presenting highly technical material.'
-      }
-    ]
-  }
+        question: 'Can I calculate reading time without pasting my entire text?',
+        answer:
+          'Yes. Switch to the Word Count tab on the Reading Time Calculator to enter any numeric word count directly.',
+      },
+    ],
+  },
 };

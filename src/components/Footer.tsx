@@ -1,132 +1,157 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, ShieldCheck, Heart, Sparkles, BookOpen } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Brand Info */}
-          <div className="space-y-4 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-lg">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm">
-                <FileText className="w-4 h-4" />
-              </div>
-              <span className="text-blue-600 dark:text-blue-400 font-extrabold text-base">
-                Word Counter<span className="text-slate-900 dark:text-white"> for Assignment</span>
-              </span>
+    <footer className="mt-20 border-t border-zinc-200 bg-zinc-50 text-zinc-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+          {/* Brand Summary */}
+          <div className="space-y-3">
+            <Link to="/" className="text-base font-extrabold tracking-tight text-zinc-950 block">
+              Word Counter for Assignment
             </Link>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              A free, privacy-first text analysis suite engineered for students, researchers, and essay writers. Supports English, Urdu, and Roman Urdu.
+            <p className="text-xs text-zinc-600 leading-relaxed">
+              Free online word counting and academic writing calculators for students, teachers, and researchers in English, Urdu, and Roman Urdu. All text runs directly in your browser.
             </p>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-medium border border-emerald-200 dark:border-emerald-800/60">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>100% Client-Side • Zero Data Uploaded</span>
-            </div>
           </div>
 
-          {/* Quick Counter Tools */}
+          {/* Core & Language Counters */}
           <div>
-            <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">
-              Core Counters
+            <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-950 mb-3">
+              Counters &amp; Language Tools
             </h3>
-            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+            <ul className="space-y-2 text-sm text-zinc-600">
               <li>
-                <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Word Counter for Assignment
+                <Link to="/" className="hover:text-zinc-950 hover:underline">
+                  Word Counter for Assignments
                 </Link>
               </li>
               <li>
-                <a href="/character-counter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Character Counter Online
+                <a href="/urdu-word-counter/" className="hover:text-zinc-950 hover:underline">
+                  Urdu Word Counter
                 </a>
               </li>
               <li>
-                <a href="/urdu-word-counter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1.5">
-                  <span>Urdu Word Counter</span>
-                  <span className="text-[10px] bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-1 rounded">اردو</span>
+                <Link to="/roman-urdu-word-counter/" className="hover:text-zinc-950 hover:underline">
+                  Roman Urdu Word Counter
+                </Link>
+              </li>
+              <li>
+                <a href="/character-counter/" className="hover:text-zinc-950 hover:underline">
+                  Character Counter
                 </a>
               </li>
               <li>
-                <a href="/paragraph-counter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/paragraph-counter/" className="hover:text-zinc-950 hover:underline">
                   Paragraph Counter
                 </a>
+              </li>
+              <li>
+                <Link to="/sentence-counter/" className="hover:text-zinc-950 hover:underline">
+                  Sentence Counter
+                </Link>
+              </li>
+              <li>
+                <Link to="/line-counter/" className="hover:text-zinc-950 hover:underline">
+                  Line Counter
+                </Link>
+              </li>
+              <li>
+                <Link to="/unique-word-counter/" className="hover:text-zinc-950 hover:underline">
+                  Unique Word Counter
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Academic Calculators & Blog */}
+          {/* Calculators & Document Tools */}
           <div>
-            <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">
-              Calculators &amp; Blog
+            <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-950 mb-3">
+              Calculators &amp; Guides
             </h3>
-            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+            <ul className="space-y-2 text-sm text-zinc-600">
               <li>
-                <a href="/words-to-pages-converter/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/words-to-pages-converter/" className="hover:text-zinc-950 hover:underline">
                   Words to Pages Converter
                 </a>
               </li>
               <li>
-                <a href="/blog/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-blue-600 dark:text-blue-400 flex items-center gap-1">
-                  <BookOpen className="w-3.5 h-3.5" />
-                  <span>All Blog Guides</span>
+                <Link to="/assignment-word-limit-calculator/" className="hover:text-zinc-950 hover:underline">
+                  Assignment Word Limit Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/reading-time-calculator/" className="hover:text-zinc-950 hover:underline">
+                  Reading Time Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/speech-time-calculator/" className="hover:text-zinc-950 hover:underline">
+                  Speech Time Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/words-per-minute-calculator/" className="hover:text-zinc-950 hover:underline">
+                  Words Per Minute Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/pdf-word-counter/" className="hover:text-zinc-950 hover:underline">
+                  PDF Word Counter
+                </Link>
+              </li>
+              <li>
+                <a href="/blog/" className="hover:text-zinc-950 hover:underline font-medium text-zinc-900">
+                  Academic Writing Blog
                 </a>
               </li>
               <li>
-                <a href="/blog/assignment-word-count-guide.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/blog/assignment-word-count-guide.html" className="hover:text-zinc-950 hover:underline">
                   Assignment Word Count Guide
-                </a>
-              </li>
-              <li>
-                <a href="/blog/how-to-count-words-in-urdu.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Urdu Word Count Guide
-                </a>
-              </li>
-              <li>
-                <a href="/blog/how-many-pages-is-1000-words.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  How Many Pages Is 1,000 Words?
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Legal & About */}
+          {/* Trust & Legal */}
           <div>
-            <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">
-              About & Trust
+            <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-950 mb-3">
+              Information &amp; Trust
             </h3>
-            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+            <ul className="space-y-2 text-sm text-zinc-600">
               <li>
-                <a href="/about/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/about/" className="hover:text-zinc-950 hover:underline">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/contact/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Contact Support
+                <a href="/contact/" className="hover:text-zinc-950 hover:underline">
+                  Contact Us
                 </a>
               </li>
               <li>
-                <a href="/privacy-policy/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/privacy-policy/" className="hover:text-zinc-950 hover:underline">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/terms/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Terms of Service
+                <a href="/terms/" className="hover:text-zinc-950 hover:underline">
+                  Terms &amp; Conditions
                 </a>
+              </li>
+              <li>
+                <Link to="/disclaimer/" className="hover:text-zinc-950 hover:underline">
+                  Disclaimer
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 dark:text-slate-500">
-          <p>© {new Date().getFullYear()} Word Counter for Assignment. Free for students worldwide.</p>
-          <p className="flex items-center gap-1">
-            <span>Crafted for English, Urdu & Roman Urdu students</span>
-          </p>
+        <div className="pt-6 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500">
+          <p>&copy; {new Date().getFullYear()} Word Counter for Assignment. Free for students, teachers, and writers.</p>
+          <p>Client-side browser processing for text privacy.</p>
         </div>
       </div>
     </footer>

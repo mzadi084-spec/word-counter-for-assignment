@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    background-color: #ffffff;
+    color: #0a0a0a;
+  }
+
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #0a0a0a;
   }
 
   .urdu-text {
     font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', Tahoma, sans-serif;
     line-height: 2.2;
   }
+
+  .font-mono-num {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
 }
 
-/* Custom scrollbar and focus styles */
+/* Crisp black accessibility focus outline */
 :focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #0a0a0a;
   outline-offset: 2px;
 }

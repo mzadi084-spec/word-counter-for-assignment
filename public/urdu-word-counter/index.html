@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Urdu Word Counter – Free Online Text & Word Counter</title>
-    <meta name="description" content="Urdu word counter for assignments, essays, and Urdu poetry. Count words, characters, sentences, and paragraphs in Urdu, English, and Roman Urdu online for free." />
+    <title>Urdu Word Counter (اردو ورڈ کاؤنٹر) – Free Online Text &amp; Word Counter</title>
+    <meta name="description" content="Urdu word counter (اردو ورڈ کاؤنٹر) for assignments, essays, and Urdu poetry (شاعری). Count words, characters, sentences, and paragraphs in Urdu, English, and Roman Urdu online." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://wordcounterforassignment.com/urdu-word-counter/" />
-    <meta property="og:title" content="Urdu Word Counter – Free Online Text & Word Counter" />
-    <meta property="og:description" content="Urdu word counter for assignments, essays, and Urdu poetry. Count words, characters, sentences, and paragraphs in Urdu, English, and Roman Urdu online for free." />
+    <meta property="og:title" content="Urdu Word Counter (اردو ورڈ کاؤنٹر) – Free Online Text &amp; Word Counter" />
+    <meta property="og:description" content="Urdu word counter (اردو ورڈ کاؤنٹر) for assignments, essays, and Urdu poetry (شاعری). Count words, characters, sentences, and paragraphs in Urdu, English, and Roman Urdu online." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://wordcounterforassignment.com/urdu-word-counter/" />
     <meta property="og:site_name" content="Word Counter for Assignment" />
@@ -16,8 +16,8 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Urdu Word Counter – Free Online Text & Word Counter" />
-    <meta name="twitter:description" content="Urdu word counter for assignments, essays, and Urdu poetry. Count words, characters, sentences, and paragraphs in Urdu, English, and Roman Urdu online for free." />
+    <meta name="twitter:title" content="Urdu Word Counter (اردو ورڈ کاؤنٹر) – Free Online Text &amp; Word Counter" />
+    <meta name="twitter:description" content="Urdu word counter (اردو ورڈ کاؤنٹر) for assignments, essays, and Urdu poetry (شاعری). Count words, characters, sentences, and paragraphs in Urdu, English, and Roman Urdu online." />
     <meta name="twitter:image" content="https://wordcounterforassignment.com/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,7 @@
               "name": "Are my Urdu essays or assignment drafts uploaded to any server?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. All text processing occurs 100% within your web browser using client-side JavaScript. Your confidential essays and drafts are never transmitted over the internet or saved to external databases."
+                "text": "No. Counting runs locally inside your browser using client-side JavaScript, with no draft submission form or server database storing your essays."
               }
             },
             {
@@ -100,25 +100,16 @@
       :root {
         --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         --font-urdu: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', serif;
-        --color-primary: #2563eb;
-        --color-primary-hover: #1d4ed8;
-        --bg-page: #f8fafc;
+        --color-primary: #0a0a0a;
+        --color-primary-hover: #27272a;
+        --bg-page: #ffffff;
         --bg-card: #ffffff;
-        --text-main: #0f172a;
-        --text-muted: #475569;
-        --border-color: #e2e8f0;
-        --stat-bg: #f1f5f9;
+        --text-main: #0a0a0a;
+        --text-muted: #52525b;
+        --border-color: #e4e4e7;
+        --stat-bg: #fafafa;
       }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-page: #020617;
-          --bg-card: #0f172a;
-          --text-main: #f8fafc;
-          --text-muted: #94a3b8;
-          --border-color: #1e293b;
-          --stat-bg: #1e293b;
-        }
-      }
+
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
         font-family: var(--font-sans);
@@ -185,14 +176,12 @@
       }
       .badge {
         display: inline-block;
-        padding: 0.25rem 0.75rem;
+        padding: 0;
         font-size: 0.75rem;
-        font-weight: 700;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        background: rgba(37, 99, 235, 0.1);
-        color: var(--color-primary);
-        border-radius: 9999px;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
         margin-bottom: 0.5rem;
       }
       h1 {
@@ -212,9 +201,9 @@
         text-align: left;
         max-width: 760px;
         margin: 1rem auto 1rem;
-        background: rgba(37, 99, 235, 0.06);
-        border: 1px solid rgba(37, 99, 235, 0.25);
-        border-left: 4px solid var(--color-primary);
+        background: #fafafa;
+        border: 1px solid #0a0a0a;
+        border: 1px solid var(--border-color);
         border-radius: 0.75rem;
         padding: 0.95rem 1.2rem;
         font-size: 0.95rem;
@@ -244,7 +233,7 @@
       }
       .stat-card.highlight {
         border-color: var(--color-primary);
-        background: rgba(37, 99, 235, 0.07);
+        background: #fafafa;
       }
       .stat-value {
         font-size: 1.65rem;
@@ -281,7 +270,7 @@
       }
       textarea:focus {
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.12);
       }
       .btn-row {
         display: flex;
@@ -357,8 +346,8 @@
         margin-bottom: 0.4rem;
       }
       .callout {
-        background: rgba(37, 99, 235, 0.06);
-        border-left: 4px solid var(--color-primary);
+        background: #fafafa;
+        border: 1px solid var(--border-color);
         padding: 1rem 1.25rem;
         border-radius: 0.5rem;
         margin: 1.25rem 0;
@@ -447,6 +436,8 @@
           <a href="/words-to-pages-converter/">Words to Pages</a>
           <a href="/character-counter/">Character Counter</a>
           <a href="/paragraph-counter/">Paragraph Counter</a>
+          <a href="/roman-urdu-word-counter/">Roman Urdu</a>
+          <a href="/pdf-word-counter/">PDF Counter</a>
           <a href="/blog/">Blog</a>
         </nav>
       </div>
@@ -456,7 +447,7 @@
       <div class="hero">
         <span class="badge">Bilingual Academic Writing Tool</span>
         <h1>Urdu Word Counter for Assignments & Essays</h1>
-        <p class="quick-answer"><strong>Quick answer:</strong> Paste or type Urdu, English, or Roman Urdu text below to count words, characters (with and without spaces), sentences, and paragraphs instantly inside your browser. The counter splits Urdu script cleanly, recognizes Khatma (۔) and Sawalia (؟) sentence marks, and keeps your drafts completely private on your device.</p>
+        <p class="quick-answer"><strong>Quick answer:</strong> Paste or type Urdu (اردو), Urdu poetry (شاعری / غزل), English, or mixed Roman Urdu text below to count words, characters (with and without spaces), sentences, and paragraphs inside your browser. The counter splits Urdu script cleanly, recognizes Khatma (۔) and Sawalia (؟) sentence marks, and runs counting locally inside your browser memory.</p>
         <p class="subtitle">Live word, character, sentence, and paragraph counter with native Nastaliq font support and full punctuation recognition for Urdu (۔ ، ؟), English, and Roman Urdu.</p>
       </div>
 
@@ -524,12 +515,12 @@
         <p>Standard word processors frequently miscalculate Urdu sentences because they only recognize Western periods (<code>.</code>), exclamation points (<code>!</code>), and question marks (<code>?</code>). In Urdu typography, the Khatma (<code>۔</code>) marks the end of a sentence, and the Sawalia Nishan (<code>؟</code>) marks a question. Our tool is specifically programmed to recognize both Western and Urdu punctuation marks so sentence and paragraph statistics stay reliable for coursework.</p>
 
         <div class="callout">
-          <strong>Need an English assignment counter or specialized checker?</strong> Check our <a href="/" style="color:var(--color-primary); font-weight:700;">Free word counter for assignments</a> for English essays and target word limits, our <a href="/character-counter/" style="color:var(--color-primary); font-weight:700;">character counter</a> for form limits, or our <a href="/paragraph-counter/" style="color:var(--color-primary); font-weight:700;">paragraph counter</a> for essay structure.
+          <strong>Need a Roman Urdu or English counter?</strong> Try our dedicated <a href="/roman-urdu-word-counter/" style="color:var(--color-primary); font-weight:700;">Roman Urdu Word Counter</a> for Latin-script Urdu assignments, our <a href="/" style="color:var(--color-primary); font-weight:700;">Free word counter for assignments</a> for English essays and target limits, our <a href="/character-counter/" style="color:var(--color-primary); font-weight:700;">character counter</a>, or our <a href="/paragraph-counter/" style="color:var(--color-primary); font-weight:700;">paragraph counter</a>.
         </div>
 
         <h2>Differences Between Urdu and English Word Counting</h2>
-        <p>In Urdu, words are formed using Arabic-derived Nastaliq script where letters join together in calligraphic ligatures. Some compound words (like "وزیراعظم" or "دارالحکومت") may be written with zero-width non-joiners or standard spaces depending on the author's keyboard layout. Our algorithm carefully splits tokens using standard Unicode whitespace boundaries to ensure consistent, fair academic counting across all keyboards.</p>
-        <p>For Roman Urdu (Urdu written in the Latin alphabet, such as "kya hal hai"), words are separated by standard spaces. Our counter handles Roman Urdu seamlessly without stripping essential letters, making it the ideal companion for student essays, WhatsApp study groups, and digital coursework.</p>
+        <p>In Urdu, words are formed using Arabic-derived Nastaliq script where letters join together in calligraphic ligatures. Some compound words (like "وزیراعظم" or "دارالحکومت") may be written with zero-width non-joiners or standard spaces depending on the author's keyboard layout. Our algorithm splits tokens using standard Unicode boundaries for consistent academic counting across keyboards. For Urdu poetry (شاعری / غزل), placing each couplet line (مصرع) on a new line counts words accurately across verses while separating lines for sentence/couplet pacing.</p>
+        <p>For Roman Urdu (Urdu written in the Latin alphabet, such as "kya hal hai"), words are separated by standard spaces. Use this tool for mixed Urdu-English scripts, or switch to our <a href="/roman-urdu-word-counter/" style="color:var(--color-primary); font-weight:600;">Roman Urdu Word Counter</a> for dedicated Roman Urdu coursework.</p>
 
         <h2>Frequently Asked Questions (FAQ)</h2>
         <div class="faq-card">
@@ -543,7 +534,7 @@
           </details>
           <details>
             <summary>Are my Urdu essays or assignment drafts uploaded to any server?</summary>
-            <p>No. All text processing occurs 100% within your web browser using client-side JavaScript. Your confidential essays and drafts are never transmitted over the internet or saved to external databases.</p>
+            <p>No. Counting runs locally inside your browser using client-side JavaScript, with no draft submission form or server database storing your essays.</p>
           </details>
           <details>
             <summary>Why does Urdu sentence counting need special punctuation marks like Khatma (۔)?</summary>
@@ -569,7 +560,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h4>Word Counter for Assignment</h4>
-          <p style="font-size:0.85rem; line-height:1.5;">Free, privacy-first academic writing tools for students in English, Urdu, and Roman Urdu. Processed 100% in your browser.</p>
+          <p style="font-size:0.85rem; line-height:1.5;">Free academic writing tools for students in English, Urdu, and Roman Urdu. Processed locally in your browser.</p>
         </div>
         <div class="footer-col">
           <h4>Core Tools</h4>
@@ -579,6 +570,9 @@
             <li><a href="/words-to-pages-converter/">Words to Pages Converter</a></li>
             <li><a href="/character-counter/">Character Counter Online</a></li>
             <li><a href="/paragraph-counter/">Paragraph Counter</a></li>
+            <li><a href="/roman-urdu-word-counter/">Roman Urdu Word Counter</a></li>
+            <li><a href="/assignment-word-limit-calculator/">Word Limit Calculator</a></li>
+            <li><a href="/pdf-word-counter/">PDF Word Counter</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -589,6 +583,7 @@
             <li><a href="/contact/">Contact</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
             <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
           </ul>
         </div>
       </div>

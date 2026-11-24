@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy – Word Counter for Assignment</title>
-    <meta name="description" content="Read our privacy policy. Word Counter for Assignment runs 100% in your browser. We never store, transmit, or read your assignment drafts or private text." />
+    <meta name="description" content="Read our privacy policy. Word Counter for Assignment processes pasted text and selected PDF files locally in your browser without storing drafts in an application database." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://wordcounterforassignment.com/privacy-policy/" />
     <meta property="og:title" content="Privacy Policy – Word Counter for Assignment" />
-    <meta property="og:description" content="Read our privacy policy. Word Counter for Assignment runs 100% in your browser. We never store, transmit, or read your assignment drafts or private text." />
+    <meta property="og:description" content="Read our privacy policy. Word Counter for Assignment processes pasted text and selected PDF files locally in your browser without storing drafts in an application database." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://wordcounterforassignment.com/privacy-policy/" />
     <meta property="og:site_name" content="Word Counter for Assignment" />
@@ -17,7 +17,7 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Privacy Policy – Word Counter for Assignment" />
-    <meta name="twitter:description" content="Read our privacy policy. Word Counter for Assignment runs 100% in your browser. We never store, transmit, or read your assignment drafts or private text." />
+    <meta name="twitter:description" content="Read our privacy policy. Word Counter for Assignment processes pasted text and selected PDF files locally in your browser without storing drafts in an application database." />
     <meta name="twitter:image" content="https://wordcounterforassignment.com/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
           "@type": "WebPage",
           "name": "Privacy Policy – Word Counter for Assignment",
           "url": "https://wordcounterforassignment.com/privacy-policy/",
-          "description": "Read our privacy policy. Word Counter for Assignment runs 100% in your browser. We never store, transmit, or read your assignment drafts or private text."
+          "description": "Read our privacy policy. Word Counter for Assignment processes pasted text and selected PDF files locally in your browser without storing drafts in an application database."
         },
         {
           "@type": "BreadcrumbList",
@@ -55,25 +55,16 @@
     <style>
       :root {
         --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        --color-primary: #2563eb;
-        --color-primary-hover: #1d4ed8;
-        --bg-page: #f8fafc;
+        --color-primary: #0a0a0a;
+        --color-primary-hover: #27272a;
+        --bg-page: #ffffff;
         --bg-card: #ffffff;
-        --text-main: #0f172a;
-        --text-muted: #475569;
-        --border-color: #e2e8f0;
-        --stat-bg: #f1f5f9;
+        --text-main: #0a0a0a;
+        --text-muted: #52525b;
+        --border-color: #e4e4e7;
+        --stat-bg: #fafafa;
       }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-page: #020617;
-          --bg-card: #0f172a;
-          --text-main: #f8fafc;
-          --text-muted: #94a3b8;
-          --border-color: #1e293b;
-          --stat-bg: #1e293b;
-        }
-      }
+
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
         font-family: var(--font-sans);
@@ -136,14 +127,12 @@
       }
       .badge {
         display: inline-block;
-        padding: 0.25rem 0.75rem;
+        padding: 0;
         font-size: 0.75rem;
-        font-weight: 700;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        background: rgba(37, 99, 235, 0.1);
-        color: var(--color-primary);
-        border-radius: 9999px;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
         margin-bottom: 0.5rem;
       }
       h1 {
@@ -162,8 +151,8 @@
         margin-bottom: 2rem;
       }
       .privacy-highlight {
-        background: rgba(16, 185, 129, 0.08);
-        border-left: 4px solid #10b981;
+        background: #fafafa;
+        border: 1px solid #0a0a0a;
         padding: 1.25rem;
         border-radius: 0.5rem;
         margin: 1.5rem 0;
@@ -250,6 +239,8 @@
           <a href="/words-to-pages-converter/">Words to Pages</a>
           <a href="/character-counter/">Character Counter</a>
           <a href="/paragraph-counter/">Paragraph Counter</a>
+          <a href="/roman-urdu-word-counter/">Roman Urdu</a>
+          <a href="/pdf-word-counter/">PDF Counter</a>
           <a href="/blog/">Blog</a>
         </nav>
       </div>
@@ -260,28 +251,31 @@
       <h1>Privacy Policy</h1>
 
       <div class="content-card">
-        <p><strong>Last Updated:</strong> November 14, 2026<br /><strong>Website:</strong> https://wordcounterforassignment.com</p>
+        <p><strong>Last Updated:</strong> November 22, 2026<br /><strong>Website:</strong> https://wordcounterforassignment.com</p>
 
         <div class="privacy-highlight">
-          Zero Server Processing: Text you type or paste into Word Counter for Assignment is processed exclusively in your web browser using local JavaScript. Your assignment drafts, essays, and notes are never stored, sent to any server, or accessible to us or any third party.
+          Client-Side Processing: Text you type or paste and PDF files you select on Word Counter for Assignment are computed locally in your web browser via JavaScript and PDF.js, without an application draft-upload API or user database storing your documents.
         </div>
 
         <h2>1. Text Content Privacy (Client-Side Processing)</h2>
-        <p>We respect the confidentiality of your academic work. When you use any of our counting tools (including the Main Word Counter, Urdu Word Counter, Words to Pages Converter, Character Counter, or Paragraph Counter), all calculations take place locally inside your computer or mobile device's browser memory.</p>
+        <p>We respect the confidentiality of your academic work. When you use any of our counting tools (including the Main Word Counter, Urdu Word Counter, Roman Urdu Word Counter, Words to Pages Converter, Character Counter, Paragraph Counter, Sentence Counter, Line Counter, Unique Word Counter, or Calculators), all calculations take place locally inside your computer or mobile device's browser memory.</p>
         <p>We do not operate backend databases or server-side APIs that receive, log, parse, or store the contents of your assignments, essays, or personal writings.</p>
 
-        <h2>2. Local Browser Storage &amp; No Tracking Ads</h2>
-        <p>We do not run behavioral ad networks, advertising trackers, or analytics scripts that monitor what you type into our tools. Your browser may remember basic display settings locally so pages load cleanly across visits. You can clear site storage or disable cookies through your browser settings at any time without impacting core word counting features.</p>
+        <h2>2. Client-Side PDF Processing</h2>
+        <p>Our PDF Word Counter parses selectable text layers directly on your device using browser-side PDF.js, parsed locally inside browser memory without submitting your PDF to a conversion backend.</p>
 
-        <h2>3. Standard Hosting Logs &amp; External Links</h2>
-        <p>Like standard static websites, routine server logs may record technical request metadata (such as requested page path, timestamp, and browser type) strictly for security and uptime monitoring. None of the text you enter in any counter is included in those requests.</p>
+        <h2>3. Cookies, Advertising &amp; Third-Party Services</h2>
+        <p>If Google AdSense or similar third-party advertising networks are enabled in the future to support free educational access, those third-party vendors may use cookies or standard web identifiers to serve relevant ads in accordance with Google&rsquo;s advertising policies. You can manage or disable cookies through your browser settings at any time without impacting core word counting features.</p>
+
+        <h2>4. Standard Hosting Logs &amp; External Links</h2>
+        <p>Like standard static websites, routine server logs may record technical request metadata (such as requested page path, timestamp, and browser type) strictly for security and uptime monitoring. None of the text you enter in any counter or upload to the PDF tool is included in those requests.</p>
         <p>Our website and blog articles may contain links to university style guides, academic writing resources, and citation manuals. We are not responsible for the privacy practices or content of third-party external websites.</p>
 
-        <h2>4. Children's Online Privacy</h2>
+        <h2>5. Children's Online Privacy</h2>
         <p>Word Counter for Assignment is intended for general student and educational audiences. We do not require accounts or knowingly collect any personally identifiable information from children under the age of 13.</p>
 
-        <h2>5. Contact Regarding Privacy</h2>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please email <a href="mailto:mzadi084@gmail.com" style="color:var(--color-primary); font-weight:600;">mzadi084@gmail.com</a> or visit our <a href="/contact/" style="color:var(--color-primary); font-weight:600;">Contact page</a>. You can also learn more about the maintainer on our <a href="/about/" style="color:var(--color-primary); font-weight:600;">About page</a> and review our <a href="/terms/" style="color:var(--color-primary); font-weight:600;">Terms of Service</a>.</p>
+        <h2>6. Contact Regarding Privacy</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please email <a href="mailto:mzadi084@gmail.com" style="color:var(--color-primary); font-weight:600;">mzadi084@gmail.com</a> or visit our <a href="/contact/" style="color:var(--color-primary); font-weight:600;">Contact page</a>. You can also learn more about the maintainer on our <a href="/about/" style="color:var(--color-primary); font-weight:600;">About page</a>, review our <a href="/terms/" style="color:var(--color-primary); font-weight:600;">Terms of Service</a>, and read our <a href="/disclaimer/" style="color:var(--color-primary); font-weight:600;">Disclaimer</a>.</p>
       </div>
     </main>
 
@@ -289,7 +283,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h4>Word Counter for Assignment</h4>
-          <p style="font-size:0.85rem; line-height:1.5;">Free, privacy-first academic writing tools for students in English, Urdu, and Roman Urdu. Processed 100% in your browser.</p>
+          <p style="font-size:0.85rem; line-height:1.5;">Free academic writing tools for students in English, Urdu, and Roman Urdu. Processed locally in your browser.</p>
         </div>
         <div class="footer-col">
           <h4>Core Tools</h4>
@@ -299,6 +293,9 @@
             <li><a href="/words-to-pages-converter/">Words to Pages Converter</a></li>
             <li><a href="/character-counter/">Character Counter Online</a></li>
             <li><a href="/paragraph-counter/">Paragraph Counter</a></li>
+            <li><a href="/roman-urdu-word-counter/">Roman Urdu Word Counter</a></li>
+            <li><a href="/assignment-word-limit-calculator/">Word Limit Calculator</a></li>
+            <li><a href="/pdf-word-counter/">PDF Word Counter</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -309,6 +306,7 @@
             <li><a href="/contact/">Contact</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
             <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
           </ul>
         </div>
       </div>

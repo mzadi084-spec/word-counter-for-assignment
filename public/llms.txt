@@ -1,28 +1,55 @@
 # Word Counter for Assignment
 
-> Free, browser-based word counter and academic writing tools for students in English, Urdu, and Roman Urdu.
+> Free, browser-based word counter and academic writing tools for students in English, Urdu, and Roman Urdu. Processed locally in the browser.
 
 ## Main Tool Pages
 
-- [Word Counter for Assignment](https://wordcounterforassignment.com/): Live word, character, sentence, and paragraph counter with target word limit tracking and reading/speaking time estimates.
-- [Urdu Word Counter](https://wordcounterforassignment.com/urdu-word-counter/): Counts Urdu, Roman Urdu, and English words, characters, sentences (including ۔ and ؟), and paragraphs.
-- [Words to Pages Converter](https://wordcounterforassignment.com/words-to-pages-converter/): Converts word counts to pages and pages to words across standard academic fonts, line spacing, and handwriting estimates.
+- [Word Counter for Assignment](https://wordcounterforassignment.com/): Main tool with live words, characters with and without spaces, sentences, paragraphs, target word limit tracker, and reading/speaking time estimates.
+- [Urdu Word Counter](https://wordcounterforassignment.com/urdu-word-counter/): Counts Urdu Nastaliq, Roman Urdu, and English words, characters, sentences (including ۔ and ؟), and paragraphs.
+- [Roman Urdu Word Counter](https://wordcounterforassignment.com/roman-urdu-word-counter/): Counts Roman Urdu and bilingual English text with Roman Urdu marker detection and readability metrics.
+- [Words to Pages Converter](https://wordcounterforassignment.com/words-to-pages-converter/): Estimates single-spaced, double-spaced, and handwritten A4 page counts from word totals and vice versa.
 - [Character Counter](https://wordcounterforassignment.com/character-counter/): Counts characters with and without spaces, words, and lines with preset character limit trackers.
-- [Paragraph Counter](https://wordcounterforassignment.com/paragraph-counter/): Counts paragraphs, sentences, words, characters, and average words per paragraph for essays and assignments.
+- [Paragraph Counter](https://wordcounterforassignment.com/paragraph-counter/): Counts paragraphs, sentences, words, characters, and average words per paragraph.
+- [Sentence Counter](https://wordcounterforassignment.com/sentence-counter/): Counts sentences, average words per sentence, and displays sentence-by-sentence length analysis.
+- [Essay Word Counter](https://wordcounterforassignment.com/essay-word-counter/): Track essay target limits, paragraph spacing, and introduction/body/conclusion proportions.
+- [Reading Time Calculator](https://wordcounterforassignment.com/reading-time-calculator/): Estimates silent reading duration from pasted text or numeric word counts across WPM presets.
+- [Speech Time Calculator](https://wordcounterforassignment.com/speech-time-calculator/): Estimates viva, seminar, and presentation duration with Q&A buffer options.
+- [Assignment Word Limit Calculator](https://wordcounterforassignment.com/assignment-word-limit-calculator/): Computes university 0%, ±5%, ±10%, or custom tolerance ranges and 10-80-10 section word budgets.
+- [Words Per Minute Calculator](https://wordcounterforassignment.com/words-per-minute-calculator/): Calculates reading or typing WPM speed with a live browser timer.
+- [Line Counter](https://wordcounterforassignment.com/line-counter/): Counts total, non-empty, and blank lines with longest line stats and one-click blank-line removal.
+- [Unique Word Counter](https://wordcounterforassignment.com/unique-word-counter/): Measures lexical diversity, single-use words, and searchable word frequencies.
+- [PDF Word Counter](https://wordcounterforassignment.com/pdf-word-counter/): Extracts embedded text layers from PDF documents locally inside the browser and reports page-by-page word totals.
 
-## Blog Posts
+## Blog Guides
 
-- [Academic Writing & Word Count Blog](https://wordcounterforassignment.com/blog/): Index of student guides on assignment word limits, page lengths, and speaking times.
-- [How Many Words Is 2 Pages?](https://wordcounterforassignment.com/blog/how-many-words-is-2-pages.html): Guide to approximate word counts for 2 single-spaced, double-spaced, and handwritten pages.
-- [How to Reduce Word Count in an Assignment](https://wordcounterforassignment.com/blog/how-to-reduce-word-count-in-assignment.html): Ten practical editing strategies to shorten an assignment draft without losing meaning.
-- [How Many Words Is 5 Pages?](https://wordcounterforassignment.com/blog/how-many-words-is-5-pages.html): Approximate word counts, formatting factors, and a section outline for a 5-page paper.
-- [Words Per Minute Speaking: Speech Length Guide](https://wordcounterforassignment.com/blog/how-many-words-per-minute-speaking.html): Typical speaking rates, speech duration tables, and pacing tips for class presentations.
-- [How Long to Read 1,300 Words Aloud?](https://wordcounterforassignment.com/blog/how-long-to-read-1300-words-aloud.html): Estimated speaking and silent reading times for a 1,300-word script or essay.
-- [University Assignment Word Count: Rules & Tips](https://wordcounterforassignment.com/blog/university-assignment-word-count.html): Overview of common word limit rules, margins, and what usually counts toward an assignment total.
-- [How Many Pages Is 10,000 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-10000-words.html): Approximate page counts, section planning tables, and formatting tips for a 10,000-word project.
-- [How Many Pages Is 1,000 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-1000-words.html): Approximate page counts for 1,000 words in single and double spacing, with a table for 500 to 3,000 words and a 1,000-word essay plan.
-- [How to Count Words in Urdu Text](https://wordcounterforassignment.com/blog/how-to-count-words-in-urdu.html): How Urdu and Roman Urdu words are counted, worked examples, and tips for Urdu assignments.
-- [Assignment Word Count Guide: Limits, Counting & Tips](https://wordcounterforassignment.com/blog/assignment-word-count-guide.html): Complete hub explaining assignment word limits, what counts, document and section counting, page conversions, and editing strategies.
-- [How Many Pages Is 3,300 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-3300-words.html): Approximate single-spaced, double-spaced, and handwritten page counts for 3,300 words, with conversion tables and a sample essay plan.
-- [How to Check Word Count in a Document](https://wordcounterforassignment.com/blog/how-to-check-word-count-in-a-document.html): Step-by-step instructions for checking word counts in Microsoft Word, Google Docs, Apple Pages, phones, and a private browser counter.
-- [How to Count Words in a Specific Section](https://wordcounterforassignment.com/blog/how-to-count-words-in-a-specific-section.html): How to count words in a single section or paragraph while excluding references, headings, or appendices.
+- [Academic Writing & Word Count Blog](https://wordcounterforassignment.com/blog/): Index of 22+ student guides on assignment word limits, page lengths, Urdu writing, and speaking pace.
+- [Assignment Word Count Guide](https://wordcounterforassignment.com/blog/assignment-word-count-guide.html): Complete hub explaining assignment word limits, what counts, section counting, page conversions, and editing strategies.
+- [How to Calculate Assignment Word Limits](https://wordcounterforassignment.com/blog/how-to-calculate-assignment-word-limits.html): How to apply university ±10% and ±5% tolerance windows and plan essay sections.
+- [Do Headings Count in Assignment Word Count?](https://wordcounterforassignment.com/blog/do-headings-count-in-word-count.html): When section headings and titles count in academic submissions.
+- [Do References Count in Word Count?](https://wordcounterforassignment.com/blog/do-references-count-in-word-count.html): How in-text citations vs. reference lists and bibliographies are counted.
+- [Do Appendices Count in Word Count?](https://wordcounterforassignment.com/blog/do-appendices-count-in-word-count.html): University rules on appendices and supplementary data tables.
+- [How Many Pages Is 500 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-500-words.html): Single-spaced, double-spaced, and handwritten page estimates for 500 words.
+- [How Many Pages Is 1,000 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-1000-words.html): Approximate page counts for 1,000 words in single and double spacing.
+- [How Many Pages Is 1,500 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-1500-words.html): Page estimates and section plans for 1,500-word essays.
+- [How Many Pages Is 2,000 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-2000-words.html): Single, double, and handwritten page counts plus 10-80-10 planning for 2,000 words.
+- [How Many Pages Is 3,300 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-3300-words.html): Page counts and reading estimates for 3,300 words.
+- [How Many Pages Is 10,000 Words?](https://wordcounterforassignment.com/blog/how-many-pages-is-10000-words.html): Dissertation and thesis page-count estimates for 10,000 words.
+- [How Many Words Is 2 Pages?](https://wordcounterforassignment.com/blog/how-many-words-is-2-pages.html): Approximate word counts for 2 single-spaced, double-spaced, and handwritten pages.
+- [How Many Words Is 5 Pages?](https://wordcounterforassignment.com/blog/how-many-words-is-5-pages.html): Approximate word counts and section plans for a 5-page paper.
+- [Handwritten vs Typed Assignment Pages](https://wordcounterforassignment.com/blog/handwritten-vs-typed-assignment-pages.html): Compares lined handwritten A4 pages with single and double-spaced typed pages.
+- [How to Check Word Count in a Document](https://wordcounterforassignment.com/blog/how-to-check-word-count-in-a-document.html): Checking word counts in Word, Google Docs, Apple Pages, phones, and browser tools.
+- [How to Count Words in a Specific Section](https://wordcounterforassignment.com/blog/how-to-count-words-in-a-specific-section.html): How to count individual sections while excluding references or appendices.
+- [How to Reduce Word Count in an Assignment](https://wordcounterforassignment.com/blog/how-to-reduce-word-count-in-assignment.html): Ten academic editing techniques to shorten a draft cleanly.
+- [How to Count Words in Urdu Text](https://wordcounterforassignment.com/blog/how-to-count-words-in-urdu.html): How Urdu spaces and punctuation marks work in assignments.
+- [Roman Urdu Word Counting Guide](https://wordcounterforassignment.com/blog/roman-urdu-word-counting-guide.html): Rules for counting Roman Urdu assignments and bilingual English notes.
+- [Words Per Minute Speaking](https://wordcounterforassignment.com/blog/how-many-words-per-minute-speaking.html): Typical presentation speaking speeds and duration charts.
+- [How Long to Read 1,300 Words Aloud?](https://wordcounterforassignment.com/blog/how-long-to-read-1300-words-aloud.html): Estimated speaking and silent reading durations for 1,300 words.
+- [University Assignment Word Count Rules](https://wordcounterforassignment.com/blog/university-assignment-word-count.html): Overview of common word limit tolerance margins and exclusions.
+
+## Site Information
+
+- [About Us](https://wordcounterforassignment.com/about/)
+- [Contact](https://wordcounterforassignment.com/contact/)
+- [Privacy Policy](https://wordcounterforassignment.com/privacy-policy/)
+- [Terms of Service](https://wordcounterforassignment.com/terms/)
+- [Disclaimer](https://wordcounterforassignment.com/disclaimer/)

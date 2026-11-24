@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment Writing Blog – Word Counter for Assignment</title>
-    <meta name="description" content="Explore practical academic writing guides, word count strategies, page length calculations, and essay editing tips for university and college students." />
+    <meta name="description" content="Explore 22+ practical academic writing guides covering assignment word limits, page length estimates, Urdu counting, PDF analysis, and speaking pace." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://wordcounterforassignment.com/blog/" />
     <meta property="og:title" content="Assignment Writing Blog – Word Counter for Assignment" />
-    <meta property="og:description" content="Explore practical academic writing guides, word count strategies, page length calculations, and essay editing tips for university and college students." />
+    <meta property="og:description" content="Explore 22+ practical academic writing guides covering assignment word limits, page length estimates, Urdu counting, PDF analysis, and speaking pace." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://wordcounterforassignment.com/blog/" />
     <meta property="og:site_name" content="Word Counter for Assignment" />
@@ -17,7 +17,7 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Assignment Writing Blog – Word Counter for Assignment" />
-    <meta name="twitter:description" content="Explore practical academic writing guides, word count strategies, page length calculations, and essay editing tips for university and college students." />
+    <meta name="twitter:description" content="Explore 22+ practical academic writing guides covering assignment word limits, page length estimates, Urdu counting, PDF analysis, and speaking pace." />
     <meta name="twitter:image" content="https://wordcounterforassignment.com/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
           "@type": "CollectionPage",
           "name": "Assignment Writing & Word Count Blog",
           "url": "https://wordcounterforassignment.com/blog/",
-          "description": "Explore practical academic writing guides, word count strategies, page length calculations, and essay editing tips for university and college students."
+          "description": "Practical academic writing guides covering assignment word limits, page length estimates, Urdu counting, and presentation timing."
         },
         {
           "@type": "BreadcrumbList",
@@ -55,22 +55,14 @@
     <style>
       :root {
         --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        --color-primary: #2563eb;
-        --color-primary-hover: #1d4ed8;
-        --bg-page: #f8fafc;
+        --color-primary: #0a0a0a;
+        --color-primary-hover: #27272a;
+        --bg-page: #ffffff;
         --bg-card: #ffffff;
-        --text-main: #0f172a;
-        --text-muted: #475569;
-        --border-color: #e2e8f0;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-page: #020617;
-          --bg-card: #0f172a;
-          --text-main: #f8fafc;
-          --text-muted: #94a3b8;
-          --border-color: #1e293b;
-        }
+        --bg-surface: #fafafa;
+        --text-main: #0a0a0a;
+        --text-muted: #52525b;
+        --border-color: #e4e4e7;
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
@@ -81,6 +73,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        -webkit-font-smoothing: antialiased;
       }
       header {
         border-bottom: 1px solid var(--border-color);
@@ -88,7 +81,7 @@
         padding: 1rem 1.5rem;
       }
       .nav-container {
-        max-width: 1000px;
+        max-width: 1080px;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -98,14 +91,11 @@
       }
       .brand {
         font-weight: 800;
-        font-size: 1.15rem;
-        color: var(--color-primary);
+        font-size: 1.05rem;
+        color: var(--text-main);
         text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
+        letter-spacing: -0.02em;
       }
-      .brand span { color: var(--text-main); }
       .nav-links {
         display: flex;
         align-items: center;
@@ -114,119 +104,59 @@
       }
       .nav-links a {
         font-size: 0.875rem;
-        font-weight: 600;
+        font-weight: 500;
         color: var(--text-muted);
         text-decoration: none;
-        transition: color 0.15s;
       }
       .nav-links a:hover, .nav-links a.active {
-        color: var(--color-primary);
+        color: var(--text-main);
+        font-weight: 600;
+        text-decoration: underline;
       }
       main {
-        max-width: 1000px;
+        max-width: 1080px;
         margin: 2.5rem auto;
         padding: 0 1.5rem;
         flex: 1;
         width: 100%;
       }
       .hero {
-        text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 2.25rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--border-color);
       }
-      .badge {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        font-size: 0.75rem;
-        font-weight: 700;
+      .eyebrow {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--text-muted);
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        background: rgba(37, 99, 235, 0.1);
-        color: var(--color-primary);
-        border-radius: 9999px;
-        margin-bottom: 0.75rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.5rem;
       }
       h1 {
-        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-size: clamp(1.9rem, 4vw, 2.65rem);
         font-weight: 800;
         line-height: 1.2;
-        margin-bottom: 0.75rem;
-        letter-spacing: -0.02em;
+        margin-bottom: 0.65rem;
+        letter-spacing: -0.025em;
       }
       .subtitle {
         color: var(--text-muted);
-        font-size: 1.125rem;
-        max-width: 650px;
-        margin: 0 auto;
+        font-size: 1.05rem;
+        max-width: 680px;
       }
-      .articles-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-      .article-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: 1.25rem;
-        padding: 1.75rem;
-        transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .article-card:hover {
-        transform: translateY(-2px);
-        border-color: var(--color-primary);
-        box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08);
-      }
-      .tag {
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: var(--color-primary);
-        margin-bottom: 0.5rem;
-        text-transform: uppercase;
-      }
-      .article-card h2 {
-        font-size: 1.35rem;
-        font-weight: 700;
-        line-height: 1.3;
-        margin-bottom: 0.75rem;
-      }
-      .article-card h2 a {
-        color: var(--text-main);
-        text-decoration: none;
-      }
-      .article-card h2 a:hover {
-        color: var(--color-primary);
-      }
-      .article-card p {
-        color: var(--text-muted);
-        font-size: 0.925rem;
-        margin-bottom: 1.5rem;
-        flex: 1;
-      }
-      .read-more {
-        color: var(--color-primary);
-        font-weight: 700;
-        font-size: 0.875rem;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.25rem;
-      }
-      .read-more:hover { text-decoration: underline; }
       .featured-hub {
-        background: rgba(37, 99, 235, 0.06);
-        border: 2px solid var(--color-primary);
-        border-radius: 1.25rem;
-        padding: 1.75rem 2rem;
+        background: var(--bg-surface);
+        border: 1px solid var(--text-main);
+        border-radius: 1rem;
+        padding: 1.65rem 1.75rem;
         margin-bottom: 2rem;
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 0.6rem;
       }
       .featured-hub h2 {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         font-weight: 800;
         line-height: 1.3;
       }
@@ -234,41 +164,135 @@
         color: var(--text-main);
         text-decoration: none;
       }
-      .featured-hub h2 a:hover {
-        color: var(--color-primary);
-      }
+      .featured-hub h2 a:hover { text-decoration: underline; }
       .featured-hub p {
         color: var(--text-muted);
-        font-size: 0.98rem;
+        font-size: 0.95rem;
+      }
+      .tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.35rem;
+      }
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+      .article-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 0.9rem;
+        padding: 1.45rem;
+        transition: border-color 0.15s, background-color 0.15s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .article-card:hover {
+        border-color: var(--text-main);
+        background: var(--bg-surface);
+      }
+      .article-card h2 {
+        font-size: 1.12rem;
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 0.6rem;
+      }
+      .article-card h2 a {
+        color: var(--text-main);
+        text-decoration: none;
+      }
+      .article-card h2 a:hover { text-decoration: underline; }
+      .article-card p {
+        color: var(--text-muted);
+        font-size: 0.88rem;
+        margin-bottom: 1.15rem;
+        flex: 1;
+      }
+      .read-more {
+        color: var(--text-main);
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .read-more:hover { text-decoration: underline; }
+      .tools-section {
+        margin-top: 3.5rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--border-color);
+      }
+      .tools-section h2 {
+        font-size: 1.45rem;
+        font-weight: 800;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.02em;
+      }
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 0.9rem;
+      }
+      .tool-link-card {
+        display: block;
+        padding: 1.15rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 0.85rem;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.15s, background-color 0.15s;
+      }
+      .tool-link-card:hover {
+        border-color: var(--text-main);
+        background: var(--bg-surface);
+      }
+      .tool-link-title {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: var(--text-main);
+        margin-bottom: 0.25rem;
+      }
+      .tool-link-desc {
+        font-size: 0.82rem;
+        color: var(--text-muted);
       }
       footer {
         border-top: 1px solid var(--border-color);
-        background: var(--bg-card);
+        background: var(--bg-surface);
         padding: 2rem 1.5rem;
         margin-top: 4rem;
         text-align: center;
-        font-size: 0.875rem;
+        font-size: 0.85rem;
         color: var(--text-muted);
       }
       footer a {
-        color: var(--color-primary);
+        color: var(--text-main);
         text-decoration: none;
         font-weight: 600;
+        margin: 0 0.45rem;
       }
+      footer a:hover { text-decoration: underline; }
     </style>
   </head>
   <body>
     <header>
       <div class="nav-container">
-        <a href="/" class="brand">
-          Word Counter<span> for Assignment</span>
-        </a>
+        <a href="/" class="brand">Word Counter for Assignment</a>
         <nav class="nav-links">
           <a href="/">Home</a>
           <a href="/urdu-word-counter/">Urdu Counter</a>
+          <a href="/roman-urdu-word-counter/">Roman Urdu</a>
           <a href="/words-to-pages-converter/">Words to Pages</a>
-          <a href="/character-counter/">Character Counter</a>
-          <a href="/paragraph-counter/">Paragraph Counter</a>
+          <a href="/assignment-word-limit-calculator/">Limit Calculator</a>
+          <a href="/pdf-word-counter/">PDF Counter</a>
           <a href="/blog/" class="active">Blog</a>
         </nav>
       </div>
@@ -276,9 +300,9 @@
 
     <main>
       <div class="hero">
-        <span class="badge">Student Academic Writing Guides</span>
-        <h1>Assignment Writing & Word Count Blog</h1>
-        <p class="subtitle">Practical guides for university coursework, page length estimates, speaking pace, and staying within assignment word limits.</p>
+        <p class="eyebrow">Student Academic Writing Guides</p>
+        <h1>Assignment Writing &amp; Word Count Blog</h1>
+        <p class="subtitle">Practical guides for university coursework, page length estimates, Urdu &amp; Roman Urdu counting, speaking pace, and staying within assignment word limits.</p>
       </div>
 
       <section class="featured-hub" aria-label="Start here">
@@ -286,45 +310,54 @@
         <h2><a href="/blog/assignment-word-count-guide.html">Start here: Assignment Word Count Guide</a></h2>
         <p>Your step-by-step hub for assignment word limits, checking documents or sections, converting words to pages, timing speeches, and trimming drafts.</p>
         <div>
-          <a href="/blog/assignment-word-count-guide.html" class="read-more">Read the Complete Hub Guide →</a>
+          <a href="/blog/assignment-word-count-guide.html" class="read-more">Read the Complete Hub Guide &rarr;</a>
         </div>
       </section>
 
       <div class="articles-grid">
         <article class="article-card">
           <div>
-            <div class="tag">Student Hub Guide</div>
-            <h2><a href="/blog/assignment-word-count-guide.html">Assignment Word Count Guide: Limits, Counting &amp; Tips</a></h2>
-            <p>A complete overview of assignment word limits, what counts, section budgets, page conversions, and editing strategies.</p>
+            <div class="tag">Word Limit Planning</div>
+            <h2><a href="/blog/how-to-calculate-assignment-word-limits.html">How to Calculate Assignment Word Limits (&plusmn;5%, &plusmn;10% &amp; Custom)</a></h2>
+            <p>Calculate university 0%, &plusmn;5%, &plusmn;10%, or custom safe submission ranges and plan 10-80-10 essay section budgets.</p>
           </div>
-          <a href="/blog/assignment-word-count-guide.html" class="read-more">Read Full Guide →</a>
+          <a href="/blog/how-to-calculate-assignment-word-limits.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Counting Rules</div>
+            <h2><a href="/blog/do-headings-count-in-word-count.html">Do Headings Count in Assignment Word Count?</a></h2>
+            <p>Learn how section headings, numbered subheadings, and running headers count across university briefs and turn-in portals.</p>
+          </div>
+          <a href="/blog/do-headings-count-in-word-count.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Counting Rules</div>
+            <h2><a href="/blog/do-references-count-in-word-count.html">Do References Count in Word Count? University Rules</a></h2>
+            <p>Understand the difference between in-text citations (usually counted) and reference lists or bibliographies (often excluded).</p>
+          </div>
+          <a href="/blog/do-references-count-in-word-count.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Counting Rules</div>
+            <h2><a href="/blog/do-appendices-count-in-word-count.html">Do Appendices Count in Word Count? Academic Guide</a></h2>
+            <p>When appendices sit outside main assignment limits and how to keep analysis in your main body rather than supplementary notes.</p>
+          </div>
+          <a href="/blog/do-appendices-count-in-word-count.html" class="read-more">Read Full Guide &rarr;</a>
         </article>
 
         <article class="article-card">
           <div>
             <div class="tag">Academic Formatting</div>
-            <h2><a href="/blog/how-many-pages-is-3300-words.html">How Many Pages Is 3,300 Words? Single &amp; Double Spaced</a></h2>
-            <p>Approximate page counts for 3,300 words across single, double, and handwritten sheets, plus reading time and a sample essay plan.</p>
+            <h2><a href="/blog/how-many-pages-is-500-words.html">How Many Pages Is 500 Words? Single &amp; Double Spaced</a></h2>
+            <p>Estimated page lengths (~1 single-spaced, ~2 double-spaced, ~2.5 to 3 handwritten) and paragraph planning for 500 words.</p>
           </div>
-          <a href="/blog/how-many-pages-is-3300-words.html" class="read-more">Read Full Guide →</a>
-        </article>
-
-        <article class="article-card">
-          <div>
-            <div class="tag">How-To Guide</div>
-            <h2><a href="/blog/how-to-check-word-count-in-a-document.html">How to Check Word Count in a Document (Word, Docs, Pages)</a></h2>
-            <p>Step-by-step ways to view word counts in Microsoft Word, Google Docs, Apple Pages, phones, and a private browser tool.</p>
-          </div>
-          <a href="/blog/how-to-check-word-count-in-a-document.html" class="read-more">Read Full Guide →</a>
-        </article>
-
-        <article class="article-card">
-          <div>
-            <div class="tag">Editing &amp; Structure</div>
-            <h2><a href="/blog/how-to-count-words-in-a-specific-section.html">How to Count Words in a Specific Section of Your Essay</a></h2>
-            <p>Measure a single paragraph or section in Word, Google Docs, or our browser counter while keeping references out of your total.</p>
-          </div>
-          <a href="/blog/how-to-count-words-in-a-specific-section.html" class="read-more">Read Full Guide →</a>
+          <a href="/blog/how-many-pages-is-500-words.html" class="read-more">Read Full Guide &rarr;</a>
         </article>
 
         <article class="article-card">
@@ -333,104 +366,216 @@
             <h2><a href="/blog/how-many-pages-is-1000-words.html">How Many Pages Is 1,000 Words? Single &amp; Double Spaced</a></h2>
             <p>Find out about how many pages 1,000 words fills in single and double spacing, plus formatting tips and essay section budgets.</p>
           </div>
-          <a href="/blog/how-many-pages-is-1000-words.html" class="read-more">Read Full Guide →</a>
+          <a href="/blog/how-many-pages-is-1000-words.html" class="read-more">Read Full Guide &rarr;</a>
         </article>
 
         <article class="article-card">
           <div>
-            <div class="tag">Urdu &amp; Bilingual Writing</div>
-            <h2><a href="/blog/how-to-count-words-in-urdu.html">How to Count Words in Urdu Text: Urdu Word Counter Guide</a></h2>
-            <p>Learn how spaces and sentence marks work in Urdu and Roman Urdu, with worked examples and practical assignment tips.</p>
+            <div class="tag">Academic Formatting</div>
+            <h2><a href="/blog/how-many-pages-is-1500-words.html">How Many Pages Is 1,500 Words? Single &amp; Double Spaced</a></h2>
+            <p>Approximate single-spaced (~3 pages), double-spaced (~6 pages), and handwritten A4 counts with a 1,500-word essay plan.</p>
           </div>
-          <a href="/blog/how-to-count-words-in-urdu.html" class="read-more">Read Full Guide →</a>
+          <a href="/blog/how-many-pages-is-1500-words.html" class="read-more">Read Full Guide &rarr;</a>
         </article>
 
         <article class="article-card">
           <div>
-            <div class="tag">Formatting & Layout</div>
-            <h2><a href="/blog/how-many-words-is-2-pages.html">How Many Words is 2 Pages? (Single vs Double Spacing)</a></h2>
-            <p>Find out about how many words are in 2 pages for double spacing (~500 words), single spacing (~1,000 words), and handwritten A4 sheets (~350 words) with standard formatting estimates.</p>
+            <div class="tag">Academic Formatting</div>
+            <h2><a href="/blog/how-many-pages-is-2000-words.html">How Many Pages Is 2,000 Words? Single &amp; Double Spaced</a></h2>
+            <p>Page estimates (~4 single-spaced or ~8 double-spaced), 10-80-10 section breakdown, and writing timing for 2,000 words.</p>
           </div>
-          <a href="/blog/how-many-words-is-2-pages.html" class="read-more">Read Full Guide →</a>
+          <a href="/blog/how-many-pages-is-2000-words.html" class="read-more">Read Full Guide &rarr;</a>
         </article>
 
         <article class="article-card">
           <div>
-            <div class="tag">Academic Editing</div>
-            <h2><a href="/blog/how-to-reduce-word-count-in-assignment.html">How to Reduce Word Count in an Assignment: 10 Proven Tips</a></h2>
-            <p>Discovered your essay is hundreds of words over the limit? Learn 10 actionable academic editing techniques to cut word count without sacrificing clarity or marks.</p>
+            <div class="tag">Academic Formatting</div>
+            <h2><a href="/blog/how-many-pages-is-3300-words.html">How Many Pages Is 3,300 Words? Single &amp; Double Spaced</a></h2>
+            <p>Approximate page counts for 3,300 words across single, double, and handwritten sheets, plus reading time and a sample essay plan.</p>
           </div>
-          <a href="/blog/how-to-reduce-word-count-in-assignment.html" class="read-more">Read Full Guide →</a>
-        </article>
-
-        <article class="article-card">
-          <div>
-            <div class="tag">Formatting &amp; Layout</div>
-            <h2><a href="/blog/how-many-words-is-5-pages.html">How Many Words Is 5 Pages? Single &amp; Double Spaced</a></h2>
-            <p>Learn how many words are in 5 pages: about 1,250 to 1,500 words double-spaced, 2,500 words single-spaced, or ~875 words handwritten with full section planning tips.</p>
-          </div>
-          <a href="/blog/how-many-words-is-5-pages.html" class="read-more">Read Full Guide →</a>
-        </article>
-
-        <article class="article-card">
-          <div>
-            <div class="tag">Speaking &amp; Presentations</div>
-            <h2><a href="/blog/how-many-words-per-minute-speaking.html">Words Per Minute Speaking: Speech Length Guide</a></h2>
-            <p>Learn typical speaking speeds: about 130 to 150 words per minute for presentations, speech duration conversion tables, and pacing tips for class talks.</p>
-          </div>
-          <a href="/blog/how-many-words-per-minute-speaking.html" class="read-more">Read Full Guide →</a>
-        </article>
-
-        <article class="article-card">
-          <div>
-            <div class="tag">Reading &amp; Speaking Timing</div>
-            <h2><a href="/blog/how-long-to-read-1300-words-aloud.html">How Long to Read 1,300 Words Aloud? Timing Guide</a></h2>
-            <p>Find out how long 1,300 words takes to read aloud (about 9 to 10 minutes) or silently (about 5 to 6.5 minutes), plus a full timing table and pacing tips.</p>
-          </div>
-          <a href="/blog/how-long-to-read-1300-words-aloud.html" class="read-more">Read Full Guide →</a>
-        </article>
-
-        <article class="article-card">
-          <div>
-            <div class="tag">Academic Guidelines</div>
-            <h2><a href="/blog/university-assignment-word-count.html">University Assignment Word Count: Rules &amp; Tips</a></h2>
-            <p>Learn what usually counts toward university word limits, how margins work, how to verify specific sections, and typical page-length estimates.</p>
-          </div>
-          <a href="/blog/university-assignment-word-count.html" class="read-more">Read Full Guide →</a>
+          <a href="/blog/how-many-pages-is-3300-words.html" class="read-more">Read Full Guide &rarr;</a>
         </article>
 
         <article class="article-card">
           <div>
             <div class="tag">Long-Form Formatting</div>
             <h2><a href="/blog/how-many-pages-is-10000-words.html">How Many Pages Is 10,000 Words? Page Count Guide</a></h2>
-            <p>Find out how many pages 10,000 words fills (about 20 single-spaced or 33 to 40 double-spaced pages), plus section planning and conversion tables.</p>
+            <p>Find out how many pages 10,000 words fills (about 20 single-spaced or 33 to 40 double-spaced pages), plus chapter planning tables.</p>
           </div>
-          <a href="/blog/how-many-pages-is-10000-words.html" class="read-more">Read Full Guide →</a>
+          <a href="/blog/how-many-pages-is-10000-words.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Formatting &amp; Layout</div>
+            <h2><a href="/blog/how-many-words-is-2-pages.html">How Many Words Is 2 Pages? Single vs Double Spacing</a></h2>
+            <p>Estimated word counts for 2 pages in double spacing (~500 words), single spacing (~1,000 words), and handwritten A4 sheets (~350 words).</p>
+          </div>
+          <a href="/blog/how-many-words-is-2-pages.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Formatting &amp; Layout</div>
+            <h2><a href="/blog/how-many-words-is-5-pages.html">How Many Words Is 5 Pages? Single &amp; Double Spaced</a></h2>
+            <p>Learn how many words are in 5 pages: about 1,250 to 1,500 words double-spaced, 2,500 words single-spaced, or ~875 words handwritten.</p>
+          </div>
+          <a href="/blog/how-many-words-is-5-pages.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Formatting &amp; Layout</div>
+            <h2><a href="/blog/handwritten-vs-typed-assignment-pages.html">Handwritten vs Typed Assignment Pages: Length Guide</a></h2>
+            <p>Compare lined A4 handwritten sheets (~175 words/page) with single and double-spaced typed pages for exam and homework planning.</p>
+          </div>
+          <a href="/blog/handwritten-vs-typed-assignment-pages.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Student Hub Guide</div>
+            <h2><a href="/blog/assignment-word-count-guide.html">Assignment Word Count Guide: Limits, Counting &amp; Tips</a></h2>
+            <p>A complete overview of assignment word limits, what counts, section budgets, page conversions, and editing strategies.</p>
+          </div>
+          <a href="/blog/assignment-word-count-guide.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Academic Guidelines</div>
+            <h2><a href="/blog/university-assignment-word-count.html">University Assignment Word Count: Rules &amp; Tips</a></h2>
+            <p>Learn what usually counts toward university word limits, how margins work, how to verify sections, and typical page-length estimates.</p>
+          </div>
+          <a href="/blog/university-assignment-word-count.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">How-To Guide</div>
+            <h2><a href="/blog/how-to-check-word-count-in-a-document.html">How to Check Word Count in a Document (Word, Docs, Pages)</a></h2>
+            <p>Step-by-step ways to view word counts in Microsoft Word, Google Docs, Apple Pages, phones, and a private browser tool.</p>
+          </div>
+          <a href="/blog/how-to-check-word-count-in-a-document.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Editing &amp; Structure</div>
+            <h2><a href="/blog/how-to-count-words-in-a-specific-section.html">How to Count Words in a Specific Section of Your Essay</a></h2>
+            <p>Measure a single paragraph or section in Word, Google Docs, or our browser counter while keeping references out of your total.</p>
+          </div>
+          <a href="/blog/how-to-count-words-in-a-specific-section.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Academic Editing</div>
+            <h2><a href="/blog/how-to-reduce-word-count-in-assignment.html">How to Reduce Word Count in an Assignment: 10 Proven Tips</a></h2>
+            <p>Over your limit? Learn 10 practical academic editing techniques to trim excess words without sacrificing clarity or marks.</p>
+          </div>
+          <a href="/blog/how-to-reduce-word-count-in-assignment.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Urdu &amp; Bilingual Writing</div>
+            <h2><a href="/blog/how-to-count-words-in-urdu.html">How to Count Words in Urdu Text: Urdu Word Counter Guide</a></h2>
+            <p>Learn how spaces and sentence marks (۔ and ؟) work in Urdu script with worked examples and practical assignment tips.</p>
+          </div>
+          <a href="/blog/how-to-count-words-in-urdu.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Urdu &amp; Bilingual Writing</div>
+            <h2><a href="/blog/roman-urdu-word-counting-guide.html">Roman Urdu Word Counting Guide for Students</a></h2>
+            <p>Clear guidance for counting Roman Urdu words, compounds, postpositions (ka, ki, ke, mein), and mixed English coursework.</p>
+          </div>
+          <a href="/blog/roman-urdu-word-counting-guide.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Speaking &amp; Presentations</div>
+            <h2><a href="/blog/how-many-words-per-minute-speaking.html">Words Per Minute Speaking: Speech Length Guide</a></h2>
+            <p>Learn typical speaking speeds: about 130 to 150 words per minute for presentations, speech duration tables, and pacing tips.</p>
+          </div>
+          <a href="/blog/how-many-words-per-minute-speaking.html" class="read-more">Read Full Guide &rarr;</a>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="tag">Reading &amp; Speaking Timing</div>
+            <h2><a href="/blog/how-long-to-read-1300-words-aloud.html">How Long to Read 1,300 Words Aloud? Timing Guide</a></h2>
+            <p>Find out how long 1,300 words takes to read aloud (about 9 to 10 minutes) or silently (about 5 to 6.5 minutes), with timing tables.</p>
+          </div>
+          <a href="/blog/how-long-to-read-1300-words-aloud.html" class="read-more">Read Full Guide &rarr;</a>
         </article>
       </div>
 
-      <section style="margin-top: 3.5rem;">
-        <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; letter-spacing: -0.02em;">Free Tools</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-          <a href="/" style="display: block; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 1rem; text-decoration: none; color: inherit; transition: border-color 0.2s;">
-            <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">Word Counter for Assignment</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Main tool with live counts, word limit tracker, and reading speed.</div>
+      <section class="tools-section">
+        <h2>All Free Academic Writing Tools</h2>
+        <div class="tools-grid">
+          <a href="/" class="tool-link-card">
+            <div class="tool-link-title">Word Counter for Assignment</div>
+            <div class="tool-link-desc">Main counter with live words, characters, target limits, and reading speed.</div>
           </a>
-          <a href="/urdu-word-counter/" style="display: block; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 1rem; text-decoration: none; color: inherit; transition: border-color 0.2s;">
-            <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">Urdu Word Counter</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Counts words, sentences (۔ ؟), and paragraphs in Urdu and Roman Urdu.</div>
+          <a href="/urdu-word-counter/" class="tool-link-card">
+            <div class="tool-link-title">Urdu Word Counter</div>
+            <div class="tool-link-desc">Counts Urdu Nastaliq words, letters, and sentences (۔ and ؟).</div>
           </a>
-          <a href="/words-to-pages-converter/" style="display: block; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 1rem; text-decoration: none; color: inherit; transition: border-color 0.2s;">
-            <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">Words to Pages Converter</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Convert words to pages for single/double spacing and standard fonts.</div>
+          <a href="/roman-urdu-word-counter/" class="tool-link-card">
+            <div class="tool-link-title">Roman Urdu Word Counter</div>
+            <div class="tool-link-desc">Count Roman Urdu and bilingual English drafts with particle insights.</div>
           </a>
-          <a href="/character-counter/" style="display: block; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 1rem; text-decoration: none; color: inherit; transition: border-color 0.2s;">
-            <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">Character Counter</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Count characters with and without spaces, and track platform limits.</div>
+          <a href="/words-to-pages-converter/" class="tool-link-card">
+            <div class="tool-link-title">Words to Pages Converter</div>
+            <div class="tool-link-desc">Estimate single/double-spaced and handwritten pages from words.</div>
           </a>
-          <a href="/paragraph-counter/" style="display: block; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 1rem; text-decoration: none; color: inherit; transition: border-color 0.2s;">
-            <div style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.25rem;">Paragraph Counter</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Count paragraphs, sentences, words, and average words per paragraph.</div>
+          <a href="/character-counter/" class="tool-link-card">
+            <div class="tool-link-title">Character Counter</div>
+            <div class="tool-link-desc">Count characters with and without spaces and track portal caps.</div>
+          </a>
+          <a href="/paragraph-counter/" class="tool-link-card">
+            <div class="tool-link-title">Paragraph Counter</div>
+            <div class="tool-link-desc">Count paragraphs, sentences, and average words per paragraph.</div>
+          </a>
+          <a href="/sentence-counter/" class="tool-link-card">
+            <div class="tool-link-title">Sentence Counter</div>
+            <div class="tool-link-desc">Count sentences, average words per sentence, and view a sentence breakdown.</div>
+          </a>
+          <a href="/essay-word-counter/" class="tool-link-card">
+            <div class="tool-link-title">Essay Word Counter</div>
+            <div class="tool-link-desc">Track custom essay targets and paragraph pacing in one browser editor.</div>
+          </a>
+          <a href="/reading-time-calculator/" class="tool-link-card">
+            <div class="tool-link-title">Reading Time Calculator</div>
+            <div class="tool-link-desc">Estimate silent reading duration across slow, standard, and fast speeds.</div>
+          </a>
+          <a href="/speech-time-calculator/" class="tool-link-card">
+            <div class="tool-link-title">Speech Time Calculator</div>
+            <div class="tool-link-desc">Estimate viva, seminar, and presentation duration with Q&amp;A buffer.</div>
+          </a>
+          <a href="/assignment-word-limit-calculator/" class="tool-link-card">
+            <div class="tool-link-title">Assignment Word Limit Calculator</div>
+            <div class="tool-link-desc">Compute 0%, &plusmn;5%, &plusmn;10%, or custom tolerance ranges and 10-80-10 section word budgets.</div>
+          </a>
+          <a href="/words-per-minute-calculator/" class="tool-link-card">
+            <div class="tool-link-title">Words Per Minute Calculator</div>
+            <div class="tool-link-desc">Calculate WPM from words and time or run an in-browser timer.</div>
+          </a>
+          <a href="/line-counter/" class="tool-link-card">
+            <div class="tool-link-title">Line Counter</div>
+            <div class="tool-link-desc">Count total, non-empty, and blank lines with one-click blank-line cleanup.</div>
+          </a>
+          <a href="/unique-word-counter/" class="tool-link-card">
+            <div class="tool-link-title">Unique Word Counter</div>
+            <div class="tool-link-desc">Analyze lexical diversity and inspect full searchable word frequencies.</div>
+          </a>
+          <a href="/pdf-word-counter/" class="tool-link-card">
+            <div class="tool-link-title">PDF Word Counter</div>
+            <div class="tool-link-desc">Count embedded PDF text and per-page words directly in your browser.</div>
           </a>
         </div>
       </section>
@@ -438,16 +583,17 @@
 
     <footer>
       <p style="margin-bottom: 0.75rem;">
-        <a href="/" style="margin: 0 0.5rem;">Word Counter</a>
-        <a href="/urdu-word-counter/" style="margin: 0 0.5rem;">Urdu Counter</a>
-        <a href="/words-to-pages-converter/" style="margin: 0 0.5rem;">Words to Pages</a>
-        <a href="/character-counter/" style="margin: 0 0.5rem;">Character Counter</a>
-        <a href="/paragraph-counter/" style="margin: 0 0.5rem;">Paragraph Counter</a>
-        <a href="/blog/" style="margin: 0 0.5rem;">Blog</a>
-        <a href="/about/" style="margin: 0 0.5rem;">About</a>
-        <a href="/contact/" style="margin: 0 0.5rem;">Contact</a>
-        <a href="/privacy-policy/" style="margin: 0 0.5rem;">Privacy Policy</a>
-        <a href="/terms/" style="margin: 0 0.5rem;">Terms</a>
+        <a href="/">Word Counter</a>
+        <a href="/urdu-word-counter/">Urdu Counter</a>
+        <a href="/roman-urdu-word-counter/">Roman Urdu Counter</a>
+        <a href="/words-to-pages-converter/">Words to Pages</a>
+        <a href="/pdf-word-counter/">PDF Counter</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/disclaimer/">Disclaimer</a>
       </p>
       <p>&copy; 2026 <a href="/">Word Counter for Assignment</a>. Free student tool for English, Urdu &amp; Roman Urdu coursework.</p>
     </footer>

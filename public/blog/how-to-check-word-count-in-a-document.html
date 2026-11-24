@@ -112,258 +112,6 @@
       ]
     }
     </script>
-    <style>
-      :root {
-        --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        --color-primary: #2563eb;
-        --color-primary-hover: #1d4ed8;
-        --bg-page: #f8fafc;
-        --bg-card: #ffffff;
-        --text-main: #0f172a;
-        --text-muted: #475569;
-        --border-color: #e2e8f0;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-page: #020617;
-          --bg-card: #0f172a;
-          --text-main: #f8fafc;
-          --text-muted: #94a3b8;
-          --border-color: #1e293b;
-        }
-      }
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      body {
-        font-family: var(--font-sans);
-        background-color: var(--bg-page);
-        color: var(--text-main);
-        line-height: 1.7;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-      header {
-        border-bottom: 1px solid var(--border-color);
-        background: var(--bg-card);
-        padding: 1rem 1.5rem;
-      }
-      .nav-container {
-        max-width: 860px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .brand {
-        font-weight: 800;
-        font-size: 1.15rem;
-        color: var(--color-primary);
-        text-decoration: none;
-        margin-right: 0;
-      }
-      .brand span { color: var(--text-main); }
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 1.1rem;
-        flex-wrap: wrap;
-      }
-      .nav-links a {
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: var(--text-muted);
-        text-decoration: none;
-        margin-right: 0;
-      }
-      .nav-links a:hover, .nav-links a.active { color: var(--color-primary); }
-      article {
-        max-width: 860px;
-        margin: 2.5rem auto;
-        padding: 0 1.5rem;
-        flex: 1;
-        width: 100%;
-      }
-      .meta {
-        font-size: 0.875rem;
-        color: var(--text-muted);
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-      .category-pill {
-        background: rgba(37, 99, 235, 0.1);
-        color: var(--color-primary);
-        font-weight: 700;
-        font-size: 0.75rem;
-        padding: 0.2rem 0.6rem;
-        border-radius: 9999px;
-        text-transform: uppercase;
-      }
-      h1 {
-        font-size: clamp(2rem, 3.5vw, 2.75rem);
-        font-weight: 800;
-        line-height: 1.25;
-        margin-bottom: 0.75rem;
-        letter-spacing: -0.02em;
-      }
-      .last-updated {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        margin-bottom: 1.5rem;
-      }
-      .lead {
-        font-size: 1.2rem;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-        line-height: 1.6;
-      }
-      .quick-answer {
-        background: rgba(37, 99, 235, 0.06);
-        border: 2px solid var(--color-primary);
-        border-radius: 1rem;
-        padding: 1.5rem;
-        margin-bottom: 2.5rem;
-      }
-      .quick-answer h2 {
-        font-size: 1.15rem;
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 0.75rem;
-        color: var(--color-primary);
-      }
-      .quick-answer p {
-        margin-bottom: 0;
-        font-size: 1rem;
-      }
-      h2 {
-        font-size: 1.6rem;
-        font-weight: 700;
-        margin: 2.5rem 0 1rem;
-        letter-spacing: -0.01em;
-      }
-      h3 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin: 1.5rem 0 0.75rem;
-      }
-      p {
-        margin-bottom: 1.25rem;
-        font-size: 1.05rem;
-      }
-      ul, ol {
-        margin: 1rem 0 1.5rem 1.5rem;
-        font-size: 1.05rem;
-      }
-      li { margin-bottom: 0.5rem; }
-      .table-wrap {
-        overflow-x: auto;
-        margin: 2rem 0;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        background: var(--bg-card);
-        border-radius: 0.75rem;
-        overflow: hidden;
-        border: 1px solid var(--border-color);
-      }
-      th, td {
-        padding: 0.85rem 1rem;
-        text-align: left;
-        border-bottom: 1px solid var(--border-color);
-        font-size: 0.95rem;
-      }
-      th {
-        background: rgba(37, 99, 235, 0.05);
-        font-weight: 700;
-      }
-      .faq-card {
-        margin: 2rem 0;
-      }
-      .faq-card details {
-        border-bottom: 1px solid var(--border-color);
-        padding: 1rem 0;
-      }
-      .faq-card details:last-child {
-        border-bottom: none;
-      }
-      .faq-card summary {
-        font-weight: 700;
-        font-size: 1.05rem;
-        cursor: pointer;
-        color: var(--text-main);
-        outline: none;
-      }
-      .faq-card summary:hover {
-        color: var(--color-primary);
-      }
-      .faq-card p {
-        margin-top: 0.75rem;
-        margin-bottom: 0;
-        color: var(--text-muted);
-      }
-      .cta-box {
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: 1rem;
-        padding: 2rem;
-        margin-top: 3rem;
-        text-align: center;
-      }
-      .cta-btn {
-        display: inline-block;
-        background: var(--color-primary);
-        color: #ffffff;
-        font-weight: 700;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.75rem;
-        text-decoration: none;
-        margin-top: 1rem;
-        transition: background-color 0.2s;
-      }
-      .cta-btn:hover {
-        background: var(--color-primary-hover);
-      }
-      .related-guides {
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: 1rem;
-        padding: 1.5rem 1.75rem;
-        margin-top: 2.5rem;
-      }
-      .related-guides h2 {
-        margin-top: 0;
-        font-size: 1.25rem;
-        margin-bottom: 0.75rem;
-      }
-      .related-guides ul {
-        margin: 0 0 0 1.25rem;
-      }
-      .related-guides a {
-        color: var(--color-primary);
-        font-weight: 600;
-        text-decoration: none;
-      }
-      .related-guides a:hover { text-decoration: underline; }
-      footer {
-        border-top: 1px solid var(--border-color);
-        background: var(--bg-card);
-        padding: 2rem 1.5rem;
-        margin-top: 4rem;
-        text-align: center;
-        font-size: 0.875rem;
-        color: var(--text-muted);
-      }
-      footer a {
-        color: var(--color-primary);
-        text-decoration: none;
-        font-weight: 600;
-        margin: 0 0.5rem;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -375,8 +123,8 @@
           <a href="/">Home</a>
           <a href="/urdu-word-counter/">Urdu Counter</a>
           <a href="/words-to-pages-converter/">Words to Pages</a>
-          <a href="/character-counter/">Character Counter</a>
-          <a href="/paragraph-counter/">Paragraph Counter</a>
+          <a href="/assignment-word-limit-calculator/">Limit Calculator</a>
+          <a href="/pdf-word-counter/">PDF Counter</a>
           <a href="/blog/" class="active">Blog</a>
         </nav>
       </div>
@@ -453,7 +201,7 @@
       <p>If you are checking a PDF, plain text note, email draft, or an assignment saved in an app without a built-in counter, select the text you want to measure, copy it, and paste it into a mobile browser counter.</p>
 
       <h2>Pasting Your Text into a Browser Word Counter</h2>
-      <p>Copying only the sections that count—such as your introduction, body sections, and conclusion—into our <a href="/">word counter on the home page</a> avoids accidental inclusion of cover pages, tables of contents, or reference lists. Because all calculations run locally inside your web browser, your assignment draft stays private on your device with zero uploads.</p>
+      <p>Copying only the sections that count—such as your introduction, body sections, and conclusion—into our <a href="/">word counter on the home page</a> avoids accidental inclusion of cover pages, tables of contents, or reference lists. Calculations run locally inside your web browser without saving drafts to an account or server database.</p>
       <p>When you also need to verify paragraph pacing across your essay, pair it with our <a href="/paragraph-counter/">free paragraph counter</a> to check average words per paragraph alongside sentence totals—and if an online portal enforces a character limit instead of a word count, paste that same selection into our <a href="/character-counter/">character counter</a> to check characters with and without spaces.</p>
 
       <h2>Why Word Counts Differ Slightly Between Programs</h2>
@@ -488,7 +236,7 @@
 
       <div class="cta-box">
         <h3>Check Your Count Privately in Your Browser</h3>
-        <p>Paste only the sections that count into our free browser-based counter to see words, characters, sentences, paragraphs, and reading time with zero uploads.</p>
+        <p>Paste only the sections that count into our free browser-based counter to see words, characters, sentences, paragraphs, and reading time locally inside your browser.</p>
         <a href="/" class="cta-btn">Open Free Word Counter</a>
       </div>
 
@@ -510,14 +258,15 @@
       <p style="margin-bottom: 0.75rem;">
         <a href="/">Word Counter</a>
         <a href="/urdu-word-counter/">Urdu Counter</a>
+        <a href="/roman-urdu-word-counter/">Roman Urdu Counter</a>
         <a href="/words-to-pages-converter/">Words to Pages</a>
-        <a href="/character-counter/">Character Counter</a>
-        <a href="/paragraph-counter/">Paragraph Counter</a>
+        <a href="/pdf-word-counter/">PDF Counter</a>
         <a href="/blog/">Blog</a>
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms/">Terms</a>
+        <a href="/disclaimer/">Disclaimer</a>
       </p>
       <p>&copy; 2026 <a href="/">Word Counter for Assignment</a>. Free student tool for English, Urdu &amp; Roman Urdu coursework.</p>
     </footer>

@@ -1,73 +1,71 @@
 import React from 'react';
 import { SEOHead } from '../components/SEOHead';
-import { FileCheck, AlertTriangle, ShieldCheck, HelpCircle } from 'lucide-react';
 
 export const TermsPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Terms of Service – Word Counter for Assignment"
-        description="Terms and conditions governing the use of Word Counter for Assignment. Free educational use, student copyright retention, and disclaimers."
+        title="Terms & Conditions – Word Counter for Assignment"
+        description="Terms and conditions governing the use of Word Counter for Assignment. Free educational use, copyright retention, and academic guidelines."
         canonicalPath="/terms"
       />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10">
-        <header className="space-y-3 pb-6 border-b border-slate-200 dark:border-slate-800">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold border border-blue-200/60 dark:border-blue-900/60">
-            <FileCheck className="w-3.5 h-3.5" />
-            <span>Educational Use Agreement</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Terms of Service
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8">
+        <header className="space-y-2 pb-6 border-b border-zinc-200">
+          <p className="text-xs font-medium text-zinc-500">
+            Educational Use Terms
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
+            Terms &amp; Conditions
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
+          <p className="text-sm text-zinc-500">
             Last Updated: November 14, 2026
           </p>
         </header>
 
-        <div className="space-y-8 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">1. Acceptance of Terms</h2>
+        <div className="space-y-7 text-zinc-700 text-sm sm:text-base leading-relaxed">
+          <section className="space-y-2">
+            <h2 className="text-xl font-bold text-zinc-950">1. Acceptance of Terms</h2>
             <p>
-              By accessing and using <strong>Word Counter for Assignment</strong> (the "Service"), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our services.
+              By accessing <strong>Word Counter for Assignment</strong>, you agree to comply with these Terms &amp; Conditions. If you disagree with any term, please discontinue use of the site.
             </p>
           </section>
 
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">2. Free Educational License</h2>
+          <section className="space-y-2">
+            <h2 className="text-xl font-bold text-zinc-950">2. Free Educational Use</h2>
             <p>
-              Permission is granted to use our web tools, calculators, and educational guides for personal, academic, classroom, and non-commercial educational purposes without charge. You are free to calculate metrics for school essays, bachelor assignments, dissertations, and research drafts.
+              All counters, calculators, and writing guides on this site are provided free of charge for students, educators, and writers preparing coursework, theses, presentations, and general documents.
             </p>
           </section>
 
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">3. Intellectual Property of Your Content</h2>
+          <section className="space-y-2">
+            <h2 className="text-xl font-bold text-zinc-950">3. Ownership of Your Content</h2>
             <p>
-              <strong>You retain 100% ownership, copyright, and moral rights</strong> in any text, essay, article, or manuscript you paste into or analyze with our tools. Because our application operates entirely on your client device, we do not claim any license, ownership, or rights in your academic work.
+              You retain full ownership and copyright over any text or PDF files you analyze in your browser. We claim no license or rights over your work.
             </p>
           </section>
 
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">4. Academic Responsibility Disclaimer</h2>
+          <section className="space-y-2">
+            <h2 className="text-xl font-bold text-zinc-950">4. Estimates &amp; Academic Responsibility</h2>
             <p>
-              Our tools provide standard estimates for word counts, character counts, reading times (~200 words per minute), speaking times (~130 words per minute), and page conversions (~500 single-spaced, ~250 double-spaced, and ~175 handwritten words per page). Actual totals vary by person, font, formatting, software, and institution.
-            </p>
-            <p>
-              It remains the student's sole responsibility to confirm final submission requirements with their university syllabus, course instructor, or exam board. <strong>Word Counter for Assignment</strong> is provided "as is" without warranty of any kind, and we are not liable for any grading outcomes, mark deductions, or submission disqualifications.
+              Metrics such as reading time (~200 WPM), speaking time (~130 WPM), words-to-pages estimates (~500 single-spaced, ~250 double-spaced, ~175 handwritten words per page), and ±10% word limits are practical guidelines. Different software tools, fonts, and institutions count hyphenation, citations, and formatting differently. Students remain responsible for verifying submission rules with their own university syllabus or lecturer.
             </p>
           </section>
 
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">5. Prohibited Uses</h2>
+          <section className="space-y-2">
+            <h2 className="text-xl font-bold text-zinc-950">5. Prohibited Conduct</h2>
             <p>
-              You agree not to use automated scripts, scrapers, or bot nets to overwhelm our hosting infrastructure, reverse engineer proprietary source assets, or use our platform in violation of any applicable local or international laws.
+              Automated scraping, denial-of-service attempts, or misuse of site resources that disrupts service availability for other users is prohibited.
             </p>
           </section>
 
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">6. Contact & Questions</h2>
+          <section className="space-y-2">
+            <h2 className="text-xl font-bold text-zinc-950">6. Contact</h2>
             <p>
-              For any questions regarding these terms, contact us at: <a href="mailto:mzadi084@gmail.com" className="text-blue-600 dark:text-blue-400 font-semibold underline">mzadi084@gmail.com</a>.
+              Questions regarding these terms may be sent to{' '}
+              <a href="mailto:mzadi084@gmail.com" className="font-semibold text-zinc-950 underline">
+                mzadi084@gmail.com
+              </a>.
             </p>
           </section>
         </div>

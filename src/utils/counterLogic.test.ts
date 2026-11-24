@@ -2,6 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   analyzeText,
+  analyzeSentences,
+  analyzeLines,
+  removeBlankLines,
+  analyzeUniqueWords,
+  analyzeRomanUrdu,
+  calculateAssignmentWordLimit,
+  calculateWpm,
   calculateWordLimit,
   convertWordsToPages,
   formatTime,
@@ -34,7 +41,6 @@ test('analyzeText correctly recognizes Urdu punctuation marks (۔ and ؟)', () =
   const urduText = 'یہ پہلا جملہ ہے۔ کیا آپ کو سمجھ آئی؟ بالکل آئی۔';
   const result = analyzeText(urduText);
 
-  // 3 sentences ending with ۔, ؟ and ۔
   assert.equal(result.sentences, 3);
   assert.ok(result.words >= 9);
 });
@@ -55,21 +61,18 @@ test('formatTime calculates minutes and seconds accurately', () => {
 });
 
 test('calculateWordLimit calculates words left and words over correctly', () => {
-  // Under limit
   const under = calculateWordLimit(80, 200);
   assert.equal(under.wordsLeft, 120);
   assert.equal(under.wordsOver, 0);
   assert.equal(under.isOver, false);
   assert.equal(under.statusMessage, '120 words left');
 
-  // Over limit
   const over = calculateWordLimit(235, 200);
   assert.equal(over.wordsLeft, 0);
   assert.equal(over.wordsOver, 35);
   assert.equal(over.isOver, true);
   assert.equal(over.statusMessage, '35 words over');
 
-  // Target limit
   const exact = calculateWordLimit(200, 200);
   assert.equal(exact.wordsLeft, 0);
   assert.equal(exact.wordsOver, 0);
@@ -81,18 +84,14 @@ test('analyzeText filters stop words and words < 3 characters in topWords', () =
   const result = analyzeText(text);
 
   assert.ok(result.topWords.length <= 5);
-  // 'research' appears 4 times
   assert.equal(result.topWords[0].word, 'research');
   assert.equal(result.topWords[0].count, 4);
 });
 
 test('convertWordsToPages calculates single, double, and handwritten pages accurately', () => {
   const result = convertWordsToPages(1000);
-  // 1000 / 500 = 2.0
   assert.equal(result.singleSpacing, 2.0);
-  // 1000 / 250 = 4.0
   assert.equal(result.doubleSpacing, 4.0);
-  // 1000 / 175 = 5.714... => 5.7
   assert.equal(result.handwrittenA4, 5.7);
 
   const zero = convertWordsToPages(0);
@@ -149,4 +148,94 @@ test('analyzeText ignores extended abbreviation list case-insensitively in sente
   const result = analyzeText(text);
 
   assert.equal(result.sentences, 1);
+});
+
+test('analyzeSentences extracts individual sentences with accurate word counts', () => {
+  const text = 'Dr. Khan scored 3.8 GPA. His essay was concise! Did he revise it?';
+  const res = analyzeSentences(text);
+
+  assert.equal(res.sentenceCount, 3);
+  assert.equal(res.totalWords, 13);
+  assert.equal(res.shortestSentenceWords, 4);
+  assert.equal(res.longestSentenceWords, 5);
+  assert.equal(res.sentences[0].text, 'Dr. Khan scored 3.8 GPA.');
+});
+
+test('analyzeLines and removeBlankLines handle multiline text accurately', () => {
+  const text = 'Line one here\n\nLine two is longer\n   \nEnd';
+  const res = analyzeLines(text);
+
+  assert.equal(res.totalLines, 5);
+  assert.equal(res.nonEmptyLines, 3);
+  assert.equal(res.blankLines, 2);
+  assert.equal(res.totalWords, 8);
+  assert.equal(res.longestLineChars, 18);
+  assert.equal(removeBlankLines(text), 'Line one here\nLine two is longer\nEnd');
+});
+
+test('analyzeUniqueWords computes unique count, lexical diversity, and stop word filtering', () => {
+  const text = 'The essay discusses research and research methods. The essay is strong.';
+  const all = analyzeUniqueWords(text, false);
+  const filtered = analyzeUniqueWords(text, true);
+
+  assert.equal(all.totalWords, 11);
+  assert.equal(all.uniqueWords, 8);
+  assert.equal(all.repeatedUniqueWords, 3); // the, essay, research
+  assert.equal(all.singleOccurrenceWords, 5);
+  assert.ok(filtered.entries.every((e) => e.word !== 'the' && e.word !== 'and'));
+  assert.equal(filtered.entries[0].count, 2);
+});
+
+test('analyzeRomanUrdu detects Roman Urdu vocabulary alongside base counts', () => {
+  const text = 'Yeh mazmoon bohot aham hai aur is mein alfaz ki tadad check ki gayi hai.';
+  const res = analyzeRomanUrdu(text);
+
+  assert.equal(res.baseStats.words, 15);
+  assert.ok(res.romanUrduMarkerHits >= 10);
+  assert.ok(res.detectedMarkers.includes('mazmoon'));
+});
+
+test('calculateAssignmentWordLimit calculates +-10% range, section budgets, and status', () => {
+  const under = calculateAssignmentWordLimit(2000, 10, 1750);
+  assert.equal(under.minWords, 1800);
+  assert.equal(under.maxWords, 2200);
+  assert.equal(under.introWords, 200);
+  assert.equal(under.bodyWords, 1600);
+  assert.equal(under.conclusionWords, 200);
+  assert.equal(under.status, 'under');
+  assert.equal(under.deltaToRange, 50);
+
+  const within = calculateAssignmentWordLimit(2000, 10, 1950);
+  assert.equal(within.status, 'within');
+  assert.equal(within.deltaToRange, 0);
+
+  const over = calculateAssignmentWordLimit(2000, 10, 2300);
+  assert.equal(over.status, 'over');
+  assert.equal(over.deltaToRange, 100);
+
+  const customTolerance = calculateAssignmentWordLimit(2000, 7, 1900);
+  assert.equal(customTolerance.minWords, 1860);
+  assert.equal(customTolerance.maxWords, 2140);
+  assert.equal(customTolerance.status, 'within');
+
+  const strictZero = calculateAssignmentWordLimit(1500, 0, 1520);
+  assert.equal(strictZero.minWords, 1500);
+  assert.equal(strictZero.maxWords, 1500);
+  assert.equal(strictZero.status, 'over');
+  assert.equal(strictZero.deltaToRange, 20);
+
+  const clampedMax = calculateAssignmentWordLimit(1000, 80, 1400);
+  assert.equal(clampedMax.minWords, 500);
+  assert.equal(clampedMax.maxWords, 1500);
+  assert.equal(clampedMax.status, 'within');
+});
+
+test('calculateWpm computes words per minute and per second accurately', () => {
+  const res = calculateWpm(260, 120, 1400);
+  assert.equal(res.wordsPerMinute, 130);
+  assert.equal(res.wordsPerSecond, 2.17);
+  assert.equal(res.charactersPerMinute, 700);
+
+  const zero = calculateWpm(260, 0);
+  assert.equal(zero.wordsPerMinute, 0);
 });

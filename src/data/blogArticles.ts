@@ -18,15 +18,16 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     slug: 'how-to-check-assignment-word-count',
     title: 'How to Check Your Assignment Word Count Accurately',
     metaTitle: 'How to Check Your Assignment Word Count Accurately',
-    metaDescription: 'Step-by-step guide to checking assignment word counts accurately. Learn what counts, university 10% tolerance rules, and common counter pitfalls.',
+    metaDescription: 'Step-by-step guide to checking assignment word counts accurately. Learn what counts, flexible tolerance margins, and common counter pitfalls.',
     publishedDate: 'November 2026',
     readTime: '5 min read',
     category: 'Assignment Strategy',
     author: 'Academic Skills Team',
-    summary: 'Learn how to accurately audit your coursework word count, handle citations and appendices, and avoid harsh university penalties.',
-    romanUrduSummary: 'Apne assignment ka word count kaise check karein, references aur citations ka kya hisaab hota hai, aur 10% rule ko kaise follow karein.',
+    summary: 'Learn how to accurately audit your coursework word count, handle citations and appendices, and stay within your syllabus limits.',
+    romanUrduSummary: 'Apne assignment ka word count kaise check karein, references aur citations ka kya hisaab hota hai, aur course tolerance rule ko kaise follow karein.',
     relatedTools: [
       { name: 'Word Counter for Assignment', path: '/' },
+      { name: 'Assignment Word Limit Calculator', path: '/assignment-word-limit-calculator' },
       { name: 'Essay Word Counter', path: '/essay-word-counter' },
       { name: 'Words to Pages Converter', path: '/words-to-pages-converter' },
     ],
@@ -37,21 +38,21 @@ In modern academic assessment, adhering strictly to assignment length specificat
 
 Submitting an assignment that falls significantly short of the word requirement indicates that the student has failed to explore the research question in sufficient depth, omitted essential empirical evidence, or skipped crucial counter-arguments. Conversely, massively exceeding the upper word limit demonstrates poor conciseness, an inability to edit oneself, or an unfair advantage over peers who adhered to constraints.
 
-In this comprehensive guide, we will unpack the practical mechanics of assignment word counting, define the widely applied 10% tolerance rule, clarify what university rubrics often exclude from counts, and show how to use dedicated online counters to review your draft before submission.
+In this comprehensive guide, we will unpack the practical rules of assignment word counting, clarify how module tolerance margins work (**0%**, **±5%**, **±10%**, or custom syllabus limits), explain what university rubrics often exclude from counts, and show how to audit your final draft. *(Need software shortcuts for Microsoft Word, Google Docs, or Apple Pages menus? See our [Document Word Count Checking Guide](/blog/how-to-check-word-count-in-a-document.html).)*
 
 ---
 
-## Understanding the Standard University 10% Rule
+## Understanding Flexible University Tolerance Rules (0%, ±5% & ±10%)
 
-Most universities across the United Kingdom, United States, Canada, Australia, and South Asia implement what is colloquially known as the **"Plus or Minus 10% Margin"**.
+Many universities across the United Kingdom, United States, Canada, Australia, and South Asia apply a **"Plus or Minus 10% Margin"** or a tighter **±5% margin**, while strict examinations and scholarship portals enforce a hard **0% cap** with zero allowance above the limit. Always check your rubric first, then verify your exact boundary using our [Assignment Word Limit Calculator](/assignment-word-limit-calculator).
 
-Under this standard operating principle:
+When your syllabus uses a ±10% operating principle:
 - If an assignment specification states **2,000 words**, the acceptable submission range is between **1,800 words** (-10%) and **2,200 words** (+10%).
-- If your submission lands within this window, examiners will award marks based solely on academic merit without applying length penalties.
-- If your submission is under 1,800 words, you risk losing marks in criteria evaluating research depth, completeness of argument, and analytical rigor.
-- If your submission exceeds 2,200 words, most university policies mandate formal deductions—typically **1 mark to 5 marks for every 100 words over**, or the examiner simply stops reading at word 2,201 and awards zero credit for your concluding synthesis.
+- If your submission lands within your course's approved window, examiners evaluate academic merit without length penalties.
+- If your submission falls below the minimum margin, you risk losing marks for underdeveloped depth and missing evidence.
+- If your submission exceeds the upper limit, department policies often apply scaled deductions or stop reading past the cutoff.
 
-*Tip for Roman Urdu Readers:* Agar aapka assignment 2,000 words ka hai, to 1,800 se 2,200 words ke darmiyan likhein. Is limit se kam ya zyada hone par marks deduct ho sakte hain.
+*Tip for Roman Urdu Readers:* Pehle apne syllabus mein check karein ke 0%, ±5%, ya ±10% margin allowed hai. Maslan ±10% rule ke mutabiq 2,000 words ke assignment ke liye 1,800 se 2,200 words ke darmiyan likhna mehfooz rehta hai.
 
 ---
 
@@ -88,7 +89,7 @@ Many students rely unquestioningly on the built-in counter located in the bottom
 
 ## Step-by-Step: How to Audit Your Draft with our Word Counter
 
-To ensure 100% submission security and eliminate surprises when uploading to Turnitin or Canvas:
+To reduce unexpected length discrepancies when uploading to Turnitin or Canvas:
 
 1. **Copy the Core Content Only:** Highlight your introduction, body paragraphs, and conclusion. Do not include your title page, bibliography, or appendix materials.
 2. **Paste into our Free Word Counter:** Head over to our [Word Counter for Assignment](/) tool. Paste your text directly into the large editor.

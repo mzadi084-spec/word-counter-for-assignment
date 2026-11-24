@@ -55,25 +55,16 @@
     <style>
       :root {
         --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        --color-primary: #2563eb;
-        --color-primary-hover: #1d4ed8;
-        --bg-page: #f8fafc;
+        --color-primary: #0a0a0a;
+        --color-primary-hover: #27272a;
+        --bg-page: #ffffff;
         --bg-card: #ffffff;
-        --text-main: #0f172a;
-        --text-muted: #475569;
-        --border-color: #e2e8f0;
-        --stat-bg: #f1f5f9;
+        --text-main: #0a0a0a;
+        --text-muted: #52525b;
+        --border-color: #e4e4e7;
+        --stat-bg: #fafafa;
       }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-page: #020617;
-          --bg-card: #0f172a;
-          --text-main: #f8fafc;
-          --text-muted: #94a3b8;
-          --border-color: #1e293b;
-          --stat-bg: #1e293b;
-        }
-      }
+
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
         font-family: var(--font-sans);
@@ -136,14 +127,12 @@
       }
       .badge {
         display: inline-block;
-        padding: 0.25rem 0.75rem;
+        padding: 0;
         font-size: 0.75rem;
-        font-weight: 700;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        background: rgba(37, 99, 235, 0.1);
-        color: var(--color-primary);
-        border-radius: 9999px;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
         margin-bottom: 0.5rem;
       }
       h1 {
@@ -241,6 +230,8 @@
           <a href="/words-to-pages-converter/">Words to Pages</a>
           <a href="/character-counter/">Character Counter</a>
           <a href="/paragraph-counter/">Paragraph Counter</a>
+          <a href="/roman-urdu-word-counter/">Roman Urdu</a>
+          <a href="/pdf-word-counter/">PDF Counter</a>
           <a href="/blog/">Blog</a>
         </nav>
       </div>
@@ -260,7 +251,7 @@
         <p>Word Counter for Assignment is provided free of charge for students, teachers, researchers, and professional writers. You are granted a personal, non-exclusive, revocable license to access our online counters, converters, and academic guides for lawful personal and academic purposes.</p>
 
         <h2>3. Intellectual Property of Your Content</h2>
-        <p><strong>You retain 100% full ownership and copyright of any text, essay draft, or coursework you paste or type into our tools.</strong> Because our tools execute entirely client-side in your browser, we do not claim any right, title, license, or interest in your submissions.</p>
+        <p><strong>You retain full ownership and copyright of any text, essay draft, or coursework you paste or type into our tools.</strong> Because our tools execute locally in your browser without user accounts or server draft storage, we do not claim any right, title, license, or interest in your submissions.</p>
 
         <h2>4. Estimates, Counting Rules &amp; Disclaimers</h2>
         <p>Our tools provide standard estimates for word counts, character counts, reading times (~200 words per minute), speaking times (~130 words per minute), and page conversions (~500 single-spaced, ~250 double-spaced, and ~175 handwritten words per page). Actual counts and timings vary by person, font, formatting, software, and institution, and final rules are set by your school, instructor, or examination board.</p>
@@ -286,7 +277,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h4>Word Counter for Assignment</h4>
-          <p style="font-size:0.85rem; line-height:1.5;">Free, privacy-first academic writing tools for students in English, Urdu, and Roman Urdu. Processed 100% in your browser.</p>
+          <p style="font-size:0.85rem; line-height:1.5;">Free academic writing tools for students in English, Urdu, and Roman Urdu. Processed locally in your browser.</p>
         </div>
         <div class="footer-col">
           <h4>Core Tools</h4>
@@ -296,6 +287,9 @@
             <li><a href="/words-to-pages-converter/">Words to Pages Converter</a></li>
             <li><a href="/character-counter/">Character Counter Online</a></li>
             <li><a href="/paragraph-counter/">Paragraph Counter</a></li>
+            <li><a href="/roman-urdu-word-counter/">Roman Urdu Word Counter</a></li>
+            <li><a href="/assignment-word-limit-calculator/">Word Limit Calculator</a></li>
+            <li><a href="/pdf-word-counter/">PDF Word Counter</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -306,6 +300,7 @@
             <li><a href="/contact/">Contact</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
             <li><a href="/terms/">Terms of Service</a></li>
+            <li><a href="/disclaimer/">Disclaimer</a></li>
           </ul>
         </div>
       </div>

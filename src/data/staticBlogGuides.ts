@@ -24,11 +24,59 @@ export const STATIC_BLOG_GUIDES: StaticBlogGuide[] = [
     cluster: 'hub',
   },
   {
+    href: '/blog/how-to-calculate-assignment-word-limits.html',
+    title: 'How to Calculate Assignment Word Limits (±5%, ±10% & Custom)',
+    tag: 'Word Limit Planning',
+    description:
+      'Calculate university 0%, ±5%, ±10%, or custom safe word count ranges and plan 10-80-10 essay budgets.',
+    cluster: 'hub',
+  },
+  {
+    href: '/blog/how-many-pages-is-500-words.html',
+    title: 'How Many Pages Is 500 Words? Single & Double Spaced',
+    tag: 'Academic Formatting',
+    description:
+      'Estimated single-spaced, double-spaced, and handwritten page counts for a 500-word essay.',
+    cluster: 'pages',
+  },
+  {
     href: '/blog/how-many-pages-is-1000-words.html',
     title: 'How Many Pages Is 1,000 Words? Single & Double Spaced',
     tag: 'Academic Formatting',
     description:
       'Approximate single-spaced, double-spaced, and handwritten page counts for 1,000 words.',
+    cluster: 'pages',
+  },
+  {
+    href: '/blog/how-many-pages-is-1500-words.html',
+    title: 'How Many Pages Is 1,500 Words? Single & Double Spaced',
+    tag: 'Academic Formatting',
+    description:
+      'Page length estimates, paragraph plans, and formatting notes for 1,500-word coursework.',
+    cluster: 'pages',
+  },
+  {
+    href: '/blog/how-many-pages-is-2000-words.html',
+    title: 'How Many Pages Is 2,000 Words? Single & Double Spaced',
+    tag: 'Academic Formatting',
+    description:
+      'Page estimates, 10-80-10 section breakdowns, and timing advice for 2,000-word essays.',
+    cluster: 'pages',
+  },
+  {
+    href: '/blog/how-many-pages-is-3300-words.html',
+    title: 'How Many Pages Is 3,300 Words? Single & Double Spaced',
+    tag: 'Academic Formatting',
+    description:
+      'Estimated page counts, reading times, and a sample essay plan for 3,300 words.',
+    cluster: 'pages',
+  },
+  {
+    href: '/blog/how-many-pages-is-10000-words.html',
+    title: 'How Many Pages Is 10,000 Words? Page Count Guide',
+    tag: 'Long-Form Formatting',
+    description:
+      'Thesis and dissertation page-count estimates and chapter planning for 10,000 words.',
     cluster: 'pages',
   },
   {
@@ -48,20 +96,36 @@ export const STATIC_BLOG_GUIDES: StaticBlogGuide[] = [
     cluster: 'pages',
   },
   {
-    href: '/blog/how-many-pages-is-3300-words.html',
-    title: 'How Many Pages Is 3,300 Words? Single & Double Spaced',
-    tag: 'Academic Formatting',
+    href: '/blog/handwritten-vs-typed-assignment-pages.html',
+    title: 'Handwritten vs Typed Assignment Pages: Length Guide',
+    tag: 'Formatting & Layout',
     description:
-      'Estimated page counts, reading times, and a sample essay plan for 3,300 words.',
+      'Compare handwritten lined A4 sheets (~175 words/page) with single and double-spaced pages.',
     cluster: 'pages',
   },
   {
-    href: '/blog/how-many-pages-is-10000-words.html',
-    title: 'How Many Pages Is 10,000 Words? Page Count Guide',
-    tag: 'Long-Form Formatting',
+    href: '/blog/do-headings-count-in-word-count.html',
+    title: 'Do Headings Count in Assignment Word Count?',
+    tag: 'Counting Rules',
     description:
-      'Thesis and dissertation page-count estimates and chapter planning for 10,000 words.',
-    cluster: 'pages',
+      'When section headings and subheadings count toward assignment limits across university briefs.',
+    cluster: 'counting',
+  },
+  {
+    href: '/blog/do-references-count-in-word-count.html',
+    title: 'Do References Count in Word Count? University Rules',
+    tag: 'Counting Rules',
+    description:
+      'How in-text citations vs. reference lists and bibliographies are treated in academic marking.',
+    cluster: 'counting',
+  },
+  {
+    href: '/blog/do-appendices-count-in-word-count.html',
+    title: 'Do Appendices Count in Word Count? Academic Guide',
+    tag: 'Counting Rules',
+    description:
+      'Why appendices usually sit outside main word limits and how to avoid misusing them.',
+    cluster: 'counting',
   },
   {
     href: '/blog/how-to-check-word-count-in-a-document.html',
@@ -93,6 +157,14 @@ export const STATIC_BLOG_GUIDES: StaticBlogGuide[] = [
     tag: 'Urdu & Bilingual Writing',
     description:
       'How Urdu spaces, punctuation marks (۔ ؟), and Roman Urdu word counts work.',
+    cluster: 'urdu',
+  },
+  {
+    href: '/blog/roman-urdu-word-counting-guide.html',
+    title: 'Roman Urdu Word Counting Guide for Students',
+    tag: 'Urdu & Bilingual Writing',
+    description:
+      'Practical rules for counting Roman Urdu assignments, hyphenated compounds, and mixed English.',
     cluster: 'urdu',
   },
   {
